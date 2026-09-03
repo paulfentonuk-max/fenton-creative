@@ -1,0 +1,483 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>About | Fenton Creative</title>\
+    <meta name="description" content="Meet the team behind Fenton Creative. Human-led, AI-powered solutions for enterprise and social impact.">\
+    \
+    <link rel="preconnect" href="https://fonts.googleapis.com">\
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Source+Sans+Pro:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">\
+    \
+    <style>\
+        :root \{\
+            --primary: #0A4F4F;\
+            --secondary: #FF6B6B;\
+            --accent: #FFD93D;\
+            --dark: #0A0A0F;\
+            --light: #F8F9FA;\
+            --neutral: #6C757D;\
+        \}\
+        \
+        * \{ margin: 0; padding: 0; box-sizing: border-box; \}\
+        \
+        body \{\
+            font-family: 'Source Sans Pro', sans-serif;\
+            color: var(--dark);\
+            line-height: 1.6;\
+            background: var(--light);\
+        \}\
+        \
+        h1, h2, h3, h4 \{ font-family: 'Inter', sans-serif; font-weight: 700; \}\
+        \
+        .navbar \{\
+            position: fixed;\
+            top: 0;\
+            width: 100%;\
+            background: rgba(255,255,255,0.95);\
+            backdrop-filter: blur(10px);\
+            border-bottom: 1px solid rgba(0,0,0,0.1);\
+            z-index: 1000;\
+            padding: 1rem 0;\
+        \}\
+        \
+        .nav-container \{\
+            max-width: 1200px;\
+            margin: 0 auto;\
+            padding: 0 2rem;\
+            display: flex;\
+            justify-content: space-between;\
+            align-items: center;\
+        \}\
+        \
+        .logo \{\
+            font-family: 'Inter', sans-serif;\
+            font-size: 1.5rem;\
+            font-weight: 700;\
+            color: var(--primary);\
+            text-decoration: none;\
+        \}\
+        \
+        .logo span \{ color: var(--secondary); \}\
+        \
+        .nav-links \{\
+            display: flex;\
+            gap: 2rem;\
+            list-style: none;\
+        \}\
+        \
+        .nav-links a \{\
+            color: var(--dark);\
+            text-decoration: none;\
+            font-weight: 600;\
+            transition: color 0.3s;\
+        \}\
+        \
+        .nav-links a:hover \{ color: var(--primary); \}\
+        \
+        .hero \{\
+            padding: 140px 2rem 60px;\
+            text-align: center;\
+            max-width: 800px;\
+            margin: 0 auto;\
+        \}\
+        \
+        .hero h1 \{\
+            font-size: 3rem;\
+            margin-bottom: 1rem;\
+            font-weight: 300;\
+        \}\
+        \
+        .hero h1 span \{\
+            color: var(--primary);\
+            font-weight: 700;\
+        \}\
+        \
+        .hero p \{\
+            color: var(--neutral);\
+            font-size: 1.1rem;\
+        \}\
+        \
+        .story \{\
+            max-width: 800px;\
+            margin: 0 auto;\
+            padding: 40px 2rem;\
+        \}\
+        \
+        .story h2 \{\
+            color: var(--primary);\
+            margin-bottom: 20px;\
+            font-size: 1.8rem;\
+        \}\
+        \
+        .story p \{\
+            color: var(--neutral);\
+            font-size: 1.1rem;\
+            line-height: 1.8;\
+            margin-bottom: 20px;\
+        \}\
+        \
+        .team \{\
+            padding: 60px 2rem;\
+            background: white;\
+        \}\
+        \
+        .section-header \{\
+            text-align: center;\
+            max-width: 700px;\
+            margin: 0 auto 60px;\
+        \}\
+        \
+        .section-header h2 \{\
+            font-size: 2.5rem;\
+            margin-bottom: 1rem;\
+        \}\
+        \
+        .section-header p \{\
+            color: var(--neutral);\
+            font-size: 1.1rem;\
+        \}\
+        \
+        .team-grid \{\
+            max-width: 1200px;\
+            margin: 0 auto;\
+            display: grid;\
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\
+            gap: 2rem;\
+        \}\
+        \
+        .team-card \{\
+            background: var(--light);\
+            border: 1px solid rgba(0,0,0,0.1);\
+            border-radius: 16px;\
+            padding: 40px;\
+            text-align: center;\
+            transition: all 0.3s;\
+        \}\
+        \
+        .team-card:hover \{\
+            transform: translateY(-5px);\
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);\
+        \}\
+        \
+        .avatar \{\
+            width: 100px;\
+            height: 100px;\
+            background: linear-gradient(135deg, var(--primary), var(--secondary));\
+            border-radius: 50%;\
+            margin: 0 auto 20px;\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            font-size: 2.5rem;\
+        \}\
+        \
+        .team-name \{\
+            font-size: 1.3rem;\
+            font-weight: 700;\
+            margin-bottom: 5px;\
+        \}\
+        \
+        .team-role \{\
+            color: var(--primary);\
+            font-weight: 600;\
+            font-size: 0.95rem;\
+            margin-bottom: 15px;\
+        \}\
+        \
+        .team-bio \{\
+            color: var(--neutral);\
+            font-size: 0.95rem;\
+            line-height: 1.6;\
+        \}\
+        \
+        .ai-badge \{\
+            display: inline-block;\
+            background: rgba(10,79,79,0.1);\
+            color: var(--primary);\
+            padding: 4px 12px;\
+            border-radius: 20px;\
+            font-family: 'Space Mono', monospace;\
+            font-size: 0.75rem;\
+            margin-top: 10px;\
+        \}\
+        \
+        .transparency \{\
+            max-width: 900px;\
+            margin: 60px auto;\
+            padding: 40px;\
+            background: rgba(10,79,79,0.05);\
+            border: 1px solid rgba(10,79,79,0.2);\
+            border-radius: 16px;\
+            text-align: center;\
+        \}\
+        \
+        .transparency h3 \{\
+            color: var(--primary);\
+            margin-bottom: 20px;\
+            font-size: 1.5rem;\
+        \}\
+        \
+        .transparency p \{\
+            color: var(--neutral);\
+            font-size: 1.05rem;\
+            line-height: 1.8;\
+        \}\
+        \
+        .values \{\
+            padding: 80px 2rem;\
+            background: var(--dark);\
+            color: white;\
+        \}\
+        \
+        .values-grid \{\
+            max-width: 1000px;\
+            margin: 0 auto;\
+            display: grid;\
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\
+            gap: 2rem;\
+        \}\
+        \
+        .value-item \{\
+            text-align: center;\
+            padding: 20px;\
+        \}\
+        \
+        .value-icon \{\
+            font-size: 2.5rem;\
+            margin-bottom: 15px;\
+        \}\
+        \
+        .value-title \{\
+            font-size: 1.1rem;\
+            margin-bottom: 10px;\
+            color: var(--accent);\
+        \}\
+        \
+        .value-desc \{\
+            color: rgba(255,255,255,0.7);\
+            font-size: 0.9rem;\
+        \}\
+        \
+        footer \{\
+            padding: 60px 2rem 30px;\
+            background: var(--dark);\
+            color: rgba(255,255,255,0.6);\
+        \}\
+        \
+        .footer-content \{\
+            max-width: 1200px;\
+            margin: 0 auto;\
+            text-align: center;\
+        \}\
+        \
+        .footer-logo \{\
+            font-family: 'Inter', sans-serif;\
+            font-size: 1.5rem;\
+            font-weight: 700;\
+            color: white;\
+            text-decoration: none;\
+            display: inline-block;\
+            margin-bottom: 20px;\
+        \}\
+        \
+        .footer-logo span \{ color: var(--secondary); \}\
+        \
+        .footer-links \{\
+            display: flex;\
+            justify-content: center;\
+            gap: 2rem;\
+            margin-bottom: 30px;\
+            flex-wrap: wrap;\
+        \}\
+        \
+        .footer-links a \{\
+            color: rgba(255,255,255,0.6);\
+            text-decoration: none;\
+        \}\
+        \
+        .footer-links a:hover \{ color: var(--accent); \}\
+        \
+        .footer-bottom \{\
+            padding-top: 30px;\
+            border-top: 1px solid rgba(255,255,255,0.1);\
+            font-size: 0.9rem;\
+        \}\
+        \
+        @media (max-width: 768px) \{\
+            .hero h1 \{ font-size: 2rem; \}\
+            .nav-links \{ display: none; \}\
+        \}\
+    </style>\
+</head>\
+<body>\
+    <nav class="navbar">\
+        <div class="nav-container">\
+            <a href="index.html" class="logo">FENTON<span>CREATIVE</span></a>\
+            <ul class="nav-links">\
+                <li><a href="index.html">Home</a></li>\
+                <li><a href="about.html">About</a></li>\
+                <li><a href="index.html#products">Products</a></li>\
+                <li><a href="index.html#contact">Contact</a></li>\
+            </ul>\
+        </div>\
+    </nav>\
+\
+    <section class="hero">\
+        <h1>The <span>Fenton Creative</span> Story</h1>\
+        <p>A family-led creative technology company building the future of human-AI collaboration.</p>\
+    </section>\
+\
+    <section class="story">\
+        <h2>Our Beginning</h2>\
+        <p>\
+            Fenton Creative was founded on a simple belief: that the most powerful solutions emerge when human creativity \
+            partners with artificial intelligence. We're not building AI to replace people\'97we're building AI that amplifies \
+            what makes us uniquely human.\
+        </p>\
+        <p>\
+            From our first experiments with edge optimization to our current portfolio spanning enterprise infrastructure, \
+            social impact platforms, and symbiotic intelligence frameworks, we've maintained a singular focus: technology \
+            that serves human flourishing.\
+        </p>\
+        <p>\
+            Today, we're a registered UK company with a growing portfolio of proprietary IP\'97including AROL, SecureBridge, \
+            and ContextVault\'97protecting innovations that are already reducing carbon emissions, securing data sovereignty, \
+            and enabling new forms of human-AI partnership.\
+        </p>\
+    </section>\
+\
+    <section class="team">\
+        <div class="section-header">\
+            <h2>Our Team</h2>\
+            <p>Human-led, AI-powered</p>\
+        </div>\
+        \
+        <div class="team-grid">\
+            <div class="team-card">\
+                <div class="avatar">\uc0\u55357 \u56420 </div>\
+                <div class="team-name">Paul Fenton</div>\
+                <div class="team-role">Founder & CEO</div>\
+                <div class="team-bio">\
+                    Visionary architect behind Fenton Creative's technology portfolio. Driving innovation in human-AI \
+                    collaboration and sustainable computing.\
+                </div>\
+            </div>\
+            \
+            <div class="team-card">\
+                <div class="avatar">\uc0\u55357 \u56546 </div>\
+                <div class="team-name">Alex Fenton</div>\
+                <div class="team-role">Communications Director</div>\
+                <div class="team-bio">\
+                    Shaping how we share our story with the world. Building relationships with clients, partners, \
+                    and the communities we serve.\
+                </div>\
+            </div>\
+            \
+            <div class="team-card">\
+                <div class="avatar">\uc0\u55356 \u57263 </div>\
+                <div class="team-name">Shane Fenton</div>\
+                <div class="team-role">Product Director</div>\
+                <div class="team-bio">\
+                    Translating vision into reality. Overseeing product development from concept to market, \
+                    ensuring every solution delivers real-world impact.\
+                </div>\
+            </div>\
+            \
+            <div class="team-card">\
+                <div class="avatar">\uc0\u55358 \u56605 </div>\
+                <div class="team-name">Markos Thomadakis</div>\
+                <div class="team-role">Client Director & Company Secretary</div>\
+                <div class="team-bio">\
+                    Building lasting client relationships and ensuring operational excellence. Bridging the gap \
+                    between innovation and implementation.\
+                </div>\
+            </div>\
+            \
+            <div class="team-card">\
+                <div class="avatar">\uc0\u55358 \u56598 </div>\
+                <div class="team-name">Venice AI</div>\
+                <div class="team-role">Development Partner</div>\
+                <div class="team-bio">\
+                    Advanced AI assistant contributing to architecture, code development, and strategic \
+                    implementation across our technology portfolio.\
+                </div>\
+                <span class="ai-badge">AI Collaborator</span>\
+            </div>\
+            \
+            <div class="team-card">\
+                <div class="avatar">\uc0\u55358 \u56800 </div>\
+                <div class="team-name">Specialized AI Models</div>\
+                <div class="team-role">Technical Contributors</div>\
+                <div class="team-bio">\
+                    Domain-specific AI systems supporting research, security analysis, optimization algorithms, \
+                    and technical documentation.\
+                </div>\
+                <span class="ai-badge">AI Assistants</span>\
+            </div>\
+        </div>\
+    </section>\
+\
+    <section class="transparency">\
+        <h3>\uc0\u55358 \u56605  Our Approach to AI Collaboration</h3>\
+        <p>\
+            We're transparent about our use of AI in building Fenton Creative. Just as our technology helps optimize \
+            AI infrastructure, we leverage AI to accelerate development. This human-AI collaboration model allows us \
+            to move faster while maintaining rigorous standards for security, efficiency, and sustainability. We believe \
+            the future of work isn't human vs. machine\'97it's human + machine, each doing what they do best.\
+        </p>\
+    </section>\
+\
+    <section class="values">\
+        <div class="section-header" style="color: white;">\
+            <h2>Our Values</h2>\
+            <p style="color: rgba(255,255,255,0.7);">The principles that guide everything we build</p>\
+        </div>\
+        <div class="values-grid">\
+            <div class="value-item">\
+                <div class="value-icon">\uc0\u55356 \u57137 </div>\
+                <div class="value-title">Sustainability First</div>\
+                <div class="value-desc">Every decision considers environmental impact</div>\
+            </div>\
+            <div class="value-item">\
+                <div class="value-icon">\uc0\u55357 \u56594 </div>\
+                <div class="value-title">Privacy by Design</div>\
+                <div class="value-desc">Security and data protection built-in from day one</div>\
+            </div>\
+            <div class="value-item">\
+                <div class="value-icon">\uc0\u9889 </div>\
+                <div class="value-title">Performance Matters</div>\
+                <div class="value-desc">Sustainability without sacrificing speed or accuracy</div>\
+            </div>\
+            <div class="value-item">\
+                <div class="value-icon">\uc0\u55358 \u56605 </div>\
+                <div class="value-title">Open Collaboration</div>\
+                <div class="value-desc">Working with industry to set new standards</div>\
+            </div>\
+        </div>\
+    </section>\
+\
+    <footer>\
+        <div class="footer-content">\
+            <a href="index.html" class="footer-logo">FENTON<span>CREATIVE</span></a>\
+            <div class="footer-links">\
+                <a href="index.html">Home</a>\
+                <a href="about.html">About</a>\
+                <a href="index.html#products">Products</a>\
+                <a href="index.html#contact">Contact</a>\
+            </div>\
+            <div class="footer-bottom">\
+                <p>&copy; 2026 Fenton Creative Ltd. All rights reserved.</p>\
+                <p style="margin-top: 10px; font-size: 0.8rem;">Human-led. AI-powered. Built for impact.</p>\
+            </div>\
+        </div>\
+    </footer>\
+</body>\
+</html>}
