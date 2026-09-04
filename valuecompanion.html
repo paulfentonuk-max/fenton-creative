@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValueCompanion™ | AI Business Intelligence | Fenton Creative™</title>
+    <meta name="description" content="ValueCompanion™ - AI-powered business intelligence and decision support. Transform your data into actionable insights.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #e94560;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #e94560;
+        }
+        
+        .product-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        .product-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a2e;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .feature-card h3 {
+            color: #e94560;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+        }
+        
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+        
+        footer {
+            background: #0f0f1a;
+            color: #888;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .product-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Fenton<span>Creative</span>™</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="developers.html">Developers</a></li>
+                <li><a href="tech-heroes.html">Tech Heroes</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="product-hero">
+        <div class="container">
+            <h1>ValueCompanion™</h1>
+            <p>AI-powered business intelligence and decision support. Transform your data into actionable insights.</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Intelligence Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Predictive Analytics</h3>
+                    <p>Machine learning models forecast trends, identify opportunities, and flag risks before they impact your business.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Natural Language Queries</h3>
+                    <p>Ask questions in plain English. Get answers, visualizations, and recommendations instantly.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Automated Reporting</h3>
+                    <p>Schedule and distribute customized reports. From executive summaries to detailed operational metrics.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Anomaly Detection</h3>
+                    <p>Automatically identify unusual patterns in your data that could indicate problems or opportunities.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Integration Hub</h3>
+                    <p>Connect to 200+ data sources including Salesforce, Stripe, Google Analytics, SQL databases, and APIs.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Collaborative Insights</h3>
+                    <p>Share dashboards, annotate findings, and build a knowledge base across your organization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="margin-bottom: 2rem;">Unlock the value in your data</h2>
+            <a href="contact.html" class="cta-button">Get ValueCompanion™</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Fenton Creative™. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
