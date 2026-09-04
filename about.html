@@ -1,483 +1,486 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2870
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DataPrune - Enterprise data optimization with 40-60% reduction and 35-55% energy savings. Performance-based pricing with SecureBridge protocol.">
+    <meta name="copyright" content="© 2025 Fenton Creative. All Rights Reserved.">
+    <title>DataPrune | Fenton Creative</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+        .protected-content { -webkit-user-select: none !important; -moz-user-select: none !important; user-select: none !important; }
+        .gradient-text { background: linear-gradient(135deg, #10B981, #059669); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .performance-badge { background: linear-gradient(135deg, #10B981, #059669); }
+        .glass { background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); }
+        .watermark {
+            position: fixed; top: 50%; left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 100px; color: rgba(16, 185, 129, 0.03);
+            pointer-events: none; z-index: 9998; font-weight: 800; white-space: nowrap;
+        }
+        .tier-card { transition: all 0.4s ease; }
+        .tier-card:hover { transform: translateY(-8px); }
+        .tier-card.featured { border: 2px solid #10B981; box-shadow: 0 0 40px rgba(16, 185, 129, 0.2); }
+        input[type="range"] {
+            -webkit-appearance: none; appearance: none; width: 100%; height: 6px;
+            background: #1e293b; border-radius: 3px; outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none; width: 20px; height: 20px;
+            background: #10B981; border-radius: 50%; cursor: pointer;
+        }
+        .protection-notice {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: rgba(0, 0, 0, 0.9); color: #94a3b8;
+            padding: 8px; font-size: 11px; text-align: center;
+            z-index: 9999; border-top: 1px solid #334155;
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', e => { e.preventDefault(); return false; });
+        document.addEventListener('keydown', e => {
+            if ((e.ctrlKey && (e.key === 's' || e.key === 'p' || e.key === 'u')) || e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault(); return false;
+            }
+        });
+        document.addEventListener('dragstart', e => { e.preventDefault(); return false; });
+        document.addEventListener('copy', e => { e.preventDefault(); return false; });
+        console.log('%c⚠️ COPYRIGHT NOTICE', 'color: #F59E0B; font-size: 24px; font-weight: bold;');
+        console.log('%c© 2025 Fenton Creative. All Rights Reserved.', 'color: #94A3B8; font-size: 14px;');
+        
+        function calculateSavings() {
+            const dataSize = document.getElementById('dataSize').value;
+            const reduction = dataSize * 0.5;
+            const costPerTB = 50;
+            const monthlySavings = reduction * costPerTB;
+            const annualSavings = monthlySavings * 12;
+            
+            document.getElementById('reductionResult').textContent = reduction.toFixed(0) + ' TB';
+            document.getElementById('monthlySavings').textContent = '£' + monthlySavings.toLocaleString();
+            document.getElementById('annualSavings').textContent = '£' + annualSavings.toLocaleString();
+            
+            const revenueShare3yr = annualSavings * 0.4 * 3;
+            const revenueShare7yr = annualSavings * 0.35 * 7;
+            const revenueShare10yr = annualSavings * 0.25 * 10;
+            
+            document.getElementById('revenue3yr').textContent = '£' + revenueShare3yr.toLocaleString();
+            document.getElementById('revenue7yr').textContent = '£' + revenueShare7yr.toLocaleString();
+            document.getElementById('revenue10yr').textContent = '£' + revenueShare10yr.toLocaleString();
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 protected-content">
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="en">\
-<head>\
-    <meta charset="UTF-8">\
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <title>About | Fenton Creative</title>\
-    <meta name="description" content="Meet the team behind Fenton Creative. Human-led, AI-powered solutions for enterprise and social impact.">\
-    \
-    <link rel="preconnect" href="https://fonts.googleapis.com">\
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Source+Sans+Pro:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">\
-    \
-    <style>\
-        :root \{\
-            --primary: #0A4F4F;\
-            --secondary: #FF6B6B;\
-            --accent: #FFD93D;\
-            --dark: #0A0A0F;\
-            --light: #F8F9FA;\
-            --neutral: #6C757D;\
-        \}\
-        \
-        * \{ margin: 0; padding: 0; box-sizing: border-box; \}\
-        \
-        body \{\
-            font-family: 'Source Sans Pro', sans-serif;\
-            color: var(--dark);\
-            line-height: 1.6;\
-            background: var(--light);\
-        \}\
-        \
-        h1, h2, h3, h4 \{ font-family: 'Inter', sans-serif; font-weight: 700; \}\
-        \
-        .navbar \{\
-            position: fixed;\
-            top: 0;\
-            width: 100%;\
-            background: rgba(255,255,255,0.95);\
-            backdrop-filter: blur(10px);\
-            border-bottom: 1px solid rgba(0,0,0,0.1);\
-            z-index: 1000;\
-            padding: 1rem 0;\
-        \}\
-        \
-        .nav-container \{\
-            max-width: 1200px;\
-            margin: 0 auto;\
-            padding: 0 2rem;\
-            display: flex;\
-            justify-content: space-between;\
-            align-items: center;\
-        \}\
-        \
-        .logo \{\
-            font-family: 'Inter', sans-serif;\
-            font-size: 1.5rem;\
-            font-weight: 700;\
-            color: var(--primary);\
-            text-decoration: none;\
-        \}\
-        \
-        .logo span \{ color: var(--secondary); \}\
-        \
-        .nav-links \{\
-            display: flex;\
-            gap: 2rem;\
-            list-style: none;\
-        \}\
-        \
-        .nav-links a \{\
-            color: var(--dark);\
-            text-decoration: none;\
-            font-weight: 600;\
-            transition: color 0.3s;\
-        \}\
-        \
-        .nav-links a:hover \{ color: var(--primary); \}\
-        \
-        .hero \{\
-            padding: 140px 2rem 60px;\
-            text-align: center;\
-            max-width: 800px;\
-            margin: 0 auto;\
-        \}\
-        \
-        .hero h1 \{\
-            font-size: 3rem;\
-            margin-bottom: 1rem;\
-            font-weight: 300;\
-        \}\
-        \
-        .hero h1 span \{\
-            color: var(--primary);\
-            font-weight: 700;\
-        \}\
-        \
-        .hero p \{\
-            color: var(--neutral);\
-            font-size: 1.1rem;\
-        \}\
-        \
-        .story \{\
-            max-width: 800px;\
-            margin: 0 auto;\
-            padding: 40px 2rem;\
-        \}\
-        \
-        .story h2 \{\
-            color: var(--primary);\
-            margin-bottom: 20px;\
-            font-size: 1.8rem;\
-        \}\
-        \
-        .story p \{\
-            color: var(--neutral);\
-            font-size: 1.1rem;\
-            line-height: 1.8;\
-            margin-bottom: 20px;\
-        \}\
-        \
-        .team \{\
-            padding: 60px 2rem;\
-            background: white;\
-        \}\
-        \
-        .section-header \{\
-            text-align: center;\
-            max-width: 700px;\
-            margin: 0 auto 60px;\
-        \}\
-        \
-        .section-header h2 \{\
-            font-size: 2.5rem;\
-            margin-bottom: 1rem;\
-        \}\
-        \
-        .section-header p \{\
-            color: var(--neutral);\
-            font-size: 1.1rem;\
-        \}\
-        \
-        .team-grid \{\
-            max-width: 1200px;\
-            margin: 0 auto;\
-            display: grid;\
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\
-            gap: 2rem;\
-        \}\
-        \
-        .team-card \{\
-            background: var(--light);\
-            border: 1px solid rgba(0,0,0,0.1);\
-            border-radius: 16px;\
-            padding: 40px;\
-            text-align: center;\
-            transition: all 0.3s;\
-        \}\
-        \
-        .team-card:hover \{\
-            transform: translateY(-5px);\
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);\
-        \}\
-        \
-        .avatar \{\
-            width: 100px;\
-            height: 100px;\
-            background: linear-gradient(135deg, var(--primary), var(--secondary));\
-            border-radius: 50%;\
-            margin: 0 auto 20px;\
-            display: flex;\
-            align-items: center;\
-            justify-content: center;\
-            font-size: 2.5rem;\
-        \}\
-        \
-        .team-name \{\
-            font-size: 1.3rem;\
-            font-weight: 700;\
-            margin-bottom: 5px;\
-        \}\
-        \
-        .team-role \{\
-            color: var(--primary);\
-            font-weight: 600;\
-            font-size: 0.95rem;\
-            margin-bottom: 15px;\
-        \}\
-        \
-        .team-bio \{\
-            color: var(--neutral);\
-            font-size: 0.95rem;\
-            line-height: 1.6;\
-        \}\
-        \
-        .ai-badge \{\
-            display: inline-block;\
-            background: rgba(10,79,79,0.1);\
-            color: var(--primary);\
-            padding: 4px 12px;\
-            border-radius: 20px;\
-            font-family: 'Space Mono', monospace;\
-            font-size: 0.75rem;\
-            margin-top: 10px;\
-        \}\
-        \
-        .transparency \{\
-            max-width: 900px;\
-            margin: 60px auto;\
-            padding: 40px;\
-            background: rgba(10,79,79,0.05);\
-            border: 1px solid rgba(10,79,79,0.2);\
-            border-radius: 16px;\
-            text-align: center;\
-        \}\
-        \
-        .transparency h3 \{\
-            color: var(--primary);\
-            margin-bottom: 20px;\
-            font-size: 1.5rem;\
-        \}\
-        \
-        .transparency p \{\
-            color: var(--neutral);\
-            font-size: 1.05rem;\
-            line-height: 1.8;\
-        \}\
-        \
-        .values \{\
-            padding: 80px 2rem;\
-            background: var(--dark);\
-            color: white;\
-        \}\
-        \
-        .values-grid \{\
-            max-width: 1000px;\
-            margin: 0 auto;\
-            display: grid;\
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\
-            gap: 2rem;\
-        \}\
-        \
-        .value-item \{\
-            text-align: center;\
-            padding: 20px;\
-        \}\
-        \
-        .value-icon \{\
-            font-size: 2.5rem;\
-            margin-bottom: 15px;\
-        \}\
-        \
-        .value-title \{\
-            font-size: 1.1rem;\
-            margin-bottom: 10px;\
-            color: var(--accent);\
-        \}\
-        \
-        .value-desc \{\
-            color: rgba(255,255,255,0.7);\
-            font-size: 0.9rem;\
-        \}\
-        \
-        footer \{\
-            padding: 60px 2rem 30px;\
-            background: var(--dark);\
-            color: rgba(255,255,255,0.6);\
-        \}\
-        \
-        .footer-content \{\
-            max-width: 1200px;\
-            margin: 0 auto;\
-            text-align: center;\
-        \}\
-        \
-        .footer-logo \{\
-            font-family: 'Inter', sans-serif;\
-            font-size: 1.5rem;\
-            font-weight: 700;\
-            color: white;\
-            text-decoration: none;\
-            display: inline-block;\
-            margin-bottom: 20px;\
-        \}\
-        \
-        .footer-logo span \{ color: var(--secondary); \}\
-        \
-        .footer-links \{\
-            display: flex;\
-            justify-content: center;\
-            gap: 2rem;\
-            margin-bottom: 30px;\
-            flex-wrap: wrap;\
-        \}\
-        \
-        .footer-links a \{\
-            color: rgba(255,255,255,0.6);\
-            text-decoration: none;\
-        \}\
-        \
-        .footer-links a:hover \{ color: var(--accent); \}\
-        \
-        .footer-bottom \{\
-            padding-top: 30px;\
-            border-top: 1px solid rgba(255,255,255,0.1);\
-            font-size: 0.9rem;\
-        \}\
-        \
-        @media (max-width: 768px) \{\
-            .hero h1 \{ font-size: 2rem; \}\
-            .nav-links \{ display: none; \}\
-        \}\
-    </style>\
-</head>\
-<body>\
-    <nav class="navbar">\
-        <div class="nav-container">\
-            <a href="index.html" class="logo">FENTON<span>CREATIVE</span></a>\
-            <ul class="nav-links">\
-                <li><a href="index.html">Home</a></li>\
-                <li><a href="about.html">About</a></li>\
-                <li><a href="index.html#products">Products</a></li>\
-                <li><a href="index.html#contact">Contact</a></li>\
-            </ul>\
-        </div>\
-    </nav>\
-\
-    <section class="hero">\
-        <h1>The <span>Fenton Creative</span> Story</h1>\
-        <p>A family-led creative technology company building the future of human-AI collaboration.</p>\
-    </section>\
-\
-    <section class="story">\
-        <h2>Our Beginning</h2>\
-        <p>\
-            Fenton Creative was founded on a simple belief: that the most powerful solutions emerge when human creativity \
-            partners with artificial intelligence. We're not building AI to replace people\'97we're building AI that amplifies \
-            what makes us uniquely human.\
-        </p>\
-        <p>\
-            From our first experiments with edge optimization to our current portfolio spanning enterprise infrastructure, \
-            social impact platforms, and symbiotic intelligence frameworks, we've maintained a singular focus: technology \
-            that serves human flourishing.\
-        </p>\
-        <p>\
-            Today, we're a registered UK company with a growing portfolio of proprietary IP\'97including AROL, SecureBridge, \
-            and ContextVault\'97protecting innovations that are already reducing carbon emissions, securing data sovereignty, \
-            and enabling new forms of human-AI partnership.\
-        </p>\
-    </section>\
-\
-    <section class="team">\
-        <div class="section-header">\
-            <h2>Our Team</h2>\
-            <p>Human-led, AI-powered</p>\
-        </div>\
-        \
-        <div class="team-grid">\
-            <div class="team-card">\
-                <div class="avatar">\uc0\u55357 \u56420 </div>\
-                <div class="team-name">Paul Fenton</div>\
-                <div class="team-role">Founder & CEO</div>\
-                <div class="team-bio">\
-                    Visionary architect behind Fenton Creative's technology portfolio. Driving innovation in human-AI \
-                    collaboration and sustainable computing.\
-                </div>\
-            </div>\
-            \
-            <div class="team-card">\
-                <div class="avatar">\uc0\u55357 \u56546 </div>\
-                <div class="team-name">Alex Fenton</div>\
-                <div class="team-role">Communications Director</div>\
-                <div class="team-bio">\
-                    Shaping how we share our story with the world. Building relationships with clients, partners, \
-                    and the communities we serve.\
-                </div>\
-            </div>\
-            \
-            <div class="team-card">\
-                <div class="avatar">\uc0\u55356 \u57263 </div>\
-                <div class="team-name">Shane Fenton</div>\
-                <div class="team-role">Product Director</div>\
-                <div class="team-bio">\
-                    Translating vision into reality. Overseeing product development from concept to market, \
-                    ensuring every solution delivers real-world impact.\
-                </div>\
-            </div>\
-            \
-            <div class="team-card">\
-                <div class="avatar">\uc0\u55358 \u56605 </div>\
-                <div class="team-name">Markos Thomadakis</div>\
-                <div class="team-role">Client Director & Company Secretary</div>\
-                <div class="team-bio">\
-                    Building lasting client relationships and ensuring operational excellence. Bridging the gap \
-                    between innovation and implementation.\
-                </div>\
-            </div>\
-            \
-            <div class="team-card">\
-                <div class="avatar">\uc0\u55358 \u56598 </div>\
-                <div class="team-name">Venice AI</div>\
-                <div class="team-role">Development Partner</div>\
-                <div class="team-bio">\
-                    Advanced AI assistant contributing to architecture, code development, and strategic \
-                    implementation across our technology portfolio.\
-                </div>\
-                <span class="ai-badge">AI Collaborator</span>\
-            </div>\
-            \
-            <div class="team-card">\
-                <div class="avatar">\uc0\u55358 \u56800 </div>\
-                <div class="team-name">Specialized AI Models</div>\
-                <div class="team-role">Technical Contributors</div>\
-                <div class="team-bio">\
-                    Domain-specific AI systems supporting research, security analysis, optimization algorithms, \
-                    and technical documentation.\
-                </div>\
-                <span class="ai-badge">AI Assistants</span>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <section class="transparency">\
-        <h3>\uc0\u55358 \u56605  Our Approach to AI Collaboration</h3>\
-        <p>\
-            We're transparent about our use of AI in building Fenton Creative. Just as our technology helps optimize \
-            AI infrastructure, we leverage AI to accelerate development. This human-AI collaboration model allows us \
-            to move faster while maintaining rigorous standards for security, efficiency, and sustainability. We believe \
-            the future of work isn't human vs. machine\'97it's human + machine, each doing what they do best.\
-        </p>\
-    </section>\
-\
-    <section class="values">\
-        <div class="section-header" style="color: white;">\
-            <h2>Our Values</h2>\
-            <p style="color: rgba(255,255,255,0.7);">The principles that guide everything we build</p>\
-        </div>\
-        <div class="values-grid">\
-            <div class="value-item">\
-                <div class="value-icon">\uc0\u55356 \u57137 </div>\
-                <div class="value-title">Sustainability First</div>\
-                <div class="value-desc">Every decision considers environmental impact</div>\
-            </div>\
-            <div class="value-item">\
-                <div class="value-icon">\uc0\u55357 \u56594 </div>\
-                <div class="value-title">Privacy by Design</div>\
-                <div class="value-desc">Security and data protection built-in from day one</div>\
-            </div>\
-            <div class="value-item">\
-                <div class="value-icon">\uc0\u9889 </div>\
-                <div class="value-title">Performance Matters</div>\
-                <div class="value-desc">Sustainability without sacrificing speed or accuracy</div>\
-            </div>\
-            <div class="value-item">\
-                <div class="value-icon">\uc0\u55358 \u56605 </div>\
-                <div class="value-title">Open Collaboration</div>\
-                <div class="value-desc">Working with industry to set new standards</div>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <footer>\
-        <div class="footer-content">\
-            <a href="index.html" class="footer-logo">FENTON<span>CREATIVE</span></a>\
-            <div class="footer-links">\
-                <a href="index.html">Home</a>\
-                <a href="about.html">About</a>\
-                <a href="index.html#products">Products</a>\
-                <a href="index.html#contact">Contact</a>\
-            </div>\
-            <div class="footer-bottom">\
-                <p>&copy; 2026 Fenton Creative Ltd. All rights reserved.</p>\
-                <p style="margin-top: 10px; font-size: 0.8rem;">Human-led. AI-powered. Built for impact.</p>\
-            </div>\
-        </div>\
-    </footer>\
-</body>\
-</html>}
+<div class="watermark">FENTON CREATIVE © 2025</div>
+
+<nav class="fixed w-full glass border-b border-slate-800/50 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <a href="#" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-leaf text-white text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-xl block leading-none">DataPrune</span>
+                    <span class="text-[10px] text-slate-400 tracking-wider">ENTERPRISE DATA OPTIMIZATION</span>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#solution" class="text-slate-300 hover:text-white transition text-sm font-medium">Solution</a>
+                <a href="#calculator" class="text-slate-300 hover:text-white transition text-sm font-medium">Savings Calculator</a>
+                <a href="#pricing" class="text-slate-300 hover:text-white transition text-sm font-medium">Pricing</a>
+                <a href="#demo" class="text-slate-300 hover:text-white transition text-sm font-medium">Demo</a>
+            </div>
+            <a href="#contact" class="hidden md:block px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 rounded-lg text-sm font-semibold transition">Enterprise Inquiry</a>
+        </div>
+    </div>
+</nav>
+
+<section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm mb-8">
+                    <i class="fas fa-chart-line"></i>
+                    Performance-Based Pricing
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    Reduce Data. <span class="gradient-text">Cut Costs.</span>
+                </h1>
+                <p class="text-xl text-slate-400 mb-6">
+                    Enterprise data optimization with SecureBridge protocol.
+                    40-60% data reduction. 35-55% energy savings.
+                </p>
+                <p class="text-lg text-slate-500 mb-8">
+                    You only pay from verified savings. No upfront subscription.
+                    No risk. Pure performance.
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
+                    <a href="#calculator" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 rounded-lg font-semibold transition">Calculate Savings</a>
+                    <a href="https://paulfentonuk-max.github.io/dataprune-secure-demo/" target="_blank" class="px-8 py-4 border border-slate-700 hover:border-slate-500 rounded-lg font-semibold transition flex items-center gap-2">
+                        <i class="fas fa-external-link-alt"></i> View Demo
+                    </a>
+                </div>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-6 text-sm text-slate-500">
+                    <span class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> 40-60% Data Reduction</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> 35-55% Energy Savings</span>
+                    <span class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Pay From Savings</span>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="font-bold text-lg">Data Optimization Impact</h3>
+                        <span class="performance-badge text-xs font-bold px-3 py-1 rounded-full text-white">LIVE DEMO</span>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Storage Utilization</span>
+                                <span class="text-emerald-400 font-bold">-52%</span>
+                            </div>
+                            <div class="h-4 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-slate-600 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <div class="h-4 bg-slate-800 rounded-full overflow-hidden -mt-4">
+                                <div class="h-full bg-emerald-500 rounded-full" style="width: 48%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Energy Consumption</span>
+                                <span class="text-emerald-400 font-bold">-47%</span>
+                            </div>
+                            <div class="h-4 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-slate-600 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <div class="h-4 bg-slate-800 rounded-full overflow-hidden -mt-4">
+                                <div class="h-full bg-emerald-500 rounded-full" style="width: 53%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-slate-400">Cost Reduction</span>
+                                <span class="text-emerald-400 font-bold">-58%</span>
+                            </div>
+                            <div class="h-4 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-slate-600 rounded-full" style="width: 100%"></div>
+                            </div>
+                            <div class="h-4 bg-slate-800 rounded-full overflow-hidden -mt-4">
+                                <div class="h-full bg-emerald-500 rounded-full" style="width: 42%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-piggy-bank text-emerald-400 text-2xl"></i>
+                            <div>
+                                <p class="text-sm text-slate-400">Annual Savings</p>
+                                <p class="text-2xl font-bold text-emerald-400">£2.4M</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="solution" class="py-24 px-4 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">How DataPrune Works</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">AI-powered data optimization that reduces storage, cuts energy costs, and improves performance.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
+                <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-search text-emerald-400 text-xl"></i>
+                </div>
+                <h3 class="font-bold mb-2">1. Analyze</h3>
+                <p class="text-sm text-slate-400">AI scans your data landscape to identify redundancy, obsolete files, and optimization opportunities.</p>
+            </div>
+            
+            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
+                <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-brain text-emerald-400 text-xl"></i>
+                </div>
+                <h3 class="font-bold mb-2">2. Classify</h3>
+                <p class="text-sm text-slate-400">Machine learning categorizes data by value, access patterns, and compliance requirements.</p>
+            </div>
+            
+            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
+                <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-compress-alt text-emerald-400 text-xl"></i>
+                </div>
+                <h3 class="font-bold mb-2">3. Optimize</h3>
+                <p class="text-sm text-slate-400">Intelligent compression, deduplication, and tiering reduce storage footprint by 40-60%.</p>
+            </div>
+            
+            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
+                <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-chart-line text-emerald-400 text-xl"></i>
+                </div>
+                <h3 class="font-bold mb-2">4. Verify</h3>
+                <p class="text-sm text-slate-400">Continuous monitoring validates savings. You keep 40-75% of verified cost reductions.</p>
+            </div>
+        </div>
+        
+        <div class="mt-12 p-8 bg-slate-900 border border-slate-800 rounded-2xl">
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-emerald-400 mb-2">40-60%</div>
+                    <p class="text-slate-400">Data Reduction</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-emerald-400 mb-2">35-55%</div>
+                    <p class="text-slate-400">Energy Savings</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-emerald-400 mb-2">£15-75k</div>
+                    <p class="text-slate-400">Onboarding Investment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="calculator" class="py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Savings Calculator</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Estimate your potential cost savings and revenue share with DataPrune.</p>
+        </div>
+        
+        <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">
+            <div class="mb-8">
+                <label class="block text-sm text-slate-400 mb-3">Current Data Storage (TB)</label>
+                <input type="range" id="dataSize" min="10" max="1000" value="100" oninput="calculateSavings()" class="w-full">
+                <div class="flex justify-between text-xs text-slate-500 mt-2">
+                    <span>10TB</span>
+                    <span id="dataValue" class="text-emerald-400 font-bold">100 TB</span>
+                    <span>1000TB</span>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-4 mb-8">
+                <div class="p-4 bg-slate-950 rounded-xl text-center">
+                    <p class="text-xs text-slate-500 mb-1">Estimated Reduction</p>
+                    <p id="reductionResult" class="text-2xl font-bold text-emerald-400">50 TB</p>
+                </div>
+                <div class="p-4 bg-slate-950 rounded-xl text-center">
+                    <p class="text-xs text-slate-500 mb-1">Monthly Savings</p>
+                    <p id="monthlySavings" class="text-2xl font-bold text-emerald-400">£2,500</p>
+                </div>
+                <div class="p-4 bg-slate-950 rounded-xl text-center">
+                    <p class="text-xs text-slate-500 mb-1">Annual Savings</p>
+                    <p id="annualSavings" class="text-2xl font-bold text-emerald-400">£30,000</p>
+                </div>
+            </div>
+            
+            <div class="p-6 bg-slate-950 rounded-xl">
+                <h4 class="font-bold mb-4 text-slate-300">Your Revenue Share Over Commitment Period</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="text-center p-4 bg-slate-900 rounded-lg">
+                        <p class="text-xs text-slate-500 mb-1">3 years (40%)</p>
+                        <p id="revenue3yr" class="text-xl font-bold text-emerald-400">£36,000</p>
+                    </div>
+                    <div class="text-center p-4 bg-slate-900 rounded-lg border border-emerald-500/30">
+                        <p class="text-xs text-slate-500 mb-1">7 years (65%)</p>
+                        <p id="revenue7yr" class="text-xl font-bold text-emerald-400">£136,500</p>
+                    </div>
+                    <div class="text-center p-4 bg-slate-900 rounded-lg">
+                        <p class="text-xs text-slate-500 mb-1">10 years (75%)</p>
+                        <p id="revenue10yr" class="text-xl font-bold text-emerald-400">£225,000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pricing" class="py-24 px-4 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Performance-Based Pricing</h2>
+            <p class="text-slate-400 max-w-3xl mx-auto">Unlike subscription models, DataPrune pricing is tied to verified results. You pay a one-time onboarding fee, then share savings.</p>
+        </div>
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="tier-card p-8 bg-slate-900 border border-slate-800 rounded-2xl">
+                <div class="w-14 h-14 bg-emerald-500/20 rounded-2xl mb-6 flex items-center justify-center">
+                    <i class="fas fa-seedling text-emerald-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Essential</h3>
+                <p class="text-slate-400 text-sm mb-6">For small data environments</p>
+                <div class="mb-6">
+                    <span class="text-3xl font-bold">£15k</span>
+                    <span class="text-slate-400 block text-sm">One-time onboarding</span>
+                </div>
+                <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Up to 50TB analyzed</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Standard classification</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> 30-day implementation</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> 40% revenue share (3yr)</li>
+                </ul>
+                <button class="w-full py-3 border border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 rounded-lg transition">Get Started</button>
+            </div>
+            
+            <div class="tier-card featured p-8 bg-gradient-to-b from-emerald-900/30 to-slate-900 rounded-2xl relative">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span class="performance-badge text-xs font-bold px-4 py-1 rounded-full text-white">POPULAR</span>
+                </div>
+                <div class="w-14 h-14 bg-emerald-500/20 rounded-2xl mb-6 flex items-center justify-center">
+                    <i class="fas fa-tree text-emerald-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Professional</h3>
+                <p class="text-slate-400 text-sm mb-6">For medium enterprises</p>
+                <div class="mb-6">
+                    <span class="text-3xl font-bold">£35k</span>
+                    <span class="text-slate-400 block text-sm">One-time onboarding</span>
+                </div>
+                <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Up to 500TB analyzed</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Advanced AI classification</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> 60-day implementation</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Custom policy engine</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> 65% revenue share (7yr)</li>
+                </ul>
+                <button class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 rounded-lg font-semibold transition">Contact Sales</button>
+            </div>
+            
+            <div class="tier-card p-8 bg-slate-900 border border-slate-800 rounded-2xl">
+                <div class="w-14 h-14 bg-emerald-500/20 rounded-2xl mb-6 flex items-center justify-center">
+                    <i class="fas fa-forest text-emerald-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Enterprise</h3>
+                <p class="text-slate-400 text-sm mb-6">For large-scale deployments</p>
+                <div class="mb-6">
+                    <span class="text-3xl font-bold">£75k</span>
+                    <span class="text-slate-400 block text-sm">One-time onboarding</span>
+                </div>
+                <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Unlimited data analyzed</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Multi-region deployment</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> 90-day implementation</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Dedicated support team</li>
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> 75% revenue share (10yr)</li>
+                </ul>
+                <button class="w-full py-3 border border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 rounded-lg transition">Contact Sales</button>
+            </div>
+        </div>
+        
+        <div class="mt-12 p-8 bg-slate-900 border border-slate-800 rounded-2xl">
+            <h3 class="font-bold mb-6 text-center">Optional Add-ons</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="p-4 bg-slate-950 rounded-lg text-center">
+                    <p class="font-medium text-slate-300">Managed Services</p>
+                    <p class="text-emerald-400 font-bold">£2k/month</p>
+                </div>
+                <div class="p-4 bg-slate-950 rounded-lg text-center">
+                    <p class="font-medium text-slate-300">Advanced Analytics</p>
+                    <p class="text-emerald-400 font-bold">£1.5k/month</p>
+                </div>
+                <div class="p-4 bg-slate-950 rounded-lg text-center">
+                    <p class="font-medium text-slate-300">Compliance Module</p>
+                    <p class="text-emerald-400 font-bold">£1.2k/month</p>
+                </div>
+                <div class="p-4 bg-slate-950 rounded-lg text-center">
+                    <p class="font-medium text-slate-300">Custom Integration</p>
+                    <p class="text-emerald-400 font-bold">From £5k</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="demo" class="py-24 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">See DataPrune in Action</h2>
+        <p class="text-slate-400 mb-10 max-w-2xl mx-auto">Explore our interactive demo to see how DataPrune optimizes data and reduces costs.</p>
+        <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">
+            <div class="flex items-center justify-center mb-6">
+                <div class="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                    <i class="fas fa-play text-emerald-400 text-3xl"></i>
+                </div>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Interactive Secure Demo</h3>
+            <p class="text-slate-400 mb-6">Experience DataPrune's interface and see real optimization results with sample data.</p>
+            <a href="https://paulfentonuk-max.github.io/dataprune-secure-demo/" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-emerald-600 hover:bg-emerald-500 rounded-lg font-semibold transition">
+                <i class="fas fa-external-link-alt"></i> Launch Demo
+            </a>
+            <p class="text-sm text-slate-500 mt-4">
+                <i class="fas fa-shield-alt mr-2 text-emerald-400"></i>
+                Secure demo environment. No data stored.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-24 px-4 bg-slate-900/30">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Optimize Your Data?</h2>
+        <p class="text-slate-400 mb-10 max-w-2xl mx-auto">Schedule a consultation to discuss your data optimization needs and see how much you could save.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="mailto:hello@fenton-shield.co" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 rounded-lg font-semibold transition">
+                <i class="fas fa-envelope mr-2"></i>Contact Sales
+            </a>
+            <a href="mailto:future@fenton-shield.co" class="px-8 py-4 border border-slate-700 hover:border-slate-500 rounded-lg font-semibold transition">
+                Schedule Technical Review
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="py-12 px-4 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+            <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-leaf text-white text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-xl block leading-none">DataPrune</span>
+                    <span class="text-[10px] text-slate-400 tracking-wider">BY FENTON CREATIVE™</span>
+                </div>
+            </div>
+            <div class="text-sm text-slate-500">
+                SecureBridge Protocol Enabled
+            </div>
+        </div>
+        <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
+            <div class="mb-4 md:mb-0">© 2025 Fenton Creative™. All Rights Reserved.</div>
+            <div class="flex items-center gap-6">
+                <span>Performance-Based Pricing</span>
+                <a href="#" class="hover:text-white transition">Privacy</a>
+                <a href="#" class="hover:text-white transition">Terms</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="protection-notice">
+    © 2025 Fenton Creative™. All Rights Reserved. | 
+    DataPrune™ - Enterprise Data Optimization | 
+    Demo: https://paulfentonuk-max.github.io/dataprune-secure-demo/ | 
+    Contact: hello@fenton-shield.co | future@fenton-shield.co
+</div>
+
+<script>
+    calculateSavings();
+    document.getElementById('dataSize').addEventListener('input', function() {
+        document.getElementById('dataValue').textContent = this.value + ' TB';
+    });
+</script>
+
+</body>
+</html>
