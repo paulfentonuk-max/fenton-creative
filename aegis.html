@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEGIS™ | AI Protection Suite | FENTON CREATIVE™</title>
+    <meta name="description" content="AEGIS™ - Complete AI protection platform combining LLM DLP, AROL optimization, and SecureBridge encryption. Local-first architecture for total data sovereignty.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #05070a;
+            --bg-secondary: #0a0f1a;
+            --bg-elevated: #0d1320;
+            --accent: #00d4ff;
+            --accent-dim: rgba(0, 212, 255, 0.1);
+            --text-primary: #f0f2f5;
+            --text-secondary: #8a94a8;
+            --border: rgba(0, 212, 255, 0.15);
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(5,7,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); font-weight: 500; }
+        .nav-links { display: flex; gap: 3rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        
+        .product-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 4rem 60px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .product-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(0, 212, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 70% 30%, rgba(0, 150, 255, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .hero-content { max-width: 800px; position: relative; z-index: 1; text-align: center; margin: 0 auto; }
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--accent-dim);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        .product-hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: -3px;
+        }
+        .product-hero h1 span { 
+            background: linear-gradient(135deg, var(--accent), #0099cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-value {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--accent);
+            display: block;
+        }
+        .hero-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+        
+        .stack {
+            padding: 8rem 4rem;
+            background: var(--bg-secondary);
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .stack-visual {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+        .stack-layer {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .stack-layer:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        .stack-layer h3 {
+            color: var(--accent);
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        .stack-layer p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .modules {
+            padding: 8rem 4rem;
+            background: var(--bg-primary);
+        }
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .module-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .module-card:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        .module-number {
+            font-size: 0.7rem;
+            color: var(--accent);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .module-card h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        .module-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .module-link {
+            color: var(--accent);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .cta-section {
+            padding: 8rem 4rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.08), transparent 70%);
+            border-top: 1px solid var(--border);
+        }
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+        .cta-section p {
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 60px rgba(0, 212, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            padding: 4rem;
+            border-top: 1px solid var(--border);
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+        footer p { color: var(--text-secondary); font-size: 0.8rem; }
+        
+        @media (max-width: 1024px) {
+            .stack-visual { grid-template-columns: repeat(2, 1fr); }
+            .module-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (max-width: 768px) {
+            nav { padding: 1rem 2rem; }
+            .nav-links { display: none; }
+            .product-hero { padding: 100px 2rem 40px; }
+            .hero-stats { flex-direction: column; gap: 2rem; }
+            .stack-visual { grid-template-columns: 1fr; }
+            .module-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">FENTON<span>CREATIVE</span>™</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="developers.html">Developers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="product-hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge">Complete AI Protection Platform</span>
+                <h1>
+                    AEGIS™
+                    <span>The Guardian of AI</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Comprehensive AI protection combining LLM DLP, AROL optimization, and SecureBridge encryption. Local-first architecture with edge-native processing for total data sovereignty.
+                </p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">$24B</span>
+                        <span class="hero-stat-label">Market by 2035</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">60%</span>
+                        <span class="hero-stat-label">Cost Reduction</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">Zero</span>
+                        <span class="hero-stat-label">Data Exfiltration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stack">
+        <div class="container">
+            <div class="section-header">
+                <h2>The AEGIS Stack</h2>
+                <p>Four layers of protection working in harmony</p>
+            </div>
+            <div class="stack-visual">
+                <div class="stack-layer">
+                    <h3>User Interface</h3>
+                    <p>Browser extensions, mobile apps, desktop clients, and server consoles for every platform</p>
+                </div>
+                <div class="stack-layer">
+                    <h3>Context & Control</h3>
+                    <p>AROL engine with policy management, memory optimization, and context-aware processing</p>
+                </div>
+                <div class="stack-layer">
+                    <h3>Protection Layer</h3>
+                    <p>LLM DLP with real-time scanning, threat detection, and behavior analysis</p>
+                </div>
+                <div class="stack-layer">
+                    <h3>Transport & Edge</h3>
+                    <p>SecureBridge encryption with EdgeShield local processing and federated learning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="modules">
+        <div class="container">
+            <div class="section-header">
+                <h2>Product Modules</h2>
+                <p>Integrated components of the AEGIS platform</p>
+            </div>
+            <div class="module-grid">
+                <a href="llm-dlp.html" class="module-card">
+                    <div class="module-number">01</div>
+                    <h3>LLM DLP Core</h3>
+                    <p>Real-time data loss prevention for all AI interactions. Browser extension and native apps protecting against PII, PCI, PHI, and IP leakage.</p>
+                    <span class="module-link">Learn More →</span>
+                </a>
+                <a href="arol.html" class="module-card">
+                    <div class="module-number">02</div>
+                    <h3>AROL Engine</h3>
+                    <p>Adaptive Response & Optimization Layer. Reduces token costs by 90% through intelligent compression, semantic caching, and context optimization.</p>
+                    <span class="module-link">Learn More →</span>
+                </a>
+                <a href="securebridge.html" class="module-card">
+                    <div class="module-number">03</div>
+                    <h3>SecureBridge</h3>
+                    <p>End-to-end encrypted data transfer with zero-knowledge architecture. WebRTC, WebSocket, and gRPC tri-modal transport for maximum efficiency.</p>
+                    <span class="module-link">Learn More →</span>
+                </a>
+                <a href="edgeshield.html" class="module-card">
+                    <div class="module-number">04</div>
+                    <h3>EdgeShield</h3>
+                    <p>Local-first AI processing with on-device inference, model routing, and vector database. Air-gapped capable for classified environments.</p>
+                    <span class="module-link">Learn More →</span>
+                </a>
+                <div class="module-card">
+                    <div class="module-number">05</div>
+                    <h3>ContextVault</h3>
+                    <p>Persistent memory architecture with semantic storage, episodic memory, and knowledge graph integration for infinite context windows.</p>
+                    <span class="module-link">Coming Soon</span>
+                </div>
+                <div class="module-card">
+                    <div class="module-number">06</div>
+                    <h3>PolicyEngine</h3>
+                    <p>Dynamic policy enforcement with natural language policy creation, RBAC, and compliance templates for GDPR, HIPAA, SOC2, and more.</p>
+                    <span class="module-link">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Deploy the complete AEGIS platform</h2>
+            <p>Enterprise-ready AI protection with local-first architecture, zero-knowledge encryption, and 90% cost reduction.</p>
+            <a href="contact.html" class="btn-primary">Contact Sales</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FENTON CREATIVE™. AEGIS™ - Guardian of Your AI Interactions.</p>
+    </footer>
+</body>
+</html>

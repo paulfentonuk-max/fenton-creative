@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM DLP | AI Data Loss Prevention | FENTON CREATIVE™</title>
+    <meta name="description" content="LLM DLP - Real-time data loss prevention for AI interactions. Protect PII, IP, and sensitive data when using ChatGPT, Claude, and other AI tools.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #05070a;
+            --bg-secondary: #0a0f1a;
+            --bg-elevated: #0d1320;
+            --accent: #00d4ff;
+            --accent-dim: rgba(0, 212, 255, 0.1);
+            --text-primary: #f0f2f5;
+            --text-secondary: #8a94a8;
+            --border: rgba(0, 212, 255, 0.15);
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(5,7,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); font-weight: 500; }
+        .nav-links { display: flex; gap: 3rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        
+        .product-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 4rem 60px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+        }
+        .product-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .hero-content { max-width: 700px; position: relative; z-index: 1; }
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--accent-dim);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        .product-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+        .product-hero h1 span { color: var(--accent); font-weight: 200; display: block; }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .threats {
+            padding: 8rem 4rem;
+            background: var(--bg-secondary);
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .threat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .threat-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .threat-card:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        .threat-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .threat-card h3 {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        .threat-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .how-it-works {
+            padding: 8rem 4rem;
+            background: var(--bg-primary);
+        }
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        .step {
+            position: relative;
+            padding-left: 3rem;
+        }
+        .step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+        }
+        .step-number {
+            position: absolute;
+            left: -0.6rem;
+            top: 0;
+            width: 1.2rem;
+            height: 1.2rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .step h3 {
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        .step p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .platforms {
+            padding: 6rem 4rem;
+            background: var(--bg-elevated);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .platform-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        .platform {
+            padding: 1rem 2rem;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        .cta-section {
+            padding: 6rem 4rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.05), transparent 70%);
+        }
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+        }
+        
+        footer {
+            padding: 4rem;
+            border-top: 1px solid var(--border);
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+        footer p { color: var(--text-secondary); font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            nav { padding: 1rem 2rem; }
+            .nav-links { display: none; }
+            .product-hero { padding: 100px 2rem 40px; }
+            .threat-grid { grid-template-columns: repeat(2, 1fr); }
+            .workflow-steps { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">FENTON<span>CREATIVE</span>™</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="developers.html">Developers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="product-hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge">Real-Time Protection</span>
+                <h1>
+                    LLM DLP
+                    <span>AI Data Loss Prevention</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Browser extension and native applications that scan all AI interactions in real-time. Protect PII, intellectual property, and sensitive data before it reaches ChatGPT, Claude, Copilot, and other AI tools. 100% local processing—zero data exfiltration.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="threats">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Protect Against</h2>
+                <p>Comprehensive detection for all sensitive data types</p>
+            </div>
+            <div class="threat-grid">
+                <div class="threat-card">
+                    <div class="threat-icon">👤</div>
+                    <h3>PII</h3>
+                    <p>Names, addresses, emails, phone numbers, national IDs</p>
+                </div>
+                <div class="threat-card">
+                    <div class="threat-icon">💳</div>
+                    <h3>PCI</h3>
+                    <p>Credit card numbers, bank accounts, financial data</p>
+                </div>
+                <div class="threat-card">
+                    <div class="threat-icon">🏥</div>
+                    <h3>PHI</h3>
+                    <p>Medical records, health information, insurance data</p>
+                </div>
+                <div class="threat-card">
+                    <div class="threat-icon">©️</div>
+                    <h3>IP</h3>
+                    <p>Source code, trade secrets, proprietary information</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Zero-latency protection that never leaves your device</p>
+            </div>
+            <div class="workflow-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Detect</h3>
+                    <p>Content script monitors all text input to AI chat interfaces. Scanner engine uses WebAssembly for high-performance regex matching and ML classification.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Analyze</h3>
+                    <p>Policy engine evaluates against your configured rules. Context-aware detection understands conversation flow and data relationships.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Protect</h3>
+                    <p>Real-time action: block transmission, warn user, redact sensitive data, or log for audit. All processing happens locally—nothing sent to cloud.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="platforms">
+        <div class="container">
+            <h3 style="font-weight: 300; margin-bottom: 1rem;">Available On</h3>
+            <div class="platform-grid">
+                <div class="platform">Chrome</div>
+                <div class="platform">Edge</div>
+                <div class="platform">Firefox</div>
+                <div class="platform">Safari</div>
+                <div class="platform">iOS</div>
+                <div class="platform">Android</div>
+                <div class="platform">Windows</div>
+                <div class="platform">macOS</div>
+                <div class="platform">Linux</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="margin-bottom: 2rem; font-weight: 300;">Protect your AI interactions</h2>
+            <a href="contact.html" class="btn-primary">Get LLM DLP</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FENTON CREATIVE™. LLM DLP - Local-first AI data protection.</p>
+    </footer>
+</body>
+</html>
