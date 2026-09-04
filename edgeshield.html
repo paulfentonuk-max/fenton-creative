@@ -3,432 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EdgeShield - WebAssembly Local AI Runtime. Technical documentation for Fenton Platform's edge inference engine.">
-    <meta name="copyright" content="© 2025 Fenton Creative. All Rights Reserved. Patent Pending.">
-    <title>EdgeShield | Fenton Creative</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <title>EdgeShield™ | Local-First AI Processing | FENTON CREATIVE™</title>
+    <meta name="description" content="EdgeShield™ - Local-first AI processing layer. On-device inference, model routing, and air-gapped capability for complete data sovereignty.">
     <style>
-        body { font-family: 'Inter', sans-serif; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
-        .protected-content { -webkit-user-select: none !important; -moz-user-select: none !important; user-select: none !important; }
-        .gradient-text { background: linear-gradient(135deg, #10B981, #059669); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .wasm-badge { background: linear-gradient(135deg, #10B981, #059669); }
-        .glass { background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); }
-        .watermark {
-            position: fixed; top: 50%; left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 100px; color: rgba(16, 185, 129, 0.03);
-            pointer-events: none; z-index: 9998; font-weight: 800; white-space: nowrap;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #05070a;
+            --bg-secondary: #0a0f1a;
+            --bg-elevated: #0d1320;
+            --accent: #00d4ff;
+            --accent-dim: rgba(0, 212, 255, 0.1);
+            --text-primary: #f0f2f5;
+            --text-secondary: #8a94a8;
+            --border: rgba(0, 212, 255, 0.15);
         }
-        .code-block { background: #0f172a; border: 1px solid #1e293b; font-family: 'Monaco', 'Menlo', monospace; font-size: 13px; }
-        .syntax-keyword { color: #c678dd; }
-        .syntax-string { color: #98c379; }
-        .syntax-comment { color: #5c6370; }
-        .syntax-function { color: #61afef; }
-        .protection-notice {
-            position: fixed; bottom: 0; left: 0; right: 0;
-            background: rgba(0, 0, 0, 0.9); color: #94a3b8;
-            padding: 8px; font-size: 11px; text-align: center;
-            z-index: 9999; border-top: 1px solid #334155;
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
         }
-        .tech-diagram { border: 1px solid rgba(16, 185, 129, 0.2); }
-        .tech-diagram:hover { border-color: rgba(16, 185, 129, 0.5); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(5,7,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); font-weight: 500; }
+        .nav-links { display: flex; gap: 3rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        
+        .product-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 4rem 60px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+        }
+        .product-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 40% 60%, rgba(0, 212, 255, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .hero-content { max-width: 700px; position: relative; z-index: 1; }
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--accent-dim);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        .product-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+        .product-hero h1 span { color: var(--accent); font-weight: 200; display: block; }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .features {
+            padding: 8rem 4rem;
+            background: var(--bg-secondary);
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .feature-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            transition: all 0.3s;
+        }
+        .feature-card:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        .feature-card h3 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .airgap {
+            padding: 8rem 4rem;
+            background: var(--bg-primary);
+            text-align: center;
+        }
+        .airgap-visual {
+            width: 300px;
+            height: 300px;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            margin: 3rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .airgap-visual::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+        .airgap-visual::after {
+            content: 'OFFLINE';
+            color: var(--accent);
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+        }
+        
+        .cta-section {
+            padding: 6rem 4rem;
+            text-align: center;
+            background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.05), transparent 70%);
+            border-top: 1px solid var(--border);
+        }
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+        }
+        
+        footer {
+            padding: 4rem;
+            border-top: 1px solid var(--border);
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+        footer p { color: var(--text-secondary); font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            nav { padding: 1rem 2rem; }
+            .nav-links { display: none; }
+            .product-hero { padding: 100px 2rem 40px; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
     </style>
-    <script>
-        document.addEventListener('contextmenu', e => { e.preventDefault(); return false; });
-        document.addEventListener('keydown', e => {
-            if ((e.ctrlKey && (e.key === 's' || e.key === 'p' || e.key === 'u')) || e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-                e.preventDefault(); return false;
-            }
-        });
-        document.addEventListener('dragstart', e => { e.preventDefault(); return false; });
-        document.addEventListener('copy', e => { e.preventDefault(); return false; });
-        console.log('%c⚠️ COPYRIGHT NOTICE', 'color: #F59E0B; font-size: 24px; font-weight: bold;');
-        console.log('%c© 2025 Fenton Creative. All Rights Reserved.', 'color: #94A3B8; font-size: 14px;');
-        console.log('%cEdgeShield™ WebAssembly Runtime - Patent Pending', 'color: #10B981; font-size: 12px;');
-    </script>
 </head>
-<body class="bg-slate-950 text-slate-100 protected-content">
+<body>
+    <nav>
+        <a href="index.html" class="logo">FENTON<span>CREATIVE</span>™</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="developers.html">Developers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-<div class="watermark">FENTON CREATIVE © 2025</div>
+    <section class="product-hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge">Local-First AI</span>
+                <h1>
+                    EdgeShield™
+                    <span>On-Device AI Processing</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Run AI models locally with ONNX Runtime and TensorFlow Lite. Model router automatically selects local vs. cloud processing based on data sensitivity. Works offline. Air-gapped capable. Complete data sovereignty.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<nav class="fixed w-full glass border-b border-slate-800/50 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-            <a href="#" class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-microchip text-white text-lg"></i>
-                </div>
-                <div>
-                    <span class="font-bold text-xl block leading-none">EdgeShield</span>
-                    <span class="text-[10px] text-slate-400 tracking-wider">WEBASSEMBLY RUNTIME</span>
-                </div>
-            </a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#overview" class="text-slate-300 hover:text-white transition text-sm font-medium">Overview</a>
-                <a href="#architecture" class="text-slate-300 hover:text-white transition text-sm font-medium">Architecture</a>
-                <a href="#security" class="text-slate-300 hover:text-white transition text-sm font-medium">Security</a>
-                <a href="#performance" class="text-slate-300 hover:text-white transition text-sm font-medium">Performance</a>
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Core Capabilities</h2>
+                <p>Intelligent edge computing for sensitive AI workloads</p>
             </div>
-            <a href="mailto:ai@fenton-shield.co" class="hidden md:block px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 rounded-lg text-sm font-semibold transition">Technical Inquiry</a>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>On-Device Inference</h3>
+                    <p>Run optimized models locally using ONNX Runtime and TensorFlow Lite. No network required. No data leaves your device. Supports classification, embeddings, and generative models.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Model Router</h3>
+                    <p>Intelligently routes requests to local or cloud models based on sensitivity classification, latency requirements, and model capability. Optimizes for privacy, speed, and accuracy.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Vector Database</h3>
+                    <p>Local SQLite + FAISS integration for embeddings and semantic search. Store and query vector data without network round-trips. Perfect for RAG applications and memory systems.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Federated Learning</h3>
+                    <p>Optional federated learning node for privacy-preserving model improvement. Contribute to collective intelligence without sharing raw data. Differential privacy guarantees.</p>
+                </div>
+            </div>
         </div>
-    </div>
-</nav>
+    </section>
 
-<section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-    <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
-    </div>
-    <div class="relative max-w-5xl mx-auto px-4 text-center">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm mb-8">
-            <span class="wasm-badge w-2 h-2 rounded-full"></span>
-            Fenton Platform™ Component
+    <section class="airgap">
+        <div class="container">
+            <h2 style="font-weight: 300; margin-bottom: 1rem;">Air-Gap Capable</h2>
+            <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto;">
+                Complete functionality without network connectivity. For classified environments, SCIFs, and high-security deployments.
+            </p>
+            <div class="airgap-visual"></div>
         </div>
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Edge<span class="gradient-text">Shield</span>
-        </h1>
-        <p class="text-2xl text-slate-400 max-w-3xl mx-auto mb-6">
-            WebAssembly Local AI Runtime
-        </p>
-        <p class="text-lg text-slate-500 max-w-2xl mx-auto mb-10">
-            Zero-latency, zero-transmission AI inference that runs entirely 
-            within the browser's WebAssembly sandbox. Content never leaves the device.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#architecture" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 rounded-lg font-semibold transition">Technical Architecture</a>
-            <a href="#security" class="px-8 py-4 border border-slate-700 hover:border-slate-500 rounded-lg font-semibold transition">Security Model</a>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="overview" class="py-24 px-4 bg-slate-900/30">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Why EdgeShield?</h2>
-            <p class="text-slate-400 max-w-3xl mx-auto">Traditional AI requires sending data to cloud servers. EdgeShield brings AI to the data—eliminating latency, preserving privacy, and enabling offline operation.</p>
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="margin-bottom: 2rem; font-weight: 300;">Process AI at the edge</h2>
+            <a href="contact.html" class="btn-primary">Get EdgeShield™</a>
         </div>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">
-                <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
-                    <i class="fas fa-bolt text-emerald-400 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Sub-50ms Latency</h3>
-                <p class="text-slate-400 mb-4">No network round-trips means near-instantaneous inference. 10x faster than cloud APIs.</p>
-                <div class="text-3xl font-bold text-emerald-400">&lt;50ms</div>
-            </div>
-            
-            <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">
-                <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
-                    <i class="fas fa-shield-alt text-emerald-400 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Zero Data Transmission</h3>
-                <p class="text-slate-400 mb-4">Content processed entirely on-device. Never sent to remote servers.</p>
-                <div class="text-3xl font-bold text-emerald-400">100%</div>
-            </div>
-            
-            <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">
-                <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
-                    <i class="fas fa-wifi-slash text-emerald-400 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Air-Gap Capable</h3>
-                <p class="text-slate-400 mb-4">Works completely offline. No internet connection required after initial model download.</p>
-                <div class="text-3xl font-bold text-emerald-400">Offline</div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="architecture" class="py-24 px-4">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Architecture</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">EdgeShield runs as an isolated WebAssembly module within the browser's offscreen document.</p>
-        </div>
-        
-        <div class="grid lg:grid-cols-2 gap-8 mb-12">
-            <div class="tech-diagram p-8 bg-slate-900 rounded-2xl">
-                <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
-                    <i class="fas fa-sitemap text-emerald-400"></i>
-                    Component Stack
-                </h3>
-                <div class="space-y-4">
-                    <div class="p-4 bg-slate-950 rounded-lg border-l-4 border-emerald-500">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="font-bold text-slate-200">Offscreen Document</span>
-                            <span class="text-xs text-emerald-400">Isolated Context</span>
-                        </div>
-                        <p class="text-sm text-slate-400">Browser extension offscreen document hosting WASM runtime</p>
-                    </div>
-                    <div class="p-4 bg-slate-950 rounded-lg border-l-4 border-teal-500 ml-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="font-bold text-slate-200">WebAssembly Sandbox</span>
-                            <span class="text-xs text-teal-400">Memory Isolated</span>
-                        </div>
-                        <p class="text-sm text-slate-400">WASM module with 128MB memory limit, CSP-enforced</p>
-                    </div>
-                    <div class="p-4 bg-slate-950 rounded-lg border-l-4 border-cyan-500 ml-8">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="font-bold text-slate-200">Model Router</span>
-                            <span class="text-xs text-cyan-400">Dynamic Loading</span>
-                        </div>
-                        <p class="text-sm text-slate-400">Selects optimal model based on content type and sensitivity</p>
-                    </div>
-                    <div class="p-4 bg-slate-950 rounded-lg border-l-4 border-blue-500 ml-12">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="font-bold text-slate-200">Inference Engine</span>
-                            <span class="text-xs text-blue-400">ONNX/WebLLM</span>
-                        </div>
-                        <p class="text-sm text-slate-400">ONNX Runtime Web or WebLLM for model execution</p>
-                    </div>
-                    <div class="p-4 bg-slate-950 rounded-lg border-l-4 border-indigo-500 ml-16">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="font-bold text-slate-200">Vector Store</span>
-                            <span class="text-xs text-indigo-400">SQLite + FAISS</span>
-                        </div>
-                        <p class="text-sm text-slate-400">Local embeddings database for semantic search</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="space-y-6">
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                    <h4 class="font-bold mb-3 flex items-center gap-2">
-                        <i class="fas fa-box text-emerald-400"></i>
-                        Offscreen Document Pattern
-                    </h4>
-                    <p class="text-slate-400 text-sm mb-3">EdgeShield runs in a separate offscreen document—an isolated browsing context that:</p>
-                    <ul class="space-y-2 text-sm text-slate-300">
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 text-xs mt-1"></i> Operates independently of visible UI</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 text-xs mt-1"></i> Has separate JavaScript event loop</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 text-xs mt-1"></i> Communicates via message passing</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 text-xs mt-1"></i> Terminated when not in use</li>
-                    </ul>
-                </div>
-                
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                    <h4 class="font-bold mb-3 flex items-center gap-2">
-                        <i class="fas fa-microchip text-emerald-400"></i>
-                        WebAssembly Execution
-                    </h4>
-                    <p class="text-slate-400 text-sm mb-3">Models compile to WASM bytecode for near-native performance:</p>
-                    <ul class="space-y-2 text-sm text-slate-300">
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 text-xs mt-1"></i> SIMD instructions for vector operations</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 text-xs mt-1"></i> SharedArrayBuffer for multi-threading</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 text-xs mt-1"></i> 128-bit memory sandbox</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 text-xs mt-1"></i> Streaming compilation</li>
-                    </ul>
-                </div>
-                
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                    <h4 class="font-bold mb-3 flex items-center gap-2">
-                        <i class="fas fa-database text-emerald-400"></i>
-                        Local Vector Database
-                    </h4>
-                    <p class="text-slate-400 text-sm mb-3">SQLite compiled to WASM with FAISS for similarity search:</p>
-                    <ul class="space-y-2 text-sm text-slate-300">
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 text-xs mt-1"></i> Embeddings stored locally</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 text-xs mt-1"></i> FAISS index for fast retrieval</li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 text-xs mt-1"></i> Encrypted at rest</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="code-block rounded-xl p-6">
-            <div class="flex items-center justify-between mb-4">
-                <h4 class="font-bold text-slate-200">EdgeShield Initialization</h4>
-                <span class="text-xs text-slate-500">TypeScript</span>
-            </div>
-            <pre><code><span class="syntax-comment">// Initialize EdgeShield WASM runtime</span>
-<span class="syntax-keyword">const</span> edgeShield = <span class="syntax-keyword">await</span> EdgeShield.<span class="syntax-function">initialize</span>({
-  <span class="syntax-variable">runtime</span>: <span class="syntax-string">'onnx'</span>, <span class="syntax-comment">// 'onnx' | 'webllm'</span>
-  <span class="syntax-variable">models</span>: [
-    <span class="syntax-string">'legality-classifier'</span>,
-    <span class="syntax-string">'tone-analyzer'</span>,
-    <span class="syntax-string">'factuality-check'</span>
-  ],
-  <span class="syntax-variable">memoryLimit</span>: <span class="syntax-string">'128mb'</span>,
-  <span class="syntax-variable">enableSIMD</span>: <span class="syntax-keyword">true</span>,
-  <span class="syntax-variable">cacheModels</span>: <span class="syntax-keyword">true</span>
-});
-
-<span class="syntax-comment">// Run local inference</span>
-<span class="syntax-keyword">const</span> result = <span class="syntax-keyword">await</span> edgeShield.<span class="syntax-function">infer</span>({
-  <span class="syntax-variable">content</span>: textToAnalyze,
-  <span class="syntax-variable">classifiers</span>: [<span class="syntax-string">'legality'</span>, <span class="syntax-string">'tone'</span>],
-  <span class="syntax-variable">timeout</span>: <span class="syntax-variable">5000</span>
-});</code></pre>
-        </div>
-    </div>
-</section>
-
-<section id="security" class="py-24 px-4 bg-slate-900/30">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Security Model</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Defense in depth: multiple layers of protection ensure content never escapes the device.</p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">
-                <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
-                    <i class="fas fa-lock text-emerald-400 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Content Security Policy</h3>
-                <p class="text-slate-400 mb-4">Strict CSP headers prevent external resource loading:</p>
-                <div class="code-block rounded-lg p-4 text-sm">
-                    <code class="text-slate-300">
-                        default-src 'none';<br>
-                        script-src 'self' 'wasm-unsafe-eval';<br>
-                        connect-src 'none';<br>
-                        img-src 'none';<br>
-                        style-src 'none';
-                    </code>
-                </div>
-                <p class="text-slate-500 text-sm mt-4"><i class="fas fa-info-circle mr-2"></i>'wasm-unsafe-eval' required for WebAssembly compilation</p>
-            </div>
-            
-            <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">
-                <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
-                    <i class="fas fa-memory text-emerald-400 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Memory Isolation</h3>
-                <p class="text-slate-400 mb-4">WASM memory sandbox prevents access to host system:</p>
-                <ul class="space-y-3 text-sm text-slate-300">
-                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 mt-1"></i> Linear memory capped at 128MB</li>
-                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 mt-1"></i> No direct DOM access from WASM</li>
-                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 mt-1"></i> Explicit memory management</li>
-                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 mt-1"></i> Automatic cleanup on termination</li>
-                </ul>
-            </div>
-            
-            <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">
-                <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
-                    <i class="fas fa-key text-emerald-400 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Model Encryption</h3>
-                <p class="text-slate-400 mb-4">Downloaded models encrypted at rest:</p>
-                <ul class="space-y-3 text-sm text-slate-300">
-                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 mt-1"></i> AES-256-GCM encryption</li>
-                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 mt-1"></i> PBKDF2 key derivation (100k iterations)</li>
-                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 mt-1"></i> Hardware-backed where available</li>
-                </ul>
-            </div>
-            
-            <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">
-                <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6">
-                    <i class="fas fa-network-wired text-emerald-400 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Network Isolation</h3>
-                <p class="text-slate-400 mb-4">Zero network connectivity during inference:</p>
-                <ul class="space-y-3 text-sm text-slate-300">
-                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 mt-1"></i> No fetch/XHR from WASM context</li>
-                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 mt-1"></i> WebSocket disabled</li>
-                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 mt-1"></i> WebRTC disabled</li>
-                    <li class="flex items-start gap-2"><i class="fas fa-check text-emerald-400 mt-1"></i> Service Worker offline-first</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="performance" class="py-24 px-4">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Performance Benchmarks</h2>
-            <p class="text-slate-400 max-w-2xl mx-auto">Real-world performance on consumer hardware.</p>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-6 mb-12">
-            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl text-center">
-                <div class="text-4xl font-bold text-emerald-400 mb-2">47ms</div>
-                <p class="text-slate-400 text-sm">Average inference time</p>
-                <p class="text-slate-500 text-xs mt-2">M1 MacBook Air, 8GB RAM</p>
-            </div>
-            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl text-center">
-                <div class="text-4xl font-bold text-emerald-400 mb-2">89ms</div>
-                <p class="text-slate-400 text-sm">95th percentile</p>
-                <p class="text-slate-500 text-xs mt-2">Same hardware, complex content</p>
-            </div>
-            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl text-center">
-                <div class="text-4xl font-bold text-emerald-400 mb-2">10x</div>
-                <p class="text-slate-400 text-sm">Faster than cloud API</p>
-                <p class="text-slate-500 text-xs mt-2">vs. OpenAI GPT-4 round-trip</p>
-            </div>
-        </div>
-        
-        <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">
-            <h3 class="font-bold mb-6">Supported Models</h3>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="p-4 bg-slate-950 rounded-lg">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-bold text-slate-200">Legality Classifier</span>
-                        <span class="text-xs text-emerald-400">12MB</span>
-                    </div>
-                    <p class="text-sm text-slate-400">Detects potentially illegal content across jurisdictions</p>
-                </div>
-                <div class="p-4 bg-slate-950 rounded-lg">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-bold text-slate-200">Tone Analyzer</span>
-                        <span class="text-xs text-emerald-400">8MB</span>
-                    </div>
-                    <p class="text-sm text-slate-400">Sentiment and emotional tone classification</p>
-                </div>
-                <div class="p-4 bg-slate-950 rounded-lg">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-bold text-slate-200">Factuality Check</span>
-                        <span class="text-xs text-emerald-400">24MB</span>
-                    </div>
-                    <p class="text-sm text-slate-400">Verifies claims against local knowledge base</p>
-                </div>
-                <div class="p-4 bg-slate-950 rounded-lg">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-bold text-slate-200">Misrepresentation Detector</span>
-                        <span class="text-xs text-emerald-400">18MB</span>
-                    </div>
-                    <p class="text-sm text-slate-400">Identifies misleading or deceptive content</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer class="py-12 px-4 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
-            <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-microchip text-white text-lg"></i>
-                </div>
-                <div>
-                    <span class="font-bold text-xl block leading-none">EdgeShield</span>
-                    <span class="text-[10px] text-slate-400 tracking-wider">FENTON PLATFORM™</span>
-                </div>
-            </div>
-            <div class="flex items-center gap-4">
-                <span class="wasm-badge text-xs font-bold px-3 py-1 rounded-full text-white">PATENT PENDING</span>
-            </div>
-        </div>
-        <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
-            <div class="mb-4 md:mb-0">© 2025 Fenton Creative. All Rights Reserved.</div>
-            <div class="flex items-center gap-6">
-                <span>WebAssembly Runtime Patent Pending</span>
-                <a href="#" class="hover:text-white transition">Privacy</a>
-                <a href="#" class="hover:text-white transition">Terms</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<div class="protection-notice">
-    © 2025 Fenton Creative. All Rights Reserved. | EdgeShield™ WebAssembly Runtime - Patent Pending | 
-    Technical Documentation - Confidential | 
-    Contact: ai@fenton-shield.co
-</div>
-
+    <footer>
+        <p>&copy; 2024 FENTON CREATIVE™. EdgeShield™ - Intelligence without compromise.</p>
+    </footer>
 </body>
 </html>
