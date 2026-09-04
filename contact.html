@@ -3,245 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Fenton Creative™</title>
-    <meta name="description" content="Get in touch with Fenton Creative™. Contact us for sales, support, or partnership inquiries.">
+    <title>Contact | FENTON CREATIVE™</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #05070a;
+            --bg-secondary: #0a0f1a;
+            --bg-elevated: #0d1320;
+            --accent: #00d4ff;
+            --text-primary: #f0f2f5;
+            --text-secondary: #8a94a8;
+            --border: rgba(0, 212, 255, 0.15);
         }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
-            color: #333;
-            background: #fafafa;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         
         nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 4rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 1000;
+            background: rgba(5,7,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
         }
-        
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--text-primary);
             text-decoration: none;
         }
-        
-        .logo span {
-            color: #e94560;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
+        .logo span { color: var(--accent); font-weight: 500; }
+        .nav-links { display: flex; gap: 3rem; list-style: none; }
         .nav-links a {
-            color: #fff;
+            color: var(--text-secondary);
             text-decoration: none;
-            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             transition: color 0.3s;
         }
-        
-        .nav-links a:hover {
-            color: #e94560;
-        }
+        .nav-links a:hover { color: var(--accent); }
         
         .page-header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 120px 0 60px;
+            padding: 150px 4rem 80px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
             text-align: center;
         }
-        
         .page-header h1 {
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
             margin-bottom: 1rem;
         }
         
-        .contact-section {
-            padding: 60px 0;
-        }
-        
+        .content { padding: 6rem 4rem; }
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
         }
-        
         .contact-info {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 3rem;
         }
-        
         .contact-info h2 {
-            color: #1a1a2e;
-            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
         }
-        
         .contact-method {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
-        
         .contact-method h3 {
-            color: #e94560;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 0.5rem;
         }
-        
         .contact-method p {
-            color: #666;
+            color: var(--text-secondary);
+        }
+        .contact-method a {
+            color: var(--accent);
+            text-decoration: none;
         }
         
         .contact-form {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 3rem;
         }
-        
-        .contact-form h2 {
-            color: #1a1a2e;
-            margin-bottom: 1.5rem;
-        }
-        
         .form-group {
             margin-bottom: 1.5rem;
         }
-        
         .form-group label {
             display: block;
-            color: #333;
-            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             margin-bottom: 0.5rem;
         }
-        
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
             font-size: 1rem;
-            font-family: inherit;
         }
-        
         .form-group textarea {
-            resize: vertical;
             min-height: 120px;
+            resize: vertical;
         }
-        
         .submit-button {
-            background: #e94560;
-            color: white;
-            padding: 1rem 2rem;
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: var(--bg-primary);
             border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
         }
-        
         .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
         }
         
         footer {
-            background: #0f0f1a;
-            color: #888;
-            padding: 40px 0;
-            text-align: center;
+            padding: 4rem;
+            border-top: 1px solid var(--border);
+            background: var(--bg-secondary);
         }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-bottom p {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+        }
+        .footer-legal a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .footer-legal a:hover { color: var(--accent); }
         
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .page-header h1 {
-                font-size: 2rem;
-            }
+            nav { padding: 1rem 2rem; }
+            .nav-links { display: none; }
+            .page-header { padding: 120px 2rem 60px; }
+            .content { padding: 4rem 2rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="index.html" class="logo">Fenton<span>Creative</span>™</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="developers.html">Developers</a></li>
-                <li><a href="tech-heroes.html">Tech Heroes</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <a href="index.html" class="logo">FENTON<span>CREATIVE</span>™</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="developers.html">Developers</a></li>
+            <li><a href="tech-heroes.html">Tech Heroes</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <section class="page-header">
         <div class="container">
             <h1>Contact Us</h1>
-            <p>Get in touch for sales, support, or partnership inquiries</p>
         </div>
     </section>
 
-    <section class="contact-section">
+    <section class="content">
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info">
                     <h2>Get in Touch</h2>
                     
                     <div class="contact-method">
+                        <h3>General Inquiries</h3>
+                        <p><a href="mailto:hello@fenton-shield.co">hello@fenton-shield.co</a></p>
+                    </div>
+                    
+                    <div class="contact-method">
                         <h3>Sales</h3>
-                        <p>hello@fenton-shield.co</p>
+                        <p><a href="mailto:hello@fenton-shield.co">hello@fenton-shield.co</a></p>
                     </div>
                     
                     <div class="contact-method">
                         <h3>Support</h3>
-                        <p>human@fenton-shield.co</p>
+                        <p><a href="mailto:hello@fenton-shield.co">hello@fenton-shield.co</a></p>
                     </div>
                     
                     <div class="contact-method">
-                        <h3>Partnerships</h3>
-                        <p>future@fenton-shield.co</p>
-                    </div>
-                    
-                    <div class="contact-method">
-                        <h3>Press & Media</h3>
-                        <p>ai@fenton-shield.co</p>
+                        <h3>Press</h3>
+                        <p><a href="mailto:hello@fenton-shield.co">hello@fenton-shield.co</a></p>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <h2>Send a Message</h2>
+                    <h2 style="color: var(--accent); font-size: 1.3rem; font-weight: 400; margin-bottom: 2rem;">Send a Message</h2>
                     <form action="#" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -257,9 +249,9 @@
                             <label for="inquiry">Inquiry Type</label>
                             <select id="inquiry" name="inquiry">
                                 <option value="sales">Sales</option>
-                                <option value="support">Technical Support</option>
+                                <option value="support">Support</option>
                                 <option value="partnership">Partnership</option>
-                                <option value="press">Press/Media</option>
+                                <option value="press">Press</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
@@ -278,7 +270,14 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Fenton Creative™. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FENTON CREATIVE™. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="legal.html">Legal</a>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
