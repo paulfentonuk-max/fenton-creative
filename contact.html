@@ -3,143 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Fenton Creative</title>
-    <meta name="description" content="Contact Fenton Creative. Let's discuss how we can amplify your vision with human-led, AI-powered solutions.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
-    
+    <title>Contact | Fenton Creative™</title>
+    <meta name="description" content="Get in touch with Fenton Creative™. Contact us for sales, support, or partnership inquiries.">
     <style>
-        :root {
-            --primary: #0A4F4F;
-            --secondary: #FF6B6B;
-            --accent: #FFD93D;
-            --dark: #0A0A0F;
-            --light: #F8F9FA;
-            --neutral: #6C757D;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Source Sans Pro', sans-serif;
-            color: var(--dark);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            background: var(--light);
+            color: #333;
+            background: #fafafa;
         }
         
-        h1, h2, h3, h4 { font-family: 'Inter', sans-serif; font-weight: 700; }
-        
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-        
-        .nav-container {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .logo {
-            font-family: 'Inter', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
+            color: #fff;
             text-decoration: none;
         }
         
-        .logo span { color: var(--secondary); }
+        .logo span {
+            color: #e94560;
+        }
         
         .nav-links {
             display: flex;
-            gap: 2rem;
             list-style: none;
+            gap: 2rem;
         }
         
         .nav-links a {
-            color: var(--dark);
+            color: #fff;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             transition: color 0.3s;
         }
         
-        .nav-links a:hover { color: var(--primary); }
-        
-        .hero {
-            padding: 140px 2rem 60px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+        .nav-links a:hover {
+            color: #e94560;
         }
         
-        .hero h1 {
+        .page-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            font-weight: 300;
         }
         
-        .hero h1 span {
-            color: var(--primary);
-            font-weight: 700;
-        }
-        
-        .hero p {
-            color: var(--neutral);
-            font-size: 1.1rem;
+        .contact-section {
+            padding: 60px 0;
         }
         
         .contact-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 2rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
         }
         
+        .contact-info {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .contact-info h2 {
+            color: #1a1a2e;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-method {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-method h3 {
+            color: #e94560;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-method p {
+            color: #666;
+        }
+        
         .contact-form {
             background: white;
-            border: 1px solid rgba(0,0,0,0.1);
-            border-radius: 16px;
-            padding: 40px;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
         
         .contact-form h2 {
-            color: var(--primary);
-            margin-bottom: 30px;
-            font-size: 1.5rem;
+            color: #1a1a2e;
+            margin-bottom: 1.5rem;
         }
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            color: var(--dark);
-            font-weight: 600;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
         }
         
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 12px;
-            border: 1px solid rgba(0,0,0,0.2);
+            padding: 0.75rem;
+            border: 1px solid #ddd;
             border-radius: 8px;
             font-size: 1rem;
-            font-family: 'Source Sans Pro', sans-serif;
+            font-family: inherit;
         }
         
         .form-group textarea {
@@ -147,252 +156,129 @@
             min-height: 120px;
         }
         
-        .btn {
-            padding: 14px 30px;
+        .submit-button {
+            background: #e94560;
+            color: white;
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 50px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
-            background: var(--primary);
-            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .btn:hover {
-            background: #083d3d;
+        .submit-button:hover {
             transform: translateY(-2px);
-        }
-        
-        .contact-info {
-            padding: 20px;
-        }
-        
-        .contact-info h2 {
-            color: var(--primary);
-            margin-bottom: 30px;
-            font-size: 1.5rem;
-        }
-        
-        .info-item {
-            margin-bottom: 30px;
-        }
-        
-        .info-item h3 {
-            color: var(--dark);
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-        
-        .info-item p {
-            color: var(--neutral);
-        }
-        
-        .info-item a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .info-item a:hover {
-            text-decoration: underline;
-        }
-        
-        .email-block {
-            background: rgba(10,79,79,0.05);
-            border-left: 4px solid var(--primary);
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .email-block h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        .email-list {
-            list-style: none;
-        }
-        
-        .email-list li {
-            padding: 8px 0;
-            color: var(--neutral);
-        }
-        
-        .email-list a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
         }
         
         footer {
-            padding: 60px 2rem 30px;
-            background: var(--dark);
-            color: rgba(255,255,255,0.6);
-            margin-top: 60px;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+            background: #0f0f1a;
+            color: #888;
+            padding: 40px 0;
             text-align: center;
         }
         
-        .footer-logo {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-        
-        .footer-logo span { color: var(--secondary); }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover { color: var(--accent); }
-        
-        .footer-bottom {
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-        }
-        
-        .ip-notice {
-            margin-top: 20px;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.4);
-        }
-        
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .nav-links { display: none; }
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">FENTON<span>CREATIVE</span></a>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Fenton<span>Creative</span>™</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="products.html">Products</a></li>
+                <li><a href="developers.html">Developers</a></li>
+                <li><a href="tech-heroes.html">Tech Heroes</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <section class="hero">
-        <h1>Let's Build <span>Together</span></h1>
-        <p>Ready to explore how human-AI collaboration can amplify your vision? Get in touch.</p>
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch for sales, support, or partnership inquiries</p>
+        </div>
     </section>
 
-    <div class="contact-grid">
-        <div class="contact-form">
-            <h2>Send a Message</h2>
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    
+                    <div class="contact-method">
+                        <h3>Sales</h3>
+                        <p>hello@fenton-shield.co</p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <h3>Support</h3>
+                        <p>human@fenton-shield.co</p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <h3>Partnerships</h3>
+                        <p>future@fenton-shield.co</p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <h3>Press & Media</h3>
+                        <p>ai@fenton-shield.co</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
+                
+                <div class="contact-form">
+                    <h2>Send a Message</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inquiry">Inquiry Type</label>
+                            <select id="inquiry" name="inquiry">
+                                <option value="sales">Sales</option>
+                                <option value="support">Technical Support</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="press">Press/Media</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="company">Company/Organisation</label>
-                    <input type="text" id="company" name="company">
-                </div>
-                <div class="form-group">
-                    <label for="interest">I'm interested in</label>
-                    <select id="interest" name="interest">
-                        <option value="">Select an option</option>
-                        <option value="dataprune">DataPrune - AI Infrastructure</option>
-                        <option value="valuecompanion">ValueCompanion - Social Impact</option>
-                        <option value="aegis">AEGIS - Human-AI Interface</option>
-                        <option value="shieldpost">ShieldPost - Privacy Tools</option>
-                        <option value="partnership">Partnership/Collaboration</option>
-                        <option value="other">Something else</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <p style="margin-top: 20px; font-size: 0.85rem; color: var(--neutral);">
-                By submitting this form, you agree to our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a>.
-            </p>
-        </div>
-
-        <div class="contact-info">
-            <h2>Other Ways to Connect</h2>
-            
-            <div class="email-block">
-                <h3>📧 Email Us Directly</h3>
-                <ul class="email-list">
-                    <li>General: <a href="mailto:hello@fenton-creative.co">hello@fenton-creative.co</a></li>
-                    <li>Founder: <a href="mailto:paul@fenton-creative.co">paul@fenton-creative.co</a></li>
-                    <li>AI Partnerships: <a href="mailto:ai@fenton-creative.co">ai@fenton-creative.co</a></li>
-                </ul>
-            </div>
-
-            <div class="info-item">
-                <h3>🕐 Response Time</h3>
-                <p>We typically respond within 24-48 hours. For urgent inquiries, please email directly.</p>
-            </div>
-
-            <div class="info-item">
-                <h3>📍 Location</h3>
-                <p>Fenton Creative Ltd<br>
-                United Kingdom<br>
-                Company Registration: [Pending]</p>
-            </div>
-
-            <div class="info-item">
-                <h3>🔗 Connect</h3>
-                <p>
-                    <a href="#">LinkedIn</a> • 
-                    <a href="#">Twitter/X</a> • 
-                    <a href="#">GitHub</a>
-                </p>
             </div>
         </div>
-    </div>
+    </section>
 
     <footer>
-        <div class="footer-content">
-            <a href="index.html" class="footer-logo">FENTON<span>CREATIVE</span></a>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="products.html">Products</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="ip-notice.html">IP Notice</a>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Fenton Creative Ltd. All rights reserved.</p>
-                <p class="ip-notice">
-                    AROL™, SecureBridge™, ContextVault™, DataPrune™, ValueCompanion™, AEGIS™ — Registered trademarks.<br>
-                    All content protected by copyright and patent law. Unauthorized use prohibited.
-                </p>
-            </div>
+        <div class="container">
+            <p>&copy; 2024 Fenton Creative™. All rights reserved.</p>
         </div>
     </footer>
 </body>
