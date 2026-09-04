@@ -3,724 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fenton Platform Developer Documentation - API references, SDKs, integration guides">
-    <meta name="copyright" content="© 2025 Fenton Creative. All Rights Reserved. UK Patent Application Pending.">
-    <title>Developer Documentation | Fenton Creative</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <title>Developers | Fenton Creative™</title>
+    <meta name="description" content="Developer resources, API documentation, and integration guides for Fenton Creative™ products.">
     <style>
-        body { font-family: 'Inter', sans-serif; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
-        .protected-content { -webkit-user-select: none !important; -moz-user-select: none !important; user-select: none !important; }
-        .gradient-text { background: linear-gradient(135deg, #3B82F6, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .patent-badge { background: linear-gradient(135deg, #F59E0B, #EF4444); }
-        .glass { background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); }
-        .watermark {
-            position: fixed; top: 50%; left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 100px; color: rgba(59, 130, 246, 0.03);
-            pointer-events: none; z-index: 9998; font-weight: 800; white-space: nowrap;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .code-block { 
-            background: #0d1117; 
-            border: 1px solid #30363d; 
-            font-family: 'SF Mono', Monaco, monospace;
-            font-size: 13px;
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
+            color: #333;
+            background: #fafafa;
         }
-        .syntax-keyword { color: #ff7b72; }
-        .syntax-string { color: #a5d6ff; }
-        .syntax-comment { color: #8b949e; }
-        .syntax-function { color: #d2a8ff; }
-        .syntax-variable { color: #ffa657; }
-        .syntax-type { color: #7ee787; }
-        .doc-sidebar { 
-            position: sticky; 
-            top: 80px; 
-            max-height: calc(100vh - 100px);
-            overflow-y: auto;
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .doc-sidebar::-webkit-scrollbar { width: 6px; }
-        .doc-sidebar::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
-        .doc-link { 
-            display: block; 
-            padding: 8px 12px; 
-            color: #8b949e; 
-            border-radius: 6px;
-            transition: all 0.2s;
+        
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .doc-link:hover, .doc-link.active { 
-            background: rgba(59, 130, 246, 0.1); 
-            color: #58a6ff; 
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .endpoint { 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 8px; 
-            font-family: monospace;
-            font-size: 13px;
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
         }
-        .method-get { color: #7ee787; }
-        .method-post { color: #79c0ff; }
-        .method-put { color: #ffa657; }
-        .method-delete { color: #f85149; }
-        .protection-notice {
-            position: fixed; bottom: 0; left: 0; right: 0;
-            background: rgba(0, 0, 0, 0.9); color: #94a3b8;
-            padding: 8px; font-size: 11px; text-align: center;
-            z-index: 9999; border-top: 1px solid #334155;
+        
+        .logo span {
+            color: #e94560;
         }
-        .api-card { 
-            border-left: 3px solid #30363d;
-            transition: all 0.3s;
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
         }
-        .api-card:hover { 
-            border-left-color: #3b82f6;
-            background: rgba(59, 130, 246, 0.05);
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
         }
-        .copy-btn {
-            opacity: 0;
-            transition: opacity 0.2s;
+        
+        .nav-links a:hover {
+            color: #e94560;
         }
-        .code-block:hover .copy-btn { opacity: 1; }
-    </style>
-    <script>
-        document.addEventListener('contextmenu', e => { e.preventDefault(); return false; });
-        document.addEventListener('keydown', e => {
-            if ((e.ctrlKey && (e.key === 's' || e.key === 'p' || e.key === 'u')) || e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-                e.preventDefault(); return false;
+        
+        .page-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content {
+            padding: 60px 0;
+        }
+        
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .doc-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #e94560;
+        }
+        
+        .doc-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+        
+        .doc-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .doc-link {
+            color: #e94560;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .code-block {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .code-block code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            background: #0f0f1a;
+            color: #888;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
             }
-        });
-        document.addEventListener('dragstart', e => { e.preventDefault(); return false; });
-        document.addEventListener('copy', e => { e.preventDefault(); return false; });
-        console.log('%c⚠️ COPYRIGHT NOTICE', 'color: #F59E0B; font-size: 24px; font-weight: bold;');
-        console.log('%c© 2025 Fenton Creative. All Rights Reserved.', 'color: #94A3B8; font-size: 14px;');
-        console.log('%cUK Patent Application Pending.', 'color: #EF4444; font-size: 12px;');
-        console.log('%cCONFIDENTIAL: Developer Documentation', 'color: #3B82F6; font-size: 12px;');
-        
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-            document.querySelectorAll('.doc-link').forEach(l => l.classList.remove('active'));
-            event.target.classList.add('active');
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
         }
-    </script>
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 protected-content">
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Fenton<span>Creative</span>™</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="developers.html">Developers</a></li>
+                <li><a href="tech-heroes.html">Tech Heroes</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="watermark">FENTON CREATIVE © 2025</div>
-
-<nav class="fixed w-full glass border-b border-slate-800/50 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-            <a href="#" class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-code text-white text-lg"></i>
-                </div>
-                <div>
-                    <span class="font-bold text-xl block leading-none">Developers</span>
-                    <span class="text-[10px] text-slate-400 tracking-wider">FENTON PLATFORM™</span>
-                </div>
-            </a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#quickstart" class="text-slate-300 hover:text-white transition text-sm font-medium">Quickstart</a>
-                <a href="#api" class="text-slate-300 hover:text-white transition text-sm font-medium">API Reference</a>
-                <a href="#sdks" class="text-slate-300 hover:text-white transition text-sm font-medium">SDKs</a>
-                <a href="#auth" class="text-slate-300 hover:text-white transition text-sm font-medium">Authentication</a>
-                <a href="#platform" class="text-slate-300 hover:text-white transition text-sm font-medium">Platform Licensing</a>
-            </div>
-            <a href="#" class="hidden md:block px-5 py-2.5 bg-blue-600 hover:bg-blue-500 rounded-lg text-sm font-semibold transition">Get API Key</a>
+    <section class="page-header">
+        <div class="container">
+            <h1>Developer Resources</h1>
+            <p>Everything you need to integrate and build with our platform</p>
         </div>
-    </div>
-</nav>
+    </section>
 
-<section class="relative min-h-[60vh] flex items-center justify-center pt-16 overflow-hidden">
-    <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-    </div>
-    <div class="relative max-w-5xl mx-auto px-4 text-center">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm mb-8">
-            <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
-            API Version 2.1
-        </div>
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Fenton Platform <span class="gradient-text">Developer Docs</span>
-        </h1>
-        <p class="text-xl text-slate-400 max-w-3xl mx-auto mb-10">
-            Build secure, intelligent applications with SecureBridge, ContextVault, AROL, and LLM DLP. 
-            Complete API reference, SDKs, and integration guides.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#quickstart" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-lg font-semibold transition">
-                <i class="fas fa-rocket mr-2"></i>Quickstart
-            </a>
-            <a href="#api" class="px-8 py-4 border border-slate-700 hover:border-slate-500 rounded-lg font-semibold transition">
-                <i class="fas fa-book mr-2"></i>API Reference
-            </a>
-        </div>
-    </div>
-</section>
-
-<div class="max-w-7xl mx-auto px-4 py-12">
-    <div class="grid lg:grid-cols-4 gap-8">
-        <div class="hidden lg:block">
-            <div class="doc-sidebar space-y-8">
-                <div>
-                    <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-3">Getting Started</h3>
-                    <nav class="space-y-1">
-                        <a href="#quickstart" onclick="scrollToSection('quickstart')" class="doc-link active text-sm">Quickstart Guide</a>
-                        <a href="#installation" onclick="scrollToSection('installation')" class="doc-link text-sm">Installation</a>
-                        <a href="#first-request" onclick="scrollToSection('first-request')" class="doc-link text-sm">First API Request</a>
-                    </nav>
+    <section class="content">
+        <div class="container">
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <h3>API Documentation</h3>
+                    <p>Complete REST API reference for all Fenton Creative™ products. Authentication, endpoints, rate limits, and examples.</p>
+                    <a href="#" class="doc-link">View API Docs →</a>
                 </div>
-                <div>
-                    <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-3">Core APIs</h3>
-                    <nav class="space-y-1">
-                        <a href="#securebridge" onclick="scrollToSection('securebridge')" class="doc-link text-sm">SecureBridge</a>
-                        <a href="#contextvault" onclick="scrollToSection('contextvault')" class="doc-link text-sm">ContextVault</a>
-                        <a href="#arol" onclick="scrollToSection('arol')" class="doc-link text-sm">AROL Engine</a>
-                        <a href="#llmdlp" onclick="scrollToSection('llmdlp')" class="doc-link text-sm">LLM DLP Core</a>
-                    </nav>
+                
+                <div class="doc-card">
+                    <h3>SDKs & Libraries</h3>
+                    <p>Official SDKs for JavaScript, Python, Go, and Rust. Get up and running in minutes with our client libraries.</p>
+                    <a href="#" class="doc-link">Browse SDKs →</a>
                 </div>
-                <div>
-                    <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-3">Resources</h3>
-                    <nav class="space-y-1">
-                        <a href="#auth" onclick="scrollToSection('auth')" class="doc-link text-sm">Authentication</a>
-                        <a href="#errors" onclick="scrollToSection('errors')" class="doc-link text-sm">Error Handling</a>
-                        <a href="#rate-limits" onclick="scrollToSection('rate-limits')" class="doc-link text-sm">Rate Limits</a>
-                        <a href="#webhooks" onclick="scrollToSection('webhooks')" class="doc-link text-sm">Webhooks</a>
-                    </nav>
+                
+                <div class="doc-card">
+                    <h3>Integration Guides</h3>
+                    <p>Step-by-step guides for integrating ShieldPost™, MTAVS™, and DataPrune™ into your existing infrastructure.</p>
+                    <a href="#" class="doc-link">Read Guides →</a>
                 </div>
-                <div>
-                    <h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-3">Platform</h3>
-                    <nav class="space-y-1">
-                        <a href="#licensing" onclick="scrollToSection('licensing')" class="doc-link text-sm">Licensing</a>
-                        <a href="#sdks" onclick="scrollToSection('sdks')" class="doc-link text-sm">SDKs</a>
-                        <a href="#changelog" onclick="scrollToSection('changelog')" class="doc-link text-sm">Changelog</a>
-                    </nav>
+                
+                <div class="doc-card">
+                    <h3>WebAssembly Runtime</h3>
+                    <p>Technical documentation for EdgeShield, our WebAssembly runtime powering client-side security validation.</p>
+                    <a href="#" class="doc-link">Explore EdgeShield →</a>
                 </div>
             </div>
-        </div>
-        
-        <div class="lg:col-span-3 space-y-16">
             
-            <section id="quickstart" class="scroll-mt-24">
-                <h2 class="text-3xl font-bold mb-6">Quickstart Guide</h2>
-                <p class="text-slate-400 mb-8">Get up and running with the Fenton Platform API in under 5 minutes. This guide covers authentication, your first request, and basic integration patterns.</p>
-                
-                <div class="grid md:grid-cols-3 gap-4 mb-8">
-                    <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                        <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
-                            <span class="text-blue-400 font-bold">1</span>
-                        </div>
-                        <h3 class="font-bold mb-2">Get API Key</h3>
-                        <p class="text-sm text-slate-400">Sign up for a developer account and generate your API key from the dashboard.</p>
-                    </div>
-                    <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                        <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
-                            <span class="text-blue-400 font-bold">2</span>
-                        </div>
-                        <h3 class="font-bold mb-2">Install SDK</h3>
-                        <p class="text-sm text-slate-400">Add the Fenton SDK to your project via npm, pip, or your preferred package manager.</p>
-                    </div>
-                    <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                        <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
-                            <span class="text-blue-400 font-bold">3</span>
-                        </div>
-                        <h3 class="font-bold mb-2">Make Request</h3>
-                        <p class="text-sm text-slate-400">Call the API with your authentication token and start building with Fenton Platform.</p>
-                    </div>
-                </div>
-                
-                <div id="installation" class="scroll-mt-24">
-                    <h3 class="text-xl font-bold mb-4">Installation</h3>
-                    <div class="space-y-4">
-                        <div class="code-block rounded-xl p-4 relative">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs text-slate-500">npm</span>
-                                <button class="copy-btn text-xs text-slate-400 hover:text-white"><i class="fas fa-copy mr-1"></i>Copy</button>
-                            </div>
-                            <code class="text-slate-300">npm install @fenton/platform-sdk</code>
-                        </div>
-                        <div class="code-block rounded-xl p-4 relative">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs text-slate-500">pip</span>
-                                <button class="copy-btn text-xs text-slate-400 hover:text-white"><i class="fas fa-copy mr-1"></i>Copy</button>
-                            </div>
-                            <code class="text-slate-300">pip install fenton-platform</code>
-                        </div>
-                        <div class="code-block rounded-xl p-4 relative">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs text-slate-500">CDN</span>
-                                <button class="copy-btn text-xs text-slate-400 hover:text-white"><i class="fas fa-copy mr-1"></i>Copy</button>
-                            </div>
-                            <code class="text-slate-300">&lt;script src="https://cdn.fenton.ai/platform/v2/fenton.min.js"&gt;&lt;/script&gt;</code>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="auth" class="scroll-mt-24">
-                <h2 class="text-3xl font-bold mb-6">Authentication</h2>
-                <p class="text-slate-400 mb-6">The Fenton Platform API uses API keys for authentication. Include your key in the Authorization header of all requests.</p>
-                
-                <div class="p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl mb-6">
-                    <div class="flex items-start gap-3">
-                        <i class="fas fa-exclamation-triangle text-amber-400 mt-1"></i>
-                        <div>
-                            <p class="text-sm text-amber-200 font-medium">Security Notice</p>
-                            <p class="text-sm text-slate-400">Never expose your API key in client-side code. Use environment variables and server-side requests for production applications.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="code-block rounded-xl p-4 mb-6">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs text-slate-500">Authorization Header</span>
-                        <button class="copy-btn text-xs text-slate-400 hover:text-white"><i class="fas fa-copy mr-1"></i>Copy</button>
-                    </div>
-                    <code class="text-slate-300">
-                        <span class="syntax-type">Authorization</span>: <span class="syntax-string">Bearer fenton_live_&lt;your_api_key&gt;</span>
+            <div style="margin-top: 4rem;">
+                <h2 style="margin-bottom: 2rem;">Quick Start</h2>
+                <div class="code-block">
+                    <code>
+// Install ShieldPost SDK<br>
+npm install @fentoncreative/shieldpost<br><br>
+// Initialize client<br>
+import { ShieldPost } from '@fentoncreative/shieldpost';<br><br>
+const shield = new ShieldPost({<br>
+&nbsp;&nbsp;apiKey: process.env.SHIELDPOST_KEY,<br>
+&nbsp;&nbsp;region: 'eu-west'<br>
+});
                     </code>
                 </div>
-                
-                <h3 class="text-xl font-bold mb-4">Initializing the SDK</h3>
-                <div class="code-block rounded-xl p-4">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs text-slate-500">JavaScript</span>
-                        <button class="copy-btn text-xs text-slate-400 hover:text-white"><i class="fas fa-copy mr-1"></i>Copy</button>
-                    </div>
-                    <pre><code><span class="syntax-keyword">import</span> { FentonClient } <span class="syntax-keyword">from</span> <span class="syntax-string">'@fenton/platform-sdk'</span>;
-
-<span class="syntax-keyword">const</span> <span class="syntax-variable">client</span> = <span class="syntax-keyword">new</span> <span class="syntax-function">FentonClient</span>({
-  <span class="syntax-variable">apiKey</span>: <span class="syntax-variable">process</span>.<span class="syntax-variable">env</span>.<span class="syntax-variable">FENTON_API_KEY</span>,
-  <span class="syntax-variable">environment</span>: <span class="syntax-string">'production'</span> <span class="syntax-comment">// or 'sandbox'</span>
-});</code></pre>
-                </div>
-            </section>
-            
-            <section id="securebridge" class="scroll-mt-24">
-                <h2 class="text-3xl font-bold mb-6">SecureBridge API</h2>
-                <p class="text-slate-400 mb-8">Zero-trust hybrid encryption protocol for secure data transmission across distributed AI providers.</p>
-                
-                <div class="api-card p-6 bg-slate-900 border border-slate-800 rounded-xl mb-6">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="endpoint">
-                            <span class="method-post font-bold">POST</span>
-                            <span class="text-slate-300">/v2/securebridge/session</span>
-                        </div>
-                        <span class="text-xs text-slate-500">Create encrypted session</span>
-                    </div>
-                    <p class="text-sm text-slate-400 mb-4">Initialize a new SecureBridge session with hybrid X25519 + AES-256-GCM encryption.</p>
-                    
-                    <div class="code-block rounded-lg p-4">
-                        <pre><code><span class="syntax-comment">// Request</span>
-<span class="syntax-keyword">const</span> <span class="syntax-variable">session</span> = <span class="syntax-keyword">await</span> <span class="syntax-variable">client</span>.<span class="syntax-variable">secureBridge</span>.<span class="syntax-function">createSession</span>({
-  <span class="syntax-variable">providers</span>: [<span class="syntax-string">'openai'</span>, <span class="syntax-string">'anthropic'</span>],
-  <span class="syntax-variable">encryption</span>: <span class="syntax-string">'hybrid'</span>,
-  <span class="syntax-variable">keyRotation</span>: <span class="syntax-string">'15m'</span>
-});
-
-<span class="syntax-comment">// Response</span>
-{
-  <span class="syntax-string">"sessionId"</span>: <span class="syntax-string">"sb_live_abc123"</span>,
-  <span class="syntax-string">"publicKey"</span>: <span class="syntax-string">"-----BEGIN PUBLIC KEY-----\\n..."</span>,
-  <span class="syntax-string">"expiresAt"</span>: <span class="syntax-string">"2025-01-15T10:30:00Z"</span>
-}</code></pre>
-                    </div>
-                </div>
-                
-                <div class="api-card p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="endpoint">
-                            <span class="method-post font-bold">POST</span>
-                            <span class="text-slate-300">/v2/securebridge/encrypt</span>
-                        </div>
-                        <span class="text-xs text-slate-500">Encrypt payload</span>
-                    </div>
-                    <p class="text-sm text-slate-400 mb-4">Encrypt data for transmission to AI providers.</p>
-                    
-                    <div class="code-block rounded-lg p-4">
-                        <pre><code><span class="syntax-keyword">const</span> <span class="syntax-variable">encrypted</span> = <span class="syntax-keyword">await</span> <span class="syntax-variable">client</span>.<span class="syntax-variable">secureBridge</span>.<span class="syntax-function">encrypt</span>({
-  <span class="syntax-variable">sessionId</span>: <span class="syntax-string">'sb_live_abc123'</span>,
-  <span class="syntax-variable">payload</span>: { <span class="syntax-variable">prompt</span>: <span class="syntax-string">'Analyze this content...'</span> },
-  <span class="syntax-variable">provider</span>: <span class="syntax-string">'openai'</span>
-});</code></pre>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="contextvault" class="scroll-mt-24">
-                <h2 class="text-3xl font-bold mb-6">ContextVault API</h2>
-                <p class="text-slate-400 mb-8">Persistent memory architecture with 90% token cost reduction through intelligent context compression.</p>
-                
-                <div class="api-card p-6 bg-slate-900 border border-slate-800 rounded-xl mb-6">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="endpoint">
-                            <span class="method-post font-bold">POST</span>
-                            <span class="text-slate-300">/v2/vault/store</span>
-                        </div>
-                        <span class="text-xs text-slate-500">Store compressed context</span>
-                    </div>
-                    
-                    <div class="code-block rounded-lg p-4">
-                        <pre><code><span class="syntax-keyword">const</span> <span class="syntax-variable">stored</span> = <span class="syntax-keyword">await</span> <span class="syntax-variable">client</span>.<span class="syntax-variable">contextVault</span>.<span class="syntax-function">store</span>({
-  <span class="syntax-variable">vaultId</span>: <span class="syntax-string">'user_123_conversations'</span>,
-  <span class="syntax-variable">data</span>: {
-    <span class="syntax-variable">messages</span>: [<span class="syntax-string">'...'</span>, <span class="syntax-string">'...'</span>],
-    <span class="syntax-variable">metadata</span>: { <span class="syntax-variable">topic</span>: <span class="syntax-string">'support'</span> }
-  },
-  <span class="syntax-variable">compression</span>: <span class="syntax-string">'semantic'</span>, <span class="syntax-comment">// 'semantic' | 'lossless'</span>
-  <span class="syntax-variable">ttl</span>: <span class="syntax-string">'30d'</span>
-});
-
-<span class="syntax-comment">// Returns compressed token count and savings</span>
-{
-  <span class="syntax-string">"storedId"</span>: <span class="syntax-string">"cv_abc123"</span>,
-  <span class="syntax-string">"originalTokens"</span>: <span class="syntax-variable">5000</span>,
-  <span class="syntax-string">"compressedTokens"</span>: <span class="syntax-variable">500</span>,
-  <span class="syntax-string">"savingsPercent"</span>: <span class="syntax-variable">90</span>
-}</code></pre>
-                    </div>
-                </div>
-                
-                <div class="api-card p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="endpoint">
-                            <span class="method-get font-bold">GET</span>
-                            <span class="text-slate-300">/v2/vault/retrieve/:vaultId</span>
-                        </div>
-                        <span class="text-xs text-slate-500">Retrieve context</span>
-                    </div>
-                    
-                    <div class="code-block rounded-lg p-4">
-                        <pre><code><span class="syntax-keyword">const</span> <span class="syntax-variable">context</span> = <span class="syntax-keyword">await</span> <span class="syntax-variable">client</span>.<span class="syntax-variable">contextVault</span>.<span class="syntax-function">retrieve</span>({
-  <span class="syntax-variable">vaultId</span>: <span class="syntax-string">'user_123_conversations'</span>,
-  <span class="syntax-variable">format</span>: <span class="syntax-string">'expanded'</span> <span class="syntax-comment">// Reconstitutes compressed data</span>
-});</code></pre>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="arol" class="scroll-mt-24">
-                <h2 class="text-3xl font-bold mb-6">AROL Engine API</h2>
-                <p class="text-slate-400 mb-8">Adaptive Response & Optimisation Layer for intelligent multi-provider AI orchestration.</p>
-                
-                <div class="api-card p-6 bg-slate-900 border border-slate-800 rounded-xl mb-6">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="endpoint">
-                            <span class="method-post font-bold">POST</span>
-                            <span class="text-slate-300">/v2/arol/orchestrate</span>
-                        </div>
-                        <span class="text-xs text-slate-500">Multi-provider orchestration</span>
-                    </div>
-                    
-                    <div class="code-block rounded-lg p-4">
-                        <pre><code><span class="syntax-keyword">const</span> <span class="syntax-variable">result</span> = <span class="syntax-keyword">await</span> <span class="syntax-variable">client</span>.<span class="syntax-variable">arol</span>.<span class="syntax-function">orchestrate</span>({
-  <span class="syntax-variable">strategy</span>: <span class="syntax-string">'consensus'</span>, <span class="syntax-comment">// 'consensus' | 'fastest' | 'weighted'</span>
-  <span class="syntax-variable">providers</span>: [<span class="syntax-string">'openai'</span>, <span class="syntax-string">'anthropic'</span>, <span class="syntax-string">'venice'</span>],
-  <span class="syntax-variable">prompt</span>: <span class="syntax-string">'Analyze the sentiment of...'</span>,
-  <span class="syntax-variable">consensusThreshold</span>: <span class="syntax-variable">0.75</span>,
-  <span class="syntax-variable">timeout</span>: <span class="syntax-variable">5000</span>
-});
-
-<span class="syntax-comment">// Returns consensus result with confidence scores</span>
-{
-  <span class="syntax-string">"consensus"</span>: <span class="syntax-string">"positive"</span>,
-  <span class="syntax-string">"confidence"</span>: <span class="syntax-variable">0.89</span>,
-  <span class="syntax-string">"providerResponses"</span>: [...],
-  <span class="syntax-string">"dissentDetected"</span>: <span class="syntax-keyword">false</span>
-}</code></pre>
-                    </div>
-                </div>
-                
-                <div class="api-card p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="endpoint">
-                            <span class="method-post font-bold">POST</span>
-                            <span class="text-slate-300">/v2/arol/analyze-dissent</span>
-                        </div>
-                        <span class="text-xs text-slate-500">Contradiction detection</span>
-                    </div>
-                    
-                    <div class="code-block rounded-lg p-4">
-                        <pre><code><span class="syntax-keyword">const</span> <span class="syntax-variable">analysis</span> = <span class="syntax-keyword">await</span> <span class="syntax-variable">client</span>.<span class="syntax-variable">arol</span>.<span class="syntax-function">analyzeDissent</span>({
-  <span class="syntax-variable">responses</span>: [<span class="syntax-string">'Claim A'</span>, <span class="syntax-string">'Claim B'</span>],
-  <span class="syntax-variable">context</span>: <span class="syntax-string">'political-debate'</span>
-});
-
-<span class="syntax-comment">// Returns contradiction analysis</span>
-{
-  <span class="syntax-string">"contradictionDetected"</span>: <span class="syntax-keyword">true</span>,
-  <span class="syntax-string">"contradictionScore"</span>: <span class="syntax-variable">0.82</span>,
-  <span class="syntax-string">"explanation"</span>: <span class="syntax-string">"Statements contradict on timeline..."</span>
-}</code></pre>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="llmdlp" class="scroll-mt-24">
-                <h2 class="text-3xl font-bold mb-6">LLM DLP Core API</h2>
-                <p class="text-slate-400 mb-8">Data loss prevention for large language models. PII detection, content classification, and policy enforcement.</p>
-                
-                <div class="api-card p-6 bg-slate-900 border border-slate-800 rounded-xl mb-6">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="endpoint">
-                            <span class="method-post font-bold">POST</span>
-                            <span class="text-slate-300">/v2/dlp/scan</span>
-                        </div>
-                        <span class="text-xs text-slate-500">Scan for sensitive data</span>
-                    </div>
-                    
-                    <div class="code-block rounded-lg p-4">
-                        <pre><code><span class="syntax-keyword">const</span> <span class="syntax-variable">scan</span> = <span class="syntax-keyword">await</span> <span class="syntax-variable">client</span>.<span class="syntax-variable">llmDlp</span>.<span class="syntax-function">scan</span>({
-  <span class="syntax-variable">content</span>: <span class="syntax-string">'Contact john.doe@email.com or call 555-0123...'</span>,
-  <span class="syntax-variable">rules</span>: [
-    <span class="syntax-string">'pii'</span>,           <span class="syntax-comment">// Personal Identifiable Information</span>
-    <span class="syntax-string">'credentials'</span>,   <span class="syntax-comment">// API keys, passwords</span>
-    <span class="syntax-string">'financial'</span>,   <span class="syntax-comment">// Credit cards, bank accounts</span>
-    <span class="syntax-string">'gdpr'</span>         <span class="syntax-comment">// GDPR protected categories</span>
-  ],
-  <span class="syntax-variable">redact</span>: <span class="syntax-keyword">true</span>
-});
-
-<span class="syntax-comment">// Returns scan results with redacted content</span>
-{
-  <span class="syntax-string">"violationsFound"</span>: <span class="syntax-variable">2</span>,
-  <span class="syntax-string">"redactedContent"</span>: <span class="syntax-string">"Contact [EMAIL_REDACTED] or call [PHONE_REDACTED]..."</span>,
-  <span class="syntax-string">"violations"</span>: [
-    { <span class="syntax-string">"type"</span>: <span class="syntax-string">"email"</span>, <span class="syntax-string">"position"</span>: [<span class="syntax-variable">8</span>, <span class="syntax-variable">25</span>] },
-    { <span class="syntax-string">"type"</span>: <span class="syntax-string">"phone"</span>, <span class="syntax-string">"position"</span>: [<span class="syntax-variable">35</span>, <span class="syntax-variable">44</span>] }
-  ]
-}</code></pre>
-                    </div>
-                </div>
-                
-                <div class="api-card p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="endpoint">
-                            <span class="method-put font-bold">PUT</span>
-                            <span class="text-slate-300">/v2/dlp/policy</span>
-                        </div>
-                        <span class="text-xs text-slate-500">Configure policy</span>
-                    </div>
-                    
-                    <div class="code-block rounded-lg p-4">
-                        <pre><code><span class="syntax-keyword">await</span> <span class="syntax-variable">client</span>.<span class="syntax-variable">llmDlp</span>.<span class="syntax-function">setPolicy</span>({
-  <span class="syntax-variable">policyId</span>: <span class="syntax-string">'enterprise-default'</span>,
-  <span class="syntax-variable">rules</span>: {
-    <span class="syntax-variable">blockUnverifiedDomains</span>: <span class="syntax-keyword">true</span>,
-    <span class="syntax-variable">allowedDomains</span>: [<span class="syntax-string">'company.com'</span>, <span class="syntax-string">'trusted-partner.com'</span>],
-    <span class="syntax-variable">requireConsent</span>: <span class="syntax-keyword">true</span>,
-    <span class="syntax-variable">auditLog</span>: <span class="syntax-keyword">true</span>
-  }
-});</code></pre>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="rate-limits" class="scroll-mt-24">
-                <h2 class="text-3xl font-bold mb-6">Rate Limits</h2>
-                <p class="text-slate-400 mb-6">Rate limits vary by license tier. Exceeding limits returns HTTP 429 with Retry-After header.</p>
-                
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="border-b border-slate-800">
-                                <th class="text-left py-3 px-4 text-slate-400 font-medium">Endpoint</th>
-                                <th class="text-left py-3 px-4 text-slate-400 font-medium">Developer</th>
-                                <th class="text-left py-3 px-4 text-slate-400 font-medium">Enterprise</th>
-                                <th class="text-left py-3 px-4 text-slate-400 font-medium">Burst</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-slate-300">
-                            <tr class="border-b border-slate-800/50">
-                                <td class="py-3 px-4 font-mono text-xs">/v2/securebridge/*</td>
-                                <td class="py-3 px-4">100/min</td>
-                                <td class="py-3 px-4">10,000/min</td>
-                                <td class="py-3 px-4">10x base</td>
-                            </tr>
-                            <tr class="border-b border-slate-800/50">
-                                <td class="py-3 px-4 font-mono text-xs">/v2/vault/*</td>
-                                <td class="py-3 px-4">1,000/min</td>
-                                <td class="py-3 px-4">50,000/min</td>
-                                <td class="py-3 px-4">5x base</td>
-                            </tr>
-                            <tr class="border-b border-slate-800/50">
-                                <td class="py-3 px-4 font-mono text-xs">/v2/arol/*</td>
-                                <td class="py-3 px-4">100/min</td>
-                                <td class="py-3 px-4">5,000/min</td>
-                                <td class="py-3 px-4">10x base</td>
-                            </tr>
-                            <tr class="border-b border-slate-800/50">
-                                <td class="py-3 px-4 font-mono text-xs">/v2/dlp/*</td>
-                                <td class="py-3 px-4">500/min</td>
-                                <td class="py-3 px-4">25,000/min</td>
-                                <td class="py-3 px-4">5x base</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-            
-            <section id="licensing" class="scroll-mt-24">
-                <h2 class="text-3xl font-bold mb-6">Platform Licensing</h2>
-                <p class="text-slate-400 mb-8">License Fenton Platform technologies for your own products and services.</p>
-                
-                <div class="grid md:grid-cols-2 gap-6 mb-8">
-                    <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                        <h3 class="font-bold text-lg mb-2">Technology License</h3>
-                        <p class="text-sm text-slate-400 mb-4">Embed SecureBridge, ContextVault, AROL, or LLM DLP in your product.</p>
-                        <ul class="space-y-2 text-sm text-slate-300">
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> White-label ready</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> Patent indemnification</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> Technical support</li>
-                        </ul>
-                    </div>
-                    <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                        <h3 class="font-bold text-lg mb-2">OEM Partnership</h3>
-                        <p class="text-sm text-slate-400 mb-4">Build on Fenton Platform as a foundation for your solution.</p>
-                        <ul class="space-y-2 text-sm text-slate-300">
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> Revenue sharing available</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> Co-marketing support</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-xs"></i> Dedicated integration team</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                    <h3 class="font-bold mb-4">Licensing Tiers</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between p-4 bg-slate-950 rounded-lg">
-                            <div>
-                                <span class="font-medium text-slate-200">Developer License</span>
-                                <p class="text-xs text-slate-500">Individual developers, startups</p>
-                            </div>
-                            <span class="text-emerald-400 font-bold">£499/month</span>
-                        </div>
-                        <div class="flex items-center justify-between p-4 bg-slate-950 rounded-lg border border-blue-500/30">
-                            <div>
-                                <span class="font-medium text-slate-200">Enterprise License</span>
-                                <p class="text-xs text-slate-500">Organizations building internal tools</p>
-                            </div>
-                            <span class="text-emerald-400 font-bold">£4,999/month</span>
-                        </div>
-                        <div class="flex items-center justify-between p-4 bg-slate-950 rounded-lg">
-                            <div>
-                                <span class="font-medium text-slate-200">OEM Partnership</span>
-                                <p class="text-xs text-slate-500">ISVs and platform companies</p>
-                            </div>
-                            <span class="text-amber-400 font-bold">Custom</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="sdks" class="scroll-mt-24">
-                <h2 class="text-3xl font-bold mb-6">SDKs & Tools</h2>
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                        <div class="flex items-center gap-3 mb-4">
-                            <i class="fab fa-js text-yellow-400 text-2xl"></i>
-                            <div>
-                                <h3 class="font-bold">JavaScript/TypeScript</h3>
-                                <p class="text-xs text-slate-400">v2.1.0</p>
-                            </div>
-                        </div>
-                        <code class="text-xs text-slate-400 block mb-4">npm install @fenton/platform-sdk</code>
-                        <a href="#" class="text-sm text-blue-400 hover:underline">Documentation →</a>
-                    </div>
-                    
-                    <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                        <div class="flex items-center gap-3 mb-4">
-                            <i class="fab fa-python text-blue-400 text-2xl"></i>
-                            <div>
-                                <h3 class="font-bold">Python</h3>
-                                <p class="text-xs text-slate-400">v2.0.5</p>
-                            </div>
-                        </div>
-                        <code class="text-xs text-slate-400 block mb-4">pip install fenton-platform</code>
-                        <a href="#" class="text-sm text-blue-400 hover:underline">Documentation →</a>
-                    </div>
-                    
-                    <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                        <div class="flex items-center gap-3 mb-4">
-                            <i class="fab fa-java text-orange-400 text-2xl"></i>
-                            <div>
-                                <h3 class="font-bold">Java</h3>
-                                <p class="text-xs text-slate-400">v2.0.0</p>
-                            </div>
-                        </div>
-                        <code class="text-xs text-slate-400 block mb-4">implementation 'ai.fenton:platform:2.0.0'</code>
-                        <a href="#" class="text-sm text-blue-400 hover:underline">Documentation →</a>
-                    </div>
-                    
-                    <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
-                        <div class="flex items-center gap-3 mb-4">
-                            <i class="fas fa-terminal text-slate-400 text-2xl"></i>
-                            <div>
-                                <h3 class="font-bold">CLI</h3>
-                                <p class="text-xs text-slate-400">v1.5.0</p>
-                            </div>
-                        </div>
-                        <code class="text-xs text-slate-400 block mb-4">brew install fenton-cli</code>
-                        <a href="#" class="text-sm text-blue-400 hover:underline">Documentation →</a>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="py-12">
-                <div class="p-8 bg-gradient-to-r from-blue-900/30 to-purple-900/30 border border-blue-500/30 rounded-2xl text-center">
-                    <h3 class="text-2xl font-bold mb-4">Need Help?</h3>
-                    <p class="text-slate-400 mb-6 max-w-xl mx-auto">Our developer relations team is here to help with integration, troubleshooting, and optimization.</p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="mailto:developers@fenton-creative.co" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-lg font-semibold transition">
-                            <i class="fas fa-envelope mr-2"></i>Contact Developer Support
-                        </a>
-                        <a href="#" class="px-6 py-3 border border-slate-700 hover:border-slate-500 rounded-lg font-semibold transition">
-                            <i class="fas fa-comments mr-2"></i>Join Discord Community
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-</div>
-
-<footer class="py-12 px-4 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
-            <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-code text-white text-lg"></i>
-                </div>
-                <div>
-                    <span class="font-bold text-xl block leading-none">Fenton Platform</span>
-                    <span class="text-[10px] text-slate-400 tracking-wider">DEVELOPER DOCUMENTATION</span>
-                </div>
-            </div>
-            <div class="flex items-center gap-4">
-                <span class="patent-badge text-xs font-bold px-3 py-1 rounded-full text-white">PATENT PENDING</span>
             </div>
         </div>
-        <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
-            <div class="mb-4 md:mb-0">© 2025 Fenton Creative. All Rights Reserved.</div>
-            <div class="flex items-center gap-6">
-                <span>UK Patent Application Pending</span>
-                <a href="#" class="hover:text-white transition">Privacy</a>
-                <a href="#" class="hover:text-white transition">Terms</a>
-            </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Fenton Creative™. All rights reserved.</p>
         </div>
-    </div>
-</footer>
-
-<div class="protection-notice">
-    © 2025 Fenton Creative. All Rights Reserved. | UK Patent Application Pending | 
-    Confidential Developer Documentation | 
-    For licensing: licensing@fenton-creative.co
-</div>
-
+    </footer>
 </body>
 </html>
