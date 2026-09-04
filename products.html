@@ -3,508 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | Fenton Creative</title>
-    <meta name="description" content="Explore Fenton Creative's portfolio of human-led, AI-powered solutions. From enterprise infrastructure to social impact platforms.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Source+Sans+Pro:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
-    
+    <title>Products | FENTON CREATIVE™</title>
     <style>
-        :root {
-            --primary: #0A4F4F;
-            --secondary: #FF6B6B;
-            --accent: #FFD93D;
-            --dark: #0A0A0F;
-            --light: #F8F9FA;
-            --neutral: #6C757D;
-        }
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Source Sans Pro', sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
-            background: var(--light);
+        :root {
+            --bg-primary: #05070a;
+            --bg-secondary: #0a0f1a;
+            --bg-elevated: #0d1320;
+            --accent: #00d4ff;
+            --text-primary: #f0f2f5;
+            --text-secondary: #8a94a8;
+            --border: rgba(0, 212, 255, 0.15);
         }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         
-        h1, h2, h3, h4 { font-family: 'Inter', sans-serif; font-weight: 700; }
-        
-        .navbar {
+        nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             z-index: 1000;
-            padding: 1rem 0;
+            background: rgba(5,7,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); font-weight: 500; }
+        .nav-links { display: flex; gap: 3rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        
+        .page-header {
+            padding: 150px 4rem 80px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        .page-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
         }
         
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        .products {
+            padding: 6rem 4rem;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .product-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .product-card:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        .product-card.featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .product-number {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .product-card h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        .product-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .product-link {
+            color: var(--accent);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .platform-section {
+            padding: 6rem 4rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .platform-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 3rem;
+            max-width: 600px;
+            margin: 3rem auto 0;
+        }
+        .platform-card h3 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        .platform-card p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        footer {
+            padding: 4rem;
+            border-top: 1px solid var(--border);
+            background: var(--bg-secondary);
+        }
+        .footer-bottom {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .logo {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
+        .footer-bottom p {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
         }
-        
-        .logo span { color: var(--secondary); }
-        
-        .nav-links {
+        .footer-legal {
             display: flex;
             gap: 2rem;
-            list-style: none;
         }
-        
-        .nav-links a {
-            color: var(--dark);
+        .footer-legal a {
+            color: var(--text-secondary);
             text-decoration: none;
-            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             transition: color 0.3s;
         }
-        
-        .nav-links a:hover { color: var(--primary); }
-        
-        .hero {
-            padding: 140px 2rem 60px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 300;
-        }
-        
-        .hero h1 span {
-            color: var(--primary);
-            font-weight: 700;
-        }
-        
-        .hero p {
-            color: var(--neutral);
-            font-size: 1.1rem;
-        }
-        
-        .products-section {
-            padding: 60px 2rem;
-        }
-        
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 60px;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-header p {
-            color: var(--neutral);
-            font-size: 1.1rem;
-        }
-        
-        .products-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .product-card {
-            background: white;
-            border: 1px solid rgba(0,0,0,0.1);
-            border-radius: 16px;
-            padding: 40px;
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .product-card.featured {
-            border: 2px solid var(--primary);
-            position: relative;
-        }
-        
-        .featured-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary);
-            color: white;
-            padding: 6px 20px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .product-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .product-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .product-tagline {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-        
-        .product-card p {
-            color: var(--neutral);
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-        
-        .product-features {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-        
-        .product-features li {
-            padding: 5px 0;
-            padding-left: 20px;
-            position: relative;
-            color: var(--neutral);
-            font-size: 0.9rem;
-        }
-        
-        .product-features li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        .btn {
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-block;
-            text-align: center;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: #083d3d;
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .technology-section {
-            padding: 80px 2rem;
-            background: var(--dark);
-            color: white;
-            margin-top: 60px;
-        }
-        
-        .technology-section .section-header h2,
-        .technology-section .section-header p {
-            color: white;
-        }
-        
-        .tech-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .tech-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .tech-card h3 {
-            color: var(--accent);
-            font-family: 'Space Mono', monospace;
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
-        
-        .tech-card p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
-        }
-        
-        .trademark-notice {
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 30px;
-            background: rgba(10,79,79,0.05);
-            border: 1px solid rgba(10,79,79,0.2);
-            border-radius: 12px;
-            text-align: center;
-        }
-        
-        .trademark-notice h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .trademark-notice p {
-            color: var(--neutral);
-            font-size: 0.9rem;
-        }
-        
-        .tm-list {
-            font-family: 'Space Mono', monospace;
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        footer {
-            padding: 60px 2rem 30px;
-            background: var(--dark);
-            color: rgba(255,255,255,0.6);
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .footer-logo {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-        
-        .footer-logo span { color: var(--secondary); }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover { color: var(--accent); }
-        
-        .footer-bottom {
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-        }
-        
-        .ip-notice {
-            margin-top: 20px;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.4);
-        }
+        .footer-legal a:hover { color: var(--accent); }
         
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+            nav { padding: 1rem 2rem; }
             .nav-links { display: none; }
+            .page-header { padding: 120px 2rem 60px; }
+            .products { padding: 4rem 2rem; }
+            .product-grid { grid-template-columns: 1fr; }
+            .product-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">FENTON<span>CREATIVE</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
+    <nav>
+        <a href="index.html" class="logo">FENTON<span>CREATIVE</span>™</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="developers.html">Developers</a></li>
+            <li><a href="tech-heroes.html">Tech Heroes</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
 
-    <section class="hero">
-        <h1>Our <span>Solutions</span></h1>
-        <p>Human-led, AI-powered products designed for real-world impact. From enterprise infrastructure to social transformation.</p>
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Products</h1>
+            <p>AI-powered security and optimization solutions</p>
+        </div>
     </section>
 
-    <section class="products-section">
-        <div class="section-header">
-            <h2>Flagship Products</h2>
-            <p>Production-ready solutions transforming how organisations operate</p>
-        </div>
-        
-        <div class="products-grid">
-            <div class="product-card featured">
-                <div class="featured-badge">Core Product</div>
-                <div class="product-icon">🌱</div>
-                <h3>DataPrune</h3>
-                <div class="product-tagline">Sustainable AI Infrastructure</div>
-                <p>Reduce AI infrastructure emissions by 40-60% with intelligent edge optimisation. Enterprise-grade efficiency without compromising performance.</p>
-                <ul class="product-features">
-                    <li>AROL-powered edge optimisation</li>
-                    <li>SecureBridge encryption</li>
-                    <li>Real-time analytics dashboard</li>
-                    <li>Carbon reporting & ESG compliance</li>
-                </ul>
-                <a href="dataprune.html" class="btn btn-primary">Learn More</a>
+    <section class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Individual Solutions</h2>
             </div>
-            
-            <div class="product-card featured">
-                <div class="featured-badge">Social Impact</div>
-                <div class="product-icon">💎</div>
-                <h3>ValueCompanion</h3>
-                <div class="product-tagline">Prevention & Social Value OS</div>
-                <p>AI-powered ecosystem connecting ideas, funding, delivery and evidence. Social impact, measured and amplified in real-time.</p>
-                <ul class="product-features">
-                    <li>Real-time impact tracking</li>
-                    <li>Funding-delivery matchmaking</li>
-                    <li>Evidence-based reporting</li>
-                    <li>Stakeholder collaboration hub</li>
-                </ul>
-                <a href="valuecompanion.html" class="btn btn-primary">Learn More</a>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-icon">🛡️</div>
-                <h3>AEGIS</h3>
-                <div class="product-tagline">Human-AI Interface</div>
-                <p>Symbiotic intelligence framework for a new era of human-AI partnership. Collaborative problem-solving at scale.</p>
-                <ul class="product-features">
-                    <li>ContextVault memory architecture</li>
-                    <li>Multi-modal interaction</li>
-                    <li>Adaptive learning systems</li>
-                    <li>Human oversight controls</li>
-                </ul>
-                <a href="aegis.html" class="btn btn-secondary">Learn More</a>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-icon">🔒</div>
-                <h3>ShieldPost</h3>
-                <div class="product-tagline">Privacy-Preserving Publishing</div>
-                <p>Client-side content analysis for social media with advisory interface and configurable ruleset architecture.</p>
-                <ul class="product-features">
-                    <li>Local processing (no data leaves device)</li>
-                    <li>Configurable policy engine</li>
-                    <li>Non-blocking advisory interface</li>
-                    <li>Multi-platform support</li>
-                </ul>
-                <a href="shieldpost.html" class="btn btn-secondary">Learn More</a>
+            <div class="product-grid">
+                <a href="shieldpost.html" class="product-card featured">
+                    <div>
+                        <span class="badge">Patent Pending</span>
+                        <p class="product-number">01</p>
+                        <h3>ShieldPost™</h3>
+                        <p>Real-time AI malware detection and threat neutralization. Military-grade security that runs at the edge, intercepting threats before they reach your infrastructure.</p>
+                        <span class="product-link">Learn More →</span>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 150px; height: 150px; border: 1px solid var(--border); border-radius: 50%; margin: 0 auto;"></div>
+                    </div>
+                </a>
+                
+                <a href="mtavs.html" class="product-card">
+                    <p class="product-number">02</p>
+                    <h3>MTAVS™</h3>
+                    <p>Multi-threaded AI validation with sub-millisecond response times.</p>
+                    <span class="product-link">Learn More →</span>
+                </a>
+                
+                <a href="dataprune.html" class="product-card">
+                    <p class="product-number">03</p>
+                    <h3>DataPrune™</h3>
+                    <p>Intelligent data optimization. Pay only for actual savings achieved.</p>
+                    <span class="product-link">Learn More →</span>
+                </a>
+                
+                <a href="valuecompanion.html" class="product-card">
+                    <p class="product-number">04</p>
+                    <h3>ValueCompanion™</h3>
+                    <p>AI-powered business intelligence and predictive analytics.</p>
+                    <span class="product-link">Learn More →</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="technology-section">
-        <div class="section-header">
-            <h2>Core Technology</h2>
-            <p>Proprietary IP powering our solutions</p>
-        </div>
-        
-        <div class="tech-grid">
-            <div class="tech-card">
-                <h3>AROL™</h3>
-                <p>Adaptive Response & Optimisation Layer. Self-learning edge intelligence.</p>
+    <section class="platform-section">
+        <div class="container">
+            <h2 style="font-weight: 300; font-size: 1.8rem;">The Complete Platform</h2>
+            <div class="platform-card">
+                <h3>AEGIS™</h3>
+                <p>Comprehensive AI protection combining LLM DLP, AROL optimization, and SecureBridge encryption. Local-first architecture for total data sovereignty.</p>
+                <a href="aegis.html" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">Explore AEGIS →</a>
             </div>
-            <div class="tech-card">
-                <h3>SecureBridge™</h3>
-                <p>Zero-trust hybrid encryption for sovereign data transfer.</p>
-            </div>
-            <div class="tech-card">
-                <h3>ContextVault™</h3>
-                <p>Persistent memory architecture for contextual AI understanding.</p>
-            </div>
-            <div class="tech-card">
-                <h3>PolicyEngine™</h3>
-                <p>Dynamic policy enforcement with real-time adaptation.</p>
-            </div>
-            <div class="tech-card">
-                <h3>EdgeShield™</h3>
-                <p>Local-first AI processing layer for privacy-preserving computation.</p>
-            </div>
-            <div class="tech-card">
-                <h3>M-TAVS™</h3>
-                <p>Multi-provider AI consensus with dissent visualisation for threat verification.</p>
-            </div>
-        </div>
-        
-        <div class="trademark-notice">
-            <h3>📝 Intellectual Property Notice</h3>
-            <p>All technologies listed above are proprietary to Fenton Creative Ltd and protected by UK and international patent and copyright law. <span class="tm-list">AROL™, SecureBridge™, ContextVault™, PolicyEngine™, EdgeShield™, M-TAVS™, DataPrune™, ValueCompanion™, AEGIS™, and ShieldPost™</span> are registered trademarks. Unauthorised use, reproduction, or distribution is strictly prohibited.</p>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <a href="index.html" class="footer-logo">FENTON<span>CREATIVE</span></a>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="products.html">Products</a>
-                <a href="contact.html">Contact</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="ip-notice.html">IP Notice</a>
-            </div>
+        <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2026 Fenton Creative Ltd. All rights reserved.</p>
-                <p class="ip-notice">
-                    All trademarks, service marks, and trade names are proprietary to Fenton Creative Ltd.<br>
-                    Protected by UK and international intellectual property laws. Patent pending.
-                </p>
+                <p>&copy; 2026 FENTON CREATIVE™. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="legal.html">Legal</a>
+                </div>
             </div>
         </div>
     </footer>
