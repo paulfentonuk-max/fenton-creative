@@ -3,269 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataPrune™ | Enterprise Data Optimization | Fenton Creative™</title>
-    <meta name="description" content="DataPrune™ - Enterprise data optimization and storage management. Reduce costs and improve performance with intelligent data lifecycle management.">
+    <title>DataPrune™ | Enterprise Data Optimization | FENTON CREATIVE™</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #05070a;
+            --bg-secondary: #0a0f1a;
+            --bg-elevated: #0d1320;
+            --accent: #00d4ff;
+            --text-primary: #f0f2f5;
+            --text-secondary: #8a94a8;
+            --border: rgba(0, 212, 255, 0.15);
         }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
-            color: #333;
-            background: #fafafa;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         
         nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(5,7,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); font-weight: 500; }
+        .nav-links { display: flex; gap: 3rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        
+        .product-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 4rem 60px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+        .hero-content { max-width: 700px; }
+        .product-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+        .product-hero h1 span { color: var(--accent); font-weight: 200; display: block; }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .pricing-highlight {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 3rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .pricing-value {
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--accent);
+            display: block;
+        }
+        .pricing-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        .features {
+            padding: 6rem 4rem;
+            background: var(--bg-secondary);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .feature-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 2rem;
+        }
+        .feature-card h3 {
+            color: var(--accent);
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            padding: 4rem;
+            border-top: 1px solid var(--border);
+            background: var(--bg-secondary);
+        }
+        .footer-bottom {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #fff;
-            text-decoration: none;
+        .footer-bottom p {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
         }
-        
-        .logo span {
-            color: #e94560;
-        }
-        
-        .nav-links {
+        .footer-legal {
             display: flex;
-            list-style: none;
             gap: 2rem;
         }
-        
-        .nav-links a {
-            color: #fff;
+        .footer-legal a {
+            color: var(--text-secondary);
             text-decoration: none;
-            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             transition: color 0.3s;
         }
-        
-        .nav-links a:hover {
-            color: #e94560;
-        }
-        
-        .product-hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 150px 0 100px;
-            text-align: center;
-        }
-        
-        .product-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .product-hero p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .features {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1a1a2e;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .feature-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        
-        .feature-card h3 {
-            color: #e94560;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card p {
-            color: #666;
-        }
-        
-        .pricing-highlight {
-            background: #1a1a2e;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .pricing-highlight h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .pricing-highlight .price {
-            font-size: 4rem;
-            color: #e94560;
-            font-weight: 700;
-        }
-        
-        .pricing-highlight p {
-            opacity: 0.9;
-            margin-top: 1rem;
-        }
-        
-        .cta-section {
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: #e94560;
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
-        }
-        
-        footer {
-            background: #0f0f1a;
-            color: #888;
-            padding: 40px 0;
-            text-align: center;
-        }
+        .footer-legal a:hover { color: var(--accent); }
         
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .product-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .pricing-highlight .price {
-                font-size: 3rem;
-            }
+            nav { padding: 1rem 2rem; }
+            .nav-links { display: none; }
+            .product-hero { padding: 100px 2rem 40px; }
+            .features { padding: 4rem 2rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="index.html" class="logo">Fenton<span>Creative</span>™</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="developers.html">Developers</a></li>
-                <li><a href="tech-heroes.html">Tech Heroes</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <a href="index.html" class="logo">FENTON<span>CREATIVE</span>™</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="developers.html">Developers</a></li>
+            <li><a href="tech-heroes.html">Tech Heroes</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <section class="product-hero">
         <div class="container">
-            <h1>DataPrune™</h1>
-            <p>Enterprise data optimization and storage management. Reduce costs and improve performance with intelligent data lifecycle management.</p>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Optimization Features</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>Intelligent Archival</h3>
-                    <p>AI-powered analysis identifies cold data and automatically moves it to cost-effective storage tiers without impacting accessibility.</p>
-                </div>
+            <div class="hero-content">
+                <h1>
+                    DataPrune™
+                    <span>Intelligent Data Optimization</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Enterprise data optimization and storage management. Reduce costs and improve performance with intelligent data lifecycle management.
+                </p>
                 
-                <div class="feature-card">
-                    <h3>Deduplication</h3>
-                    <p>Advanced algorithms eliminate redundant data across your entire infrastructure. Typical savings: 40-70% on storage costs.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Compression</h3>
-                    <p>Lossless compression optimized for your data types. Real-time compression with minimal CPU overhead.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Lifecycle Policies</h3>
-                    <p>Define granular retention policies based on data age, access patterns, compliance requirements, and business value.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Multi-Cloud</h3>
-                    <p>Works across AWS S3, Azure Blob, Google Cloud Storage, and private S3-compatible endpoints. Unified management.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Compliance Tools</h3>
-                    <p>GDPR right-to-be-forgotten automation, legal hold management, and audit trails for regulatory requirements.</p>
+                <div class="pricing-highlight">
+                    <span class="pricing-value">£1/GB</span>
+                    <p class="pricing-label">Pay only for actual savings achieved.<br>No upfront costs. No minimums.<br>If we don't save you money, you don't pay.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pricing-highlight">
+    <section class="features">
         <div class="container">
-            <h2>Performance-Based Pricing</h2>
-            <div class="price">£1/GB</div>
-            <p>Only pay for the storage you actually save. No upfront costs, no minimums.<br>If we don't save you money, you don't pay.</p>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="container">
-            <h2 style="margin-bottom: 2rem;">Start optimizing your data today</h2>
-            <a href="contact.html" class="cta-button">Get DataPrune™</a>
+            <h2 style="text-align: center; font-weight: 300; font-size: 1.8rem;">Optimization Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Intelligent Archival</h3>
+                    <p>AI-powered analysis identifies cold data and automatically moves it to cost-effective storage tiers.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Deduplication</h3>
+                    <p>Advanced algorithms eliminate redundant data. Typical savings: 40-70% on storage costs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Compression</h3>
+                    <p>Lossless compression optimized for your data types with minimal CPU overhead.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Lifecycle Policies</h3>
+                    <p>Define granular retention policies based on data age, access patterns, and compliance requirements.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Multi-Cloud</h3>
+                    <p>Works across AWS S3, Azure Blob, Google Cloud, and private S3-compatible endpoints.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Compliance Tools</h3>
+                    <p>GDPR right-to-be-forgotten automation and audit trails for regulatory requirements.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Fenton Creative™. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FENTON CREATIVE™. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="legal.html">Legal</a>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
