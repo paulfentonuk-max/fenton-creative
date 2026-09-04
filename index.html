@@ -4,6 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FENTON CREATIVE™ | AI Security at the Edge</title>
+    <meta name="description" content="Transform your AI infrastructure without transforming your operations. Edge-native security with 90% cost reduction, 99.7% threat detection, zero data exposure.">
+    
+    <!-- Cookie Consent Styles -->
+    <style>
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-elevated);
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            z-index: 9999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+        .cookie-banner p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .cookie-banner a {
+            color: var(--accent);
+        }
+        .cookie-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        .cookie-btn {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .cookie-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .cookie-btn.accept {
+            background: var(--accent);
+            color: var(--bg-primary);
+            border-color: var(--accent);
+        }
+        .cookie-btn.accept:hover {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+    </style>
+    
     <style>
         * {
             margin: 0;
@@ -23,12 +84,22 @@
             --border: rgba(0, 212, 255, 0.15);
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
         
         /* Animated mesh background */
@@ -127,6 +198,18 @@
         
         .hero-content {
             z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .hero-label {
@@ -138,6 +221,7 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
         
         .hero h1 {
@@ -146,6 +230,7 @@
             line-height: 1.1;
             margin-bottom: 1.5rem;
             letter-spacing: -2px;
+            animation: fadeInUp 1s ease-out 0.4s both;
         }
         
         .hero h1 span {
@@ -161,12 +246,35 @@
             margin-bottom: 3rem;
             font-weight: 300;
             line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .key-message {
+            background: var(--bg-elevated);
+            border-left: 2px solid var(--accent);
+            padding: 1.5rem 2rem;
+            margin-bottom: 3rem;
+            max-width: 500px;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+        
+        .key-message p {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            font-weight: 300;
+            margin: 0;
+        }
+        
+        .key-message .highlight {
+            color: var(--accent);
         }
         
         .cta-group {
             display: flex;
             gap: 1.5rem;
             align-items: center;
+            animation: fadeInUp 1s ease-out 1s both;
         }
         
         .btn-primary {
@@ -256,6 +364,7 @@
             to { transform: translate(-50%, -50%) rotate(360deg); }
         }
         
+        /* Stats bar with tooltips */
         .stats {
             position: absolute;
             bottom: 4rem;
@@ -270,6 +379,7 @@
         .stat {
             display: flex;
             flex-direction: column;
+            position: relative;
         }
         
         .stat-value {
@@ -286,13 +396,45 @@
             text-transform: uppercase;
             margin-top: 0.5rem;
         }
-        <section class="aegis-highlight" style="padding: 4rem; background: var(--bg-elevated); border: 1px solid var(--border); text-align: center; margin: 4rem;">
-    <h2 style="font-weight: 300; margin-bottom: 1rem;">The Complete Platform</h2>
-    <p style="color: var(--text-secondary); margin-bottom: 2rem;">Discover AEGIS™ - our integrated AI protection suite</p>
-    <a href="aegis.html" style="color: var(--accent); text-decoration: none; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Explore AEGIS →</a>
-</section>
         
-        /* ARCHITECTURE BENEFITS SECTION - NEW */
+        .stat-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            width: 250px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: var(--border);
+        }
+        
+        .stat:hover .stat-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .stat-tooltip p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* Architecture benefits section */
         .architecture {
             padding: 8rem 4rem;
             background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));
@@ -353,6 +495,13 @@
             position: relative;
             overflow: hidden;
             transition: all 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .benefit-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .benefit-card::before {
@@ -430,7 +579,7 @@
             font-size: 0.85rem;
         }
         
-        /* Impact bar */
+        /* Impact bar with explanations */
         .impact-bar {
             background: var(--bg-elevated);
             border: 1px solid var(--border);
@@ -449,10 +598,18 @@
         }
         
         .impact-item p {
-            color: var(--text-secondary);
+            color: var(--text-primary);
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .impact-explanation {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            line-height: 1.6;
+            display: block;
         }
         
         /* Products section */
@@ -501,6 +658,9 @@
             position: relative;
             overflow: hidden;
             transition: all 0.4s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
         
         .product-card::before {
@@ -693,6 +853,10 @@
                 display: none;
             }
             
+            .key-message {
+                margin: 0 auto 3rem;
+            }
+            
             .stats {
                 position: relative;
                 bottom: auto;
@@ -760,11 +924,21 @@
     </style>
 </head>
 <body>
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn" onclick="rejectCookies()">Essential Only</button>
+            <button class="cookie-btn accept" onclick="acceptCookies()">Accept All</button>
+        </div>
+    </div>
+
     <div class="mesh-bg"></div>
     
     <nav>
         <a href="index.html" class="logo">FENTON<span>CREATIVE</span>™</a>
         <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="developers.html">Developers</a></li>
@@ -781,6 +955,19 @@
                 Securing the
                 <span>Future of Web</span>
             </h1>
+            
+            <!-- KEY MESSAGE -->
+            <div class="key-message">
+                <p>
+                    Transform your AI infrastructure without transforming your operations. 
+                    <span class="highlight">Drop-in solutions</span> that deploy instantly, 
+                    run locally, and deliver immediate ROI—
+                    <span class="highlight">90% cost reduction</span>, 
+                    <span class="highlight">99.7% threat detection</span>, 
+                    <span class="highlight">zero data exposure</span>.
+                </p>
+            </div>
+            
             <p class="hero-subtitle">
                 Real-time threat detection, intelligent validation, and performance optimization powered by WebAssembly and machine learning.
             </p>
@@ -794,27 +981,40 @@
             <div class="orb"></div>
         </div>
         
+        <!-- STATS BAR WITH TOOLTIPS -->
         <div class="stats">
             <div class="stat">
                 <span class="stat-value">&lt;1ms</span>
                 <span class="stat-label">Response Time</span>
+                <div class="stat-tooltip">
+                    <p>Edge-native processing eliminates network round-trips. Security decisions happen at the speed of light, at the edge, before threats reach your infrastructure.</p>
+                </div>
             </div>
             <div class="stat">
                 <span class="stat-value">99.9%</span>
                 <span class="stat-label">Threat Detection</span>
+                <div class="stat-tooltip">
+                    <p>AI models trained on millions of malware samples with behavioral analysis. Detects zero-day exploits and polymorphic threats with industry-leading accuracy.</p>
+                </div>
             </div>
             <div class="stat">
                 <span class="stat-value">Zero</span>
                 <span class="stat-label">External Dependencies</span>
+                <div class="stat-tooltip">
+                    <p>Self-contained runtime requires no external APIs or services. Works entirely on your infrastructure with complete autonomy and zero vendor lock-in.</p>
+                </div>
             </div>
             <div class="stat">
                 <span class="stat-value">Edge</span>
-                <span class="stat-label">First Architecture</span>
+                <span class="stat-label">Native Execution</span>
+                <div class="stat-tooltip">
+                    <p>WebAssembly-powered processing runs at the edge—on your device or closest CDN node. No data sent to central servers. Complete data sovereignty.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ARCHITECTURE BENEFITS SECTION - NEW -->
+    <!-- ARCHITECTURE BENEFITS SECTION - ENHANCED WITH PRODUCT CLAIMS -->
     <section class="architecture">
         <div class="arch-header">
             <span class="arch-label">The Fenton Architecture</span>
@@ -825,9 +1025,10 @@
         </div>
         
         <div class="benefits-grid">
+            <!-- MASSIVE COST REDUCTION -->
             <div class="benefit-card featured">
                 <div>
-                    <div class="benefit-icon">◈</div>
+                    <div class="benefit-icon">💰</div>
                     <h3>Massive Cost Reduction</h3>
                     <p>By processing security at the edge, we eliminate data transfer costs to centralised servers. No more paying for bandwidth to send traffic to inspection points. No more expensive centralized infrastructure.</p>
                     <div class="metric">
@@ -843,6 +1044,7 @@
                 </div>
             </div>
             
+            <!-- ENVIRONMENTAL IMPACT -->
             <div class="benefit-card">
                 <div class="benefit-icon">🌿</div>
                 <h3>Environmental Impact</h3>
@@ -853,6 +1055,7 @@
                 </div>
             </div>
             
+            <!-- TRUE REAL-TIME SECURITY -->
             <div class="benefit-card">
                 <div class="benefit-icon">⚡</div>
                 <h3>True Real-Time Security</h3>
@@ -863,147 +1066,247 @@
                 </div>
             </div>
             
+            <!-- SHIELDPOST PROTECTION -->
             <div class="benefit-card">
-                <div class="benefit-icon">∞</div>
-                <h3>Symbiotic Development</h3>
-                <p>Our AI learns from your specific traffic patterns. The more you use it, the smarter it gets—continuously adapting to your unique threat landscape.</p>
+                <div class="benefit-icon">🛡️</div>
+                <h3>ShieldPost™ Protection</h3>
+                <p>99.7% threat detection accuracy with zero false positives. Military-grade security that learns your traffic patterns.</p>
+                <div class="metric">
+                    <span class="metric-value">&lt;1ms</span>
+                    <span class="metric-label">threat neutralization</span>
+                </div>
             </div>
             
+            <!-- AROL OPTIMIZATION -->
             <div class="benefit-card">
-                <div class="benefit-icon">◉</div>
-                <h3>Radical Simplicity</h3>
-                <p>Zero configuration deployment. No complex rule sets to maintain. No certificate management. Works out of the box, scales automatically.</p>
+                <div class="benefit-icon">⚡</div>
+                <h3>AROL™ Optimization</h3>
+                <p>90% reduction in AI token costs through intelligent request compression and semantic caching. Patent-pending technology.</p>
+                <div class="metric">
+                    <span class="metric-value">90%</span>
+                    <span class="metric-label">cost reduction</span>
+                </div>
             </div>
             
+            <!-- SECUREBRIDGE ENCRYPTION -->
             <div class="benefit-card">
-                <div class="benefit-icon">⟲</div>
-                <h3>Continuous Improvement</h3>
-                <p>Models update automatically. New threat signatures propagate instantly. You're always protected against the latest attack vectors without lifting a finger.</p>
+                <div class="benefit-icon">🔒</div>
+                <h3>SecureBridge™ Encryption</h3>
+                <p>Zero-knowledge architecture with ephemeral keys. End-to-end encryption that even we can't break.</p>
+                <div class="metric">
+                    <span class="metric-value">Zero</span>
+                    <span class="metric-label">data exposure risk</span>
+                </div>
+            </div>
+            
+            <!-- DATAPRUNE INTELLIGENCE -->
+            <div class="benefit-card">
+                <div class="benefit-icon">💾</div>
+                <h3>DataPrune™ Intelligence</h3>
+                <p>Pay only for actual storage savings achieved. AI identifies cold data and optimizes tiering automatically.</p>
+                <div class="metric">
+                    <span class="metric-value">70%</span>
+                    <span class="metric-label">typical savings</span>
+                </div>
+            </div>
+            
+            <!-- EDGESHIELD PROCESSING -->
+            <div class="benefit-card">
+                <div class="benefit-icon">🧠</div>
+                <h3>EdgeShield™ Processing</h3>
+                <p>Air-gapped capable AI that runs entirely on-device. No internet required. Complete data sovereignty.</p>
+                <div class="metric">
+                    <span class="metric-value">100%</span>
+                    <span class="metric-label">offline capable</span>
+                </div>
+            </div>
+            
+            <!-- LLM DLP SECURITY -->
+            <div class="benefit-card">
+                <div class="benefit-icon">🛡️</div>
+                <h3>LLM DLP Security</h3>
+                <p>Real-time scanning of all AI interactions. Prevents PII, PCI, PHI, and IP leakage before it happens.</p>
+                <div class="metric">
+                    <span class="metric-value">Real-time</span>
+                    <span class="metric-label">data protection</span>
+                </div>
             </div>
         </div>
         
+        <!-- IMPACT BAR WITH EXPLANATIONS -->
         <div class="impact-bar">
             <div class="impact-item">
                 <h4>Zero</h4>
                 <p>External Dependencies</p>
+                <span class="impact-explanation">Self-contained runtime. No calls to external APIs, no third-party services, no vendor lock-in. Works entirely on your infrastructure.</span>
             </div>
             <div class="impact-item">
                 <h4>Edge</h4>
                 <p>Native Execution</p>
+                <span class="impact-explanation">Processes data at the edge—on your device or closest CDN node. Eliminates network latency. Sub-millisecond response times.</span>
             </div>
             <div class="impact-item">
                 <h4>WASM</h4>
                 <p>Near-Native Speed</p>
+                <span class="impact-explanation">WebAssembly delivers 95% of native C++ performance in the browser. No plugins, no installations, instant execution.</span>
             </div>
             <div class="impact-item">
                 <h4>AI</h4>
                 <p>Adaptive Learning</p>
+                <span class="impact-explanation">Models improve based on your specific traffic patterns. Detects novel threats without rule updates. Continuously evolving protection.</span>
             </div>
         </div>
     </section>
 
     <!-- PRODUCTS SECTION -->
     <section class="products">
-        <div class="section-header">
-            <div>
-                <p class="section-label">Our Solutions</p>
-                <h2 class="section-title">Intelligent Security,<br>Redefined.</h2>
-            </div>
-            <p class="section-desc">
-                From real-time malware detection to data optimization, our suite of AI-powered tools protects and enhances your digital infrastructure.
-            </p>
-        </div>
-        
-        <div class="product-grid">
-            <div class="product-card featured">
+        <div class="container">
+            <div class="section-header">
                 <div>
-                    <span class="badge">Patent Pending</span>
-                    <p class="product-number">01</p>
-                    <h3>ShieldPost™</h3>
-                    <p>Real-time AI malware detection and threat neutralization. Military-grade security that runs at the edge, intercepting threats before they reach your infrastructure.</p>
-                    <a href="shieldpost.html" class="product-link">Learn More →</a>
+                    <p class="section-label">Our Solutions</p>
+                    <h2 class="section-title">Intelligent Security,<br>Redefined.</h2>
                 </div>
-                <div style="text-align: center;">
-                    <div style="width: 180px; height: 180px; border: 1px solid var(--border); border-radius: 50%; margin: 0 auto; position: relative;">
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: radial-gradient(circle, rgba(0,212,255,0.3), transparent); border-radius: 50%;"></div>
+                <p class="section-desc">
+                    From real-time malware detection to data optimization, our suite of AI-powered tools protects and enhances your digital infrastructure.
+                </p>
+            </div>
+            
+            <div class="product-grid">
+                <a href="shieldpost.html" class="product-card featured">
+                    <div>
+                        <span class="badge">Patent Pending</span>
+                        <p class="product-number">01</p>
+                        <h3>ShieldPost™</h3>
+                        <p>Real-time AI malware detection and threat neutralization. Military-grade security that runs at the edge, intercepting threats before they reach your infrastructure.</p>
+                        <span class="product-link">Learn More →</span>
                     </div>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <p class="product-number">02</p>
-                <h3>MTAVS™</h3>
-                <p>Multi-threaded AI validation with sub-millisecond response times.</p>
-                <a href="mtavs.html" class="product-link">Learn More →</a>
-            </div>
-            
-            <div class="product-card">
-                <p class="product-number">03</p>
-                <h3>DataPrune™</h3>
-                <p>Intelligent data optimization. Pay only for what you save.</p>
-                <a href="dataprune.html" class="product-link">Learn More →</a>
-            </div>
-            
-            <div class="product-card">
-                <p class="product-number">04</p>
-                <h3>ValueCompanion™</h3>
-                <p>AI-powered business intelligence and predictive analytics.</p>
-                <a href="valuecompanion.html" class="product-link">Learn More →</a>
+                    <div style="text-align: center;">
+                        <div style="width: 180px; height: 180px; border: 1px solid var(--border); border-radius: 50%; margin: 0 auto; position: relative;">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: radial-gradient(circle, rgba(0,212,255,0.3), transparent); border-radius: 50%;"></div>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mtavs.html" class="product-card">
+                    <p class="product-number">02</p>
+                    <h3>MTAVS™</h3>
+                    <p>Multi-threaded AI validation with sub-millisecond response times.</p>
+                    <span class="product-link">Learn More →</span>
+                </a>
+                
+                <a href="dataprune.html" class="product-card">
+                    <p class="product-number">03</p>
+                    <h3>DataPrune™</h3>
+                    <p>Intelligent data optimization. Pay only for actual savings achieved.</p>
+                    <span class="product-link">Learn More →</span>
+                </a>
+                
+                <a href="valuecompanion.html" class="product-card">
+                    <p class="product-number">04</p>
+                    <h3>ValueCompanion™</h3>
+                    <p>AI-powered business intelligence and predictive analytics.</p>
+                    <span class="product-link">Learn More →</span>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- CTA SECTION -->
     <section class="cta-section">
-        <h2>Join the Tech Heroes Program</h2>
-        <p>Early access to new products, direct engineering support, and exclusive swag for developers who push the boundaries.</p>
-        <a href="tech-heroes.html" class="btn-primary">Apply Now</a>
+        <div class="container">
+            <h2>Join the Tech Heroes Program</h2>
+            <p>Early access to new products, direct engineering support, and exclusive swag for developers who push the boundaries.</p>
+            <a href="tech-heroes.html" class="btn-primary">Apply Now</a>
+        </div>
     </section>
 
-    <!-- FOOTER WITH WORKING LINKS -->
+    <!-- FOOTER WITH LEGAL LINKS -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">FENTON<span>CREATIVE</span>™</a>
-                <p>AI-powered security and performance solutions that run at the edge. Built for developers, by developers.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">FENTON<span>CREATIVE</span>™</a>
+                    <p>AI-powered security and performance solutions that run at the edge. Built for developers, by developers.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="shieldpost.html">ShieldPost™</a></li>
+                        <li><a href="mtavs.html">MTAVS™</a></li>
+                        <li><a href="dataprune.html">DataPrune™</a></li>
+                        <li><a href="valuecompanion.html">ValueCompanion™</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="developers.html">Developers</a></li>
+                        <li><a href="tech-heroes.html">Tech Heroes</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="sitemap.html">Site Map</a></li>
+                    </ul>
+                </div>
             </div>
             
-            <div class="footer-col">
-                <h4>Products</h4>
-                <ul>
-                    <li><a href="shieldpost.html">ShieldPost™</a></li>
-                    <li><a href="mtavs.html">MTAVS™</a></li>
-                    <li><a href="dataprune.html">DataPrune™</a></li>
-                    <li><a href="valuecompanion.html">ValueCompanion™</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="developers.html">Developers</a></li>
-                    <li><a href="tech-heroes.html">Tech Heroes</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="sitemap.html">Site Map</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2024 FENTON CREATIVE™. All rights reserved.</p>
-            <div class="footer-legal">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="legal.html">Legal</a>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FENTON CREATIVE™. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="legal.html">Legal</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent & Scroll Animation Scripts -->
+    <script>
+        // Cookie Consent
+        function showCookieBanner() {
+            const banner = document.getElementById('cookieBanner');
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                setTimeout(() => banner.classList.add('show'), 1000);
+            }
+        }
+        
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+        
+        function rejectCookies() {
+            localStorage.setItem('cookieConsent', 'essential');
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+        
+        // Show banner on load
+        showCookieBanner();
+        
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.benefit-card').forEach((el) => observer.observe(el));
+    </script>
 </body>
 </html>
