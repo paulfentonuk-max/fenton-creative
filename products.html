@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Fenton Creative</title>
+    <meta name="description" content="Explore Fenton Creative's portfolio of human-led, AI-powered solutions. From enterprise infrastructure to social impact platforms.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Source+Sans+Pro:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0A4F4F;
+            --secondary: #FF6B6B;
+            --accent: #FFD93D;
+            --dark: #0A0A0F;
+            --light: #F8F9FA;
+            --neutral: #6C757D;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background: var(--light);
+        }
+        
+        h1, h2, h3, h4 { font-family: 'Inter', sans-serif; font-weight: 700; }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span { color: var(--secondary); }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover { color: var(--primary); }
+        
+        .hero {
+            padding: 140px 2rem 60px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .hero p {
+            color: var(--neutral);
+            font-size: 1.1rem;
+        }
+        
+        .products-section {
+            padding: 60px 2rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: var(--neutral);
+            font-size: 1.1rem;
+        }
+        
+        .products-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: white;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 16px;
+            padding: 40px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .product-card.featured {
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .product-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-tagline {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .product-card p {
+            color: var(--neutral);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .product-features li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            color: var(--neutral);
+            font-size: 0.9rem;
+        }
+        
+        .product-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #083d3d;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .technology-section {
+            padding: 80px 2rem;
+            background: var(--dark);
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .technology-section .section-header h2,
+        .technology-section .section-header p {
+            color: white;
+        }
+        
+        .tech-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tech-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .tech-card h3 {
+            color: var(--accent);
+            font-family: 'Space Mono', monospace;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        
+        .tech-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+        
+        .trademark-notice {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 30px;
+            background: rgba(10,79,79,0.05);
+            border: 1px solid rgba(10,79,79,0.2);
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .trademark-notice h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .trademark-notice p {
+            color: var(--neutral);
+            font-size: 0.9rem;
+        }
+        
+        .tm-list {
+            font-family: 'Space Mono', monospace;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        footer {
+            padding: 60px 2rem 30px;
+            background: var(--dark);
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span { color: var(--secondary); }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover { color: var(--accent); }
+        
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+        
+        .ip-notice {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">FENTON<span>CREATIVE</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Our <span>Solutions</span></h1>
+        <p>Human-led, AI-powered products designed for real-world impact. From enterprise infrastructure to social transformation.</p>
+    </section>
+
+    <section class="products-section">
+        <div class="section-header">
+            <h2>Flagship Products</h2>
+            <p>Production-ready solutions transforming how organisations operate</p>
+        </div>
+        
+        <div class="products-grid">
+            <div class="product-card featured">
+                <div class="featured-badge">Core Product</div>
+                <div class="product-icon">🌱</div>
+                <h3>DataPrune</h3>
+                <div class="product-tagline">Sustainable AI Infrastructure</div>
+                <p>Reduce AI infrastructure emissions by 40-60% with intelligent edge optimisation. Enterprise-grade efficiency without compromising performance.</p>
+                <ul class="product-features">
+                    <li>AROL-powered edge optimisation</li>
+                    <li>SecureBridge encryption</li>
+                    <li>Real-time analytics dashboard</li>
+                    <li>Carbon reporting & ESG compliance</li>
+                </ul>
+                <a href="dataprune.html" class="btn btn-primary">Learn More</a>
+            </div>
+            
+            <div class="product-card featured">
+                <div class="featured-badge">Social Impact</div>
+                <div class="product-icon">💎</div>
+                <h3>ValueCompanion</h3>
+                <div class="product-tagline">Prevention & Social Value OS</div>
+                <p>AI-powered ecosystem connecting ideas, funding, delivery and evidence. Social impact, measured and amplified in real-time.</p>
+                <ul class="product-features">
+                    <li>Real-time impact tracking</li>
+                    <li>Funding-delivery matchmaking</li>
+                    <li>Evidence-based reporting</li>
+                    <li>Stakeholder collaboration hub</li>
+                </ul>
+                <a href="valuecompanion.html" class="btn btn-primary">Learn More</a>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-icon">🛡️</div>
+                <h3>AEGIS</h3>
+                <div class="product-tagline">Human-AI Interface</div>
+                <p>Symbiotic intelligence framework for a new era of human-AI partnership. Collaborative problem-solving at scale.</p>
+                <ul class="product-features">
+                    <li>ContextVault memory architecture</li>
+                    <li>Multi-modal interaction</li>
+                    <li>Adaptive learning systems</li>
+                    <li>Human oversight controls</li>
+                </ul>
+                <a href="aegis.html" class="btn btn-secondary">Learn More</a>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-icon">🔒</div>
+                <h3>ShieldPost</h3>
+                <div class="product-tagline">Privacy-Preserving Publishing</div>
+                <p>Client-side content analysis for social media with advisory interface and configurable ruleset architecture.</p>
+                <ul class="product-features">
+                    <li>Local processing (no data leaves device)</li>
+                    <li>Configurable policy engine</li>
+                    <li>Non-blocking advisory interface</li>
+                    <li>Multi-platform support</li>
+                </ul>
+                <a href="shieldpost.html" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="technology-section">
+        <div class="section-header">
+            <h2>Core Technology</h2>
+            <p>Proprietary IP powering our solutions</p>
+        </div>
+        
+        <div class="tech-grid">
+            <div class="tech-card">
+                <h3>AROL™</h3>
+                <p>Adaptive Response & Optimisation Layer. Self-learning edge intelligence.</p>
+            </div>
+            <div class="tech-card">
+                <h3>SecureBridge™</h3>
+                <p>Zero-trust hybrid encryption for sovereign data transfer.</p>
+            </div>
+            <div class="tech-card">
+                <h3>ContextVault™</h3>
+                <p>Persistent memory architecture for contextual AI understanding.</p>
+            </div>
+            <div class="tech-card">
+                <h3>PolicyEngine™</h3>
+                <p>Dynamic policy enforcement with real-time adaptation.</p>
+            </div>
+            <div class="tech-card">
+                <h3>EdgeShield™</h3>
+                <p>Local-first AI processing layer for privacy-preserving computation.</p>
+            </div>
+            <div class="tech-card">
+                <h3>M-TAVS™</h3>
+                <p>Multi-provider AI consensus with dissent visualisation for threat verification.</p>
+            </div>
+        </div>
+        
+        <div class="trademark-notice">
+            <h3>📝 Intellectual Property Notice</h3>
+            <p>All technologies listed above are proprietary to Fenton Creative Ltd and protected by UK and international patent and copyright law. <span class="tm-list">AROL™, SecureBridge™, ContextVault™, PolicyEngine™, EdgeShield™, M-TAVS™, DataPrune™, ValueCompanion™, AEGIS™, and ShieldPost™</span> are registered trademarks. Unauthorised use, reproduction, or distribution is strictly prohibited.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <a href="index.html" class="footer-logo">FENTON<span>CREATIVE</span></a>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="ip-notice.html">IP Notice</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Fenton Creative Ltd. All rights reserved.</p>
+                <p class="ip-notice">
+                    All trademarks, service marks, and trade names are proprietary to Fenton Creative Ltd.<br>
+                    Protected by UK and international intellectual property laws. Patent pending.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

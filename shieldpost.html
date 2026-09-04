@@ -1,0 +1,477 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <meta name="description" content="ShieldPost - Patent-pending client-side privacy-preserving content analysis for social media. Local AI processing with WebAssembly runtime.">\
+    <meta name="copyright" content="\'a9 2025 Fenton Creative. All Rights Reserved. UK Patent Application Pending.">\
+    <title>ShieldPost | Fenton Creative</title>\
+    \
+    <script src="https://cdn.tailwindcss.com"></script>\
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">\
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />\
+    <style>\
+        body \{ font-family: 'Inter', sans-serif; -webkit-user-select: none; -moz-user-select: none; user-select: none; \}\
+        .protected-content \{ -webkit-user-select: none !important; -moz-user-select: none !important; user-select: none !important; \}\
+        .gradient-text \{ background: linear-gradient(135deg, #F59E0B, #EF4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; \}\
+        .patent-badge \{ background: linear-gradient(135deg, #F59E0B, #EF4444); \}\
+        .glass \{ background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); \}\
+        .watermark \{\
+            position: fixed; top: 50%; left: 50%;\
+            transform: translate(-50%, -50%) rotate(-45deg);\
+            font-size: 100px; color: rgba(245, 158, 11, 0.03);\
+            pointer-events: none; z-index: 9998; font-weight: 800; white-space: nowrap;\
+        \}\
+        .feature-card \{ transition: all 0.4s ease; \}\
+        .feature-card:hover \{ transform: translateY(-4px); box-shadow: 0 20px 40px rgba(245, 158, 11, 0.1); \}\
+        .classifier-icon \{ transition: all 0.3s ease; \}\
+        .classifier-icon:hover \{ transform: scale(1.1); \}\
+        .protection-notice \{\
+            position: fixed; bottom: 0; left: 0; right: 0;\
+            background: rgba(0, 0, 0, 0.9); color: #94a3b8;\
+            padding: 8px; font-size: 11px; text-align: center;\
+            z-index: 9999; border-top: 1px solid #334155;\
+        \}\
+        .demo-badge \{ background: linear-gradient(135deg, #10B981, #059669); \}\
+    </style>\
+    <script>\
+        document.addEventListener('contextmenu', e => \{ e.preventDefault(); return false; \});\
+        document.addEventListener('keydown', e => \{\
+            if ((e.ctrlKey && (e.key === 's' || e.key === 'p' || e.key === 'u')) || e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) \{\
+                e.preventDefault(); return false;\
+            \}\
+        \});\
+        document.addEventListener('dragstart', e => \{ e.preventDefault(); return false; \});\
+        document.addEventListener('copy', e => \{ e.preventDefault(); return false; \});\
+        console.log('%c\uc0\u9888 \u65039  COPYRIGHT NOTICE', 'color: #F59E0B; font-size: 24px; font-weight: bold;');\
+        console.log('%c\'a9 2025 Fenton Creative. All Rights Reserved.', 'color: #94A3B8; font-size: 14px;');\
+        console.log('%cUK Patent Application Pending.', 'color: #EF4444; font-size: 12px;');\
+    </script>\
+</head>\
+<body class="bg-slate-950 text-slate-100 protected-content">\
+\
+<div class="watermark">FENTON CREATIVE \'a9 2025</div>\
+\
+<nav class="fixed w-full glass border-b border-slate-800/50 z-50">\
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">\
+        <div class="flex justify-between items-center h-16">\
+            <a href="#" class="flex items-center space-x-3">\
+                <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-red-500 rounded-xl flex items-center justify-center">\
+                    <i class="fas fa-shield-alt text-white text-lg"></i>\
+                </div>\
+                <div>\
+                    <span class="font-bold text-xl block leading-none">ShieldPost</span>\
+                    <span class="text-[10px] text-slate-400 tracking-wider">PRIVACY-PRESERVING AI</span>\
+                </div>\
+            </a>\
+            <div class="hidden md:flex space-x-8">\
+                <a href="#features" class="text-slate-300 hover:text-white transition text-sm font-medium">Features</a>\
+                <a href="#classifiers" class="text-slate-300 hover:text-white transition text-sm font-medium">Classifiers</a>\
+                <a href="#technology" class="text-slate-300 hover:text-white transition text-sm font-medium">Technology</a>\
+                <a href="#pricing" class="text-slate-300 hover:text-white transition text-sm font-medium">Pricing</a>\
+            </div>\
+            <div class="flex items-center gap-3">\
+                <span class="patent-badge text-xs font-bold px-3 py-1 rounded-full text-white hidden md:block">PATENT PENDING</span>\
+                <a href="#install" class="px-5 py-2.5 bg-amber-600 hover:bg-amber-500 rounded-lg text-sm font-semibold transition">Get ShieldPost</a>\
+            </div>\
+        </div>\
+    </div>\
+</nav>\
+\
+<section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">\
+    <div class="absolute inset-0 overflow-hidden">\
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>\
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-3xl"></div>\
+    </div>\
+    <div class="relative max-w-6xl mx-auto px-4">\
+        <div class="grid lg:grid-cols-2 gap-12 items-center">\
+            <div class="text-center lg:text-left">\
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm mb-8">\
+                    <i class="fas fa-shield-alt"></i>\
+                    UK Patent Application Pending\
+                </div>\
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">\
+                    Post with <span class="gradient-text">Confidence</span>\
+                </h1>\
+                <p class="text-xl text-slate-400 mb-6">\
+                    Client-side privacy-preserving content analysis for social media. \
+                    AI-powered guidance that runs entirely on your device\'97\
+                    your content never leaves your browser.\
+                </p>\
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">\
+                    <a href="#install" class="px-8 py-4 bg-amber-600 hover:bg-amber-500 rounded-lg font-semibold transition flex items-center gap-2">\
+                        <i class="fab fa-chrome"></i> Add to Chrome\
+                    </a>\
+                    <a href="#demo" class="px-8 py-4 border border-slate-700 hover:border-slate-500 rounded-lg font-semibold transition">Watch Demo</a>\
+                </div>\
+                <div class="flex flex-wrap justify-center lg:justify-start gap-6 text-sm text-slate-500">\
+                    <span class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Local AI Processing</span>\
+                    <span class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Zero Data Transmission</span>\
+                    <span class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Patent-Pending Tech</span>\
+                </div>\
+            </div>\
+            <div class="relative">\
+                <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl">\
+                    <div class="flex items-center gap-3 mb-4 border-b border-slate-800 pb-4">\
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>\
+                        <div class="w-3 h-3 rounded-full bg-amber-500"></div>\
+                        <div class="w-3 h-3 rounded-full bg-emerald-500"></div>\
+                        <span class="ml-4 text-sm text-slate-500">Social Media Compose Window</span>\
+                    </div>\
+                    <div class="space-y-4">\
+                        <div class="p-4 bg-slate-950 rounded-lg border border-slate-800">\
+                            <p class="text-slate-300 mb-3">Just read that the new policy changes will affect everyone next month. This is going to be huge! #breakingnews</p>\
+                            <div class="flex items-center gap-2 mb-2">\
+                                <span class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span>\
+                                <span class="text-sm text-amber-400">ShieldPost analyzing...</span>\
+                            </div>\
+                        </div>\
+                        <div class="p-4 bg-amber-500/10 border border-amber-500/30 rounded-lg">\
+                            <div class="flex items-start gap-3">\
+                                <i class="fas fa-exclamation-triangle text-amber-400 mt-1"></i>\
+                                <div>\
+                                    <p class="font-medium text-amber-400 mb-1">Factuality Advisory</p>\
+                                    <p class="text-sm text-slate-300">Claim about policy changes lacks source. Consider adding citation or verification.</p>\
+                                    <div class="flex gap-2 mt-3">\
+                                        <button class="px-3 py-1 bg-slate-800 hover:bg-slate-700 rounded text-xs transition">Add Source</button>\
+                                        <button class="px-3 py-1 bg-slate-800 hover:bg-slate-700 rounded text-xs transition">Edit Post</button>\
+                                        <button class="px-3 py-1 border border-amber-500/50 text-amber-400 hover:bg-amber-500/10 rounded text-xs transition">Post Anyway</button>\
+                                    </div>\
+                                </div>\
+                            </div>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>\
+    </div>\
+</section>\
+\
+<section id="features" class="py-24 px-4 bg-slate-900/30">\
+    <div class="max-w-7xl mx-auto">\
+        <div class="text-center mb-16">\
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Why ShieldPost is Different</h2>\
+            <p class="text-slate-400 max-w-2xl mx-auto">Unlike cloud-based content moderation, ShieldPost analyzes everything locally\'97preserving your privacy while providing intelligent guidance.</p>\
+        </div>\
+        \
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">\
+            <div class="feature-card p-8 bg-slate-900 border border-slate-800 rounded-2xl">\
+                <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6">\
+                    <i class="fas fa-shield-alt text-emerald-400 text-2xl"></i>\
+                </div>\
+                <h3 class="text-xl font-bold mb-3">Zero Data Transmission</h3>\
+                <p class="text-slate-400">Your posts are analyzed by AI running entirely in your browser. Content never sent to remote servers.</p>\
+            </div>\
+            \
+            <div class="feature-card p-8 bg-slate-900 border border-slate-800 rounded-2xl">\
+                <div class="w-14 h-14 bg-amber-500/20 rounded-xl flex items-center justify-center mb-6">\
+                    <i class="fas fa-bolt text-amber-400 text-2xl"></i>\
+                </div>\
+                <h3 class="text-xl font-bold mb-3">Sub-50ms Analysis</h3>\
+                <p class="text-slate-400">EdgeShield WebAssembly runtime delivers instant feedback. No waiting for cloud API responses.</p>\
+            </div>\
+            \
+            <div class="feature-card p-8 bg-slate-900 border border-slate-800 rounded-2xl">\
+                <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6">\
+                    <i class="fas fa-user-shield text-blue-400 text-2xl"></i>\
+                </div>\
+                <h3 class="text-xl font-bold mb-3">Non-Blocking Advisory</h3>\
+                <p class="text-slate-400">You're always in control. ShieldPost suggests, never blocks. Post anyway option always available.</p>\
+            </div>\
+            \
+            <div class="feature-card p-8 bg-slate-900 border border-slate-800 rounded-2xl">\
+                <div class="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6">\
+                    <i class="fas fa-sliders-h text-purple-400 text-2xl"></i>\
+                </div>\
+                <h3 class="text-xl font-bold mb-3">Configurable Rules</h3>\
+                <p class="text-slate-400">Hierarchical rulesets let you customize sensitivity. Personal, professional, or organizational policies.</p>\
+            </div>\
+            \
+            <div class="feature-card p-8 bg-slate-900 border border-slate-800 rounded-2xl">\
+                <div class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-6">\
+                    <i class="fas fa-brain text-cyan-400 text-2xl"></i>\
+                </div>\
+                <h3 class="text-xl font-bold mb-3">Five Classifiers</h3>\
+                <p class="text-slate-400">Legality, Tone, Factuality, Misrepresentation, and Platform Policy\'97comprehensive multi-dimensional analysis.</p>\
+            </div>\
+            \
+            <div class="feature-card p-8 bg-slate-900 border border-slate-800 rounded-2xl">\
+                <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center mb-6">\
+                    <i class="fas fa-wifi-slash text-pink-400 text-2xl"></i>\
+                </div>\
+                <h3 class="text-xl font-bold mb-3">Works Offline</h3>\
+                <p class="text-slate-400">EdgeShield runs locally with no internet required after initial setup. Air-gap capable for maximum privacy.</p>\
+            </div>\
+        </div>\
+    </div>\
+</section>\
+\
+<section id="classifiers" class="py-24 px-4">\
+    <div class="max-w-7xl mx-auto">\
+        <div class="text-center mb-16">\
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Five-Dimensional Analysis</h2>\
+            <p class="text-slate-400 max-w-2xl mx-auto">ShieldPost evaluates content across five critical dimensions simultaneously.</p>\
+        </div>\
+        \
+        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">\
+            <div class="classifier-icon p-6 bg-slate-900 border border-slate-800 rounded-xl text-center">\
+                <div class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">\
+                    <i class="fas fa-gavel text-red-400 text-2xl"></i>\
+                </div>\
+                <h3 class="font-bold mb-2">Legality</h3>\
+                <p class="text-sm text-slate-400">Detects potentially illegal content across jurisdictions</p>\
+            </div>\
+            \
+            <div class="classifier-icon p-6 bg-slate-900 border border-slate-800 rounded-xl text-center">\
+                <div class="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-4">\
+                    <i class="fas fa-smile text-amber-400 text-2xl"></i>\
+                </div>\
+                <h3 class="font-bold mb-2">Tone</h3>\
+                <p class="text-sm text-slate-400">Analyzes emotional sentiment and communicative intent</p>\
+            </div>\
+            \
+            <div class="classifier-icon p-6 bg-slate-900 border border-slate-800 rounded-xl text-center">\
+                <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">\
+                    <i class="fas fa-check-double text-blue-400 text-2xl"></i>\
+                </div>\
+                <h3 class="font-bold mb-2">Factuality</h3>\
+                <p class="text-sm text-slate-400">Identifies claims requiring verification or sources</p>\
+            </div>\
+            \
+            <div class="classifier-icon p-6 bg-slate-900 border border-slate-800 rounded-xl text-center">\
+                <div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">\
+                    <i class="fas fa-exclamation-circle text-purple-400 text-2xl"></i>\
+                </div>\
+                <h3 class="font-bold mb-2">Misrepresentation</h3>\
+                <p class="text-sm text-slate-400">Flags potentially misleading or deceptive framing</p>\
+            </div>\
+            \
+            <div class="classifier-icon p-6 bg-slate-900 border border-slate-800 rounded-xl text-center">\
+                <div class="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">\
+                    <i class="fas fa-book text-emerald-400 text-2xl"></i>\
+                </div>\
+                <h3 class="font-bold mb-2">Platform Policy</h3>\
+                <p class="text-sm text-slate-400">Checks against specific platform community guidelines</p>\
+            </div>\
+        </div>\
+    </div>\
+</section>\
+\
+<section id="technology" class="py-24 px-4 bg-slate-900/30">\
+    <div class="max-w-7xl mx-auto">\
+        <div class="text-center mb-16">\
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Built on Fenton Platform\'99</h2>\
+            <p class="text-slate-400 max-w-2xl mx-auto">ShieldPost leverages the full power of Fenton Platform's privacy-preserving AI infrastructure.</p>\
+        </div>\
+        \
+        <div class="grid lg:grid-cols-2 gap-12 items-center">\
+            <div>\
+                <div class="space-y-6">\
+                    <div class="flex items-start gap-4">\
+                        <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center flex-shrink-0">\
+                            <i class="fas fa-microchip text-emerald-400"></i>\
+                        </div>\
+                        <div>\
+                            <h4 class="font-bold text-emerald-400 mb-1">EdgeShield Runtime</h4>\
+                            <p class="text-slate-400 text-sm">WebAssembly-based local AI inference. Content processed entirely on-device with zero transmission.</p>\
+                        </div>\
+                    </div>\
+                    \
+                    <div class="flex items-start gap-4">\
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">\
+                            <i class="fas fa-shield-alt text-purple-400"></i>\
+                        </div>\
+                        <div>\
+                            <h4 class="font-bold text-purple-400 mb-1">SecureBridge</h4>\
+                            <p class="text-slate-400 text-sm">Zero-trust encryption for any remote lookups. Hybrid X25519 + AES-256-GCM protocol.</p>\
+                        </div>\
+                    </div>\
+                    \
+                    <div class="flex items-start gap-4">\
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">\
+                            <i class="fas fa-brain text-blue-400"></i>\
+                        </div>\
+                        <div>\
+                            <h4 class="font-bold text-blue-400 mb-1">ContextVault</h4>\
+                            <p class="text-slate-400 text-sm">Encrypted local storage for user preferences and history. 90% compression with semantic preservation.</p>\
+                        </div>\
+                    </div>\
+                    \
+                    <div class="flex items-start gap-4">\
+                        <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center flex-shrink-0">\
+                            <i class="fas fa-bolt text-amber-400"></i>\
+                        </div>\
+                        <div>\
+                            <h4 class="font-bold text-amber-400 mb-1">AROL Engine</h4>\
+                            <p class="text-slate-400 text-sm">Adaptive classification routing. Selects optimal local models based on content type and sensitivity.</p>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div>\
+            \
+            <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">\
+                <h3 class="text-xl font-bold mb-6">Technical Specifications</h3>\
+                <div class="space-y-4">\
+                    <div class="flex justify-between items-center p-3 bg-slate-950 rounded-lg">\
+                        <span class="text-slate-400">Runtime</span>\
+                        <span class="text-emerald-400 font-medium">WebAssembly (WASM)</span>\
+                    </div>\
+                    <div class="flex justify-between items-center p-3 bg-slate-950 rounded-lg">\
+                        <span class="text-slate-400">Inference Latency</span>\
+                        <span class="text-emerald-400 font-medium">&lt;50ms</span>\
+                    </div>\
+                    <div class="flex justify-between items-center p-3 bg-slate-950 rounded-lg">\
+                        <span class="text-slate-400">Data Transmission</span>\
+                        <span class="text-emerald-400 font-medium">Zero (Local Only)</span>\
+                    </div>\
+                    <div class="flex justify-between items-center p-3 bg-slate-950 rounded-lg">\
+                        <span class="text-slate-400">Encryption</span>\
+                        <span class="text-emerald-400 font-medium">AES-256-GCM</span>\
+                    </div>\
+                    <div class="flex justify-between items-center p-3 bg-slate-950 rounded-lg">\
+                        <span class="text-slate-400">Offline Capable</span>\
+                        <span class="text-emerald-400 font-medium">Yes</span>\
+                    </div>\
+                    <div class="flex justify-between items-center p-3 bg-slate-950 rounded-lg">\
+                        <span class="text-slate-400">Patent Status</span>\
+                        <span class="text-amber-400 font-medium">UK Application Pending</span>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>\
+    </div>\
+</section>\
+\
+<section id="pricing" class="py-24 px-4">\
+    <div class="max-w-7xl mx-auto">\
+        <div class="text-center mb-16">\
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple Pricing</h2>\
+            <p class="text-slate-400 max-w-2xl mx-auto">Start with ShieldPost. Upgrade to the Fenton Suite as you grow.</p>\
+        </div>\
+        \
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">\
+            <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">\
+                <div class="w-14 h-14 bg-amber-500/20 rounded-2xl mb-6 flex items-center justify-center">\
+                    <i class="fas fa-user text-amber-400 text-2xl"></i>\
+                </div>\
+                <h3 class="text-xl font-bold mb-2">Professional</h3>\
+                <p class="text-slate-400 text-sm mb-6">For individual users</p>\
+                <div class="mb-6">\
+                    <span class="text-4xl font-bold">\'a349</span>\
+                    <span class="text-slate-400">/month</span>\
+                </div>\
+                <ul class="space-y-3 text-sm text-slate-300 mb-8">\
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> All 5 classifiers</li>\
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Chrome extension</li>\
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Personal rulesets</li>\
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Email support</li>\
+                </ul>\
+                <button class="w-full py-3 border border-amber-500 text-amber-400 hover:bg-amber-500/10 rounded-lg transition">Get Started</button>\
+            </div>\
+            \
+            <div class="p-8 bg-gradient-to-b from-amber-900/30 to-slate-900 border border-amber-500/50 rounded-2xl relative">\
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2">\
+                    <span class="patent-badge text-xs font-bold px-4 py-1 rounded-full text-white">POPULAR</span>\
+                </div>\
+                <div class="w-14 h-14 bg-amber-500/20 rounded-2xl mb-6 flex items-center justify-center">\
+                    <i class="fas fa-users text-amber-400 text-2xl"></i>\
+                </div>\
+                <h3 class="text-xl font-bold mb-2">Enterprise</h3>\
+                <p class="text-slate-400 text-sm mb-6">For organizations</p>\
+                <div class="mb-6">\
+                    <span class="text-4xl font-bold">Custom</span>\
+                </div>\
+                <ul class="space-y-3 text-sm text-slate-300 mb-8">\
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Everything in Professional</li>\
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> SSO integration</li>\
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Organizational policies</li>\
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Analytics dashboard</li>\
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Dedicated support</li>\
+                </ul>\
+                <button class="w-full py-3 bg-amber-600 hover:bg-amber-500 rounded-lg font-semibold transition">Contact Sales</button>\
+            </div>\
+            \
+            <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">\
+                <div class="w-14 h-14 bg-purple-500/20 rounded-2xl mb-6 flex items-center justify-center">\
+                    <i class="fas fa-crown text-purple-400 text-2xl"></i>\
+                </div>\
+                <h3 class="text-xl font-bold mb-2">Fenton Suite</h3>\
+                <p class="text-slate-400 text-sm mb-6">All products + Platform</p>\
+                <div class="mb-6">\
+                    <span class="text-4xl font-bold">\'a399</span>\
+                    <span class="text-slate-400">/month</span>\
+                </div>\
+                <ul class="space-y-3 text-sm text-slate-300 mb-8">\
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> ShieldPost</li>\
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> MTAVS Premium</li>\
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> ContextVault Sync</li>\
+                    <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Priority support</li>\
+                </ul>\
+                <button class="w-full py-3 border border-purple-500 text-purple-400 hover:bg-purple-500/10 rounded-lg transition">View Suite</button>\
+            </div>\
+        </div>\
+    </div>\
+</section>\
+\
+<section id="install" class="py-24 px-4 bg-slate-900/30">\
+    <div class="max-w-4xl mx-auto text-center">\
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Post with Confidence?</h2>\
+        <p class="text-slate-400 mb-10 max-w-2xl mx-auto">Join thousands of users who trust ShieldPost to help them communicate more effectively and responsibly.</p>\
+        <div class="flex flex-col sm:flex-row justify-center gap-4">\
+            <a href="#" class="px-8 py-4 bg-amber-600 hover:bg-amber-500 rounded-lg font-semibold transition flex items-center justify-center gap-2">\
+                <i class="fab fa-chrome text-xl"></i> Add to Chrome - It's Free\
+            </a>\
+            <a href="mailto:hello@fenton-shield.co" class="px-8 py-4 border border-slate-700 hover:border-slate-500 rounded-lg font-semibold transition">\
+                Contact Enterprise Sales\
+            </a>\
+        </div>\
+        <p class="text-sm text-slate-500 mt-6">\
+            <i class="fas fa-shield-alt mr-2 text-emerald-400"></i>\
+            No credit card required. Privacy guaranteed.\
+        </p>\
+    </div>\
+</section>\
+\
+<footer class="py-12 px-4 border-t border-slate-800">\
+    <div class="max-w-7xl mx-auto">\
+        <div class="flex flex-col md:flex-row justify-between items-center mb-8">\
+            <div class="flex items-center space-x-3 mb-4 md:mb-0">\
+                <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-red-500 rounded-xl flex items-center justify-center">\
+                    <i class="fas fa-shield-alt text-white text-lg"></i>\
+                </div>\
+                <div>\
+                    <span class="font-bold text-xl block leading-none">ShieldPost</span>\
+                    <span class="text-[10px] text-slate-400 tracking-wider">BY FENTON CREATIVE\'99</span>\
+                </div>\
+            </div>\
+            <div class="flex items-center gap-4">\
+                <span class="patent-badge text-xs font-bold px-3 py-1 rounded-full text-white">PATENT PENDING</span>\
+            </div>\
+        </div>\
+        <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">\
+            <div class="mb-4 md:mb-0">\'a9 2025 Fenton Creative\'99. All Rights Reserved.</div>\
+            <div class="flex items-center gap-6">\
+                <span>UK Patent Application Pending</span>\
+                <a href="#" class="hover:text-white transition">Privacy</a>\
+                <a href="#" class="hover:text-white transition">Terms</a>\
+                <a href="#" class="hover:text-white transition">AEGIS Covenant</a>\
+            </div>\
+        </div>\
+    </div>\
+</footer>\
+\
+<div class="protection-notice">\
+    \'a9 2025 Fenton Creative\'99. All Rights Reserved. | UK Patent Application Pending | \
+    ShieldPost\'99 - Client-Side Privacy-Preserving Content Analysis | \
+    Contact: hello@fenton-shield.co | human@fenton-shield.co | future@fenton-shield.co | ai@fenton-shield.co\
+</div>\
+\
+</body>\
+</html>}

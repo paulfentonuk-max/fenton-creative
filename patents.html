@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fenton Creative Patent Portfolio - UK Intellectual Property and patent-pending technologies">
+    <meta name="copyright" content="© 2025 Fenton Creative. All Rights Reserved. UK Patent Application Pending.">
+    <title>Patent Portfolio | Fenton Creative</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+        .protected-content { -webkit-user-select: none !important; -moz-user-select: none !important; user-select: none !important; }
+        .gradient-text { background: linear-gradient(135deg, #F59E0B, #EF4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .patent-badge { background: linear-gradient(135deg, #F59E0B, #EF4444); }
+        .glass { background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); }
+        .watermark {
+            position: fixed; top: 50%; left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 100px; color: rgba(245, 158, 11, 0.03);
+            pointer-events: none; z-index: 9998; font-weight: 800; white-space: nowrap;
+        }
+        .patent-card { transition: all 0.4s ease; border: 1px solid rgba(245, 158, 11, 0.2); }
+        .patent-card:hover { border-color: rgba(245, 158, 11, 0.6); box-shadow: 0 20px 40px rgba(245, 158, 11, 0.1); }
+        .status-filed { color: #10B981; }
+        .status-pending { color: #F59E0B; }
+        .protection-notice {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: rgba(0, 0, 0, 0.9); color: #94a3b8;
+            padding: 8px; font-size: 11px; text-align: center;
+            z-index: 9999; border-top: 1px solid #334155;
+        }
+        .confidential-banner {
+            background: linear-gradient(90deg, rgba(245, 158, 11, 0.1), rgba(239, 68, 68, 0.1));
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', e => { e.preventDefault(); return false; });
+        document.addEventListener('keydown', e => {
+            if ((e.ctrlKey && (e.key === 's' || e.key === 'p' || e.key === 'u')) || e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault(); return false;
+            }
+        });
+        document.addEventListener('dragstart', e => { e.preventDefault(); return false; });
+        document.addEventListener('copy', e => { e.preventDefault(); return false; });
+        console.log('%c⚠️ COPYRIGHT NOTICE', 'color: #F59E0B; font-size: 24px; font-weight: bold;');
+        console.log('%c© 2025 Fenton Creative. All Rights Reserved.', 'color: #94A3B8; font-size: 14px;');
+        console.log('%cUK Patent Application Pending. Confidential IP.', 'color: #EF4444; font-size: 12px;');
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 protected-content">
+
+<div class="watermark">FENTON CREATIVE © 2025</div>
+
+<nav class="fixed w-full glass border-b border-slate-800/50 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <a href="#" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-red-500 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-certificate text-white text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-xl block leading-none">Patent Portfolio</span>
+                    <span class="text-[10px] text-slate-400 tracking-wider">INTELLECTUAL PROPERTY</span>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#filed" class="text-slate-300 hover:text-white transition text-sm font-medium">Filed</a>
+                <a href="#pipeline" class="text-slate-300 hover:text-white transition text-sm font-medium">Pipeline</a>
+                <a href="#protection" class="text-slate-300 hover:text-white transition text-sm font-medium">IP Strategy</a>
+                <a href="#contact" class="text-slate-300 hover:text-white transition text-sm font-medium">Licensing</a>
+            </div>
+            <a href="mailto:hello@fenton-shield.co" class="hidden md:block px-5 py-2.5 bg-amber-600 hover:bg-amber-500 rounded-lg text-sm font-semibold transition">Contact IP Team</a>
+        </div>
+    </div>
+</nav>
+
+<section class="relative min-h-[60vh] flex items-center justify-center pt-16 overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-5xl mx-auto px-4 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm mb-8">
+            <i class="fas fa-shield-alt"></i>
+            Intellectual Property Protection
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            Patent <span class="gradient-text">Portfolio</span>
+        </h1>
+        <p class="text-xl text-slate-400 max-w-3xl mx-auto mb-10">
+            Fenton Creative's intellectual property strategy combines patent protection, 
+            trade secrets, and defensive publication to safeguard our innovations while 
+            advancing the field of privacy-preserving AI.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#filed" class="px-8 py-4 bg-amber-600 hover:bg-amber-500 rounded-lg font-semibold transition">Filed Applications</a>
+            <a href="#licensing" class="px-8 py-4 border border-slate-700 hover:border-slate-500 rounded-lg font-semibold transition">Licensing Inquiry</a>
+        </div>
+    </div>
+</section>
+
+<section id="filed" class="py-24 px-4 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Filed Patent Applications</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Patent applications submitted to the UK Intellectual Property Office.</p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="patent-card p-8 bg-slate-900 rounded-2xl mb-8">
+                <div class="flex items-start gap-4 mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-red-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <h3 class="text-2xl font-bold">ShieldPost</h3>
+                            <span class="patent-badge text-xs font-bold px-3 py-1 rounded-full text-white">FILED</span>
+                        </div>
+                        <p class="text-amber-400 font-medium mb-2">UK Patent Application Pending</p>
+                        <p class="text-slate-400 text-sm">Client-Side Privacy-Preserving Content Analysis System for Social Media Publishing with Advisory Non-Blocking Interface and Configurable Ruleset Architecture</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="p-4 bg-slate-950 rounded-xl">
+                        <p class="text-xs text-slate-500 mb-1">Status</p>
+                        <p class="status-filed font-bold flex items-center gap-2">
+                            <i class="fas fa-check-circle"></i> Application Filed
+                        </p>
+                    </div>
+                    <div class="p-4 bg-slate-950 rounded-xl">
+                        <p class="text-xs text-slate-500 mb-1">Jurisdiction</p>
+                        <p class="font-bold text-slate-300">United Kingdom</p>
+                    </div>
+                    <div class="p-4 bg-slate-950 rounded-xl">
+                        <p class="text-xs text-slate-500 mb-1">Type</p>
+                        <p class="font-bold text-slate-300">Invention Patent</p>
+                    </div>
+                </div>
+                
+                <div class="p-4 bg-slate-950 rounded-xl mb-6">
+                    <h4 class="font-bold mb-3 text-slate-300">Key Claims</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-amber-400 mt-1 text-xs"></i> Browser-based local AI processing using WebAssembly runtime</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-amber-400 mt-1 text-xs"></i> Advisory non-blocking user interface preserving user agency</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-amber-400 mt-1 text-xs"></i> Hierarchical ruleset architecture with configurable policies</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-amber-400 mt-1 text-xs"></i> Multi-dimensional classification (Legality, Tone, Factuality, Misrepresentation, Platform Policy)</li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-amber-400 mt-1 text-xs"></i> Emotion-intent metadata integration for contextual analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="flex items-center gap-4 text-sm text-slate-500">
+                    <span><i class="fas fa-lock mr-2 text-amber-400"></i>Application details confidential until publication</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pipeline" class="py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Patent Pipeline</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Additional innovations in preparation for patent filing.</p>
+        </div>
+        
+        <div class="confidential-banner p-6 rounded-xl mb-8 max-w-4xl mx-auto">
+            <div class="flex items-start gap-3">
+                <i class="fas fa-exclamation-triangle text-amber-400 text-xl mt-1"></i>
+                <div>
+                    <h4 class="font-bold text-amber-400 mb-1">Confidential Development</h4>
+                    <p class="text-sm text-slate-300">The following innovations are in active development. Specific technical details are withheld to preserve patentability. Contact our IP team for licensing discussions under NDA.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="patent-card p-6 bg-slate-900 rounded-xl">
+                <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-shield-alt text-amber-400 text-xl"></i>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                    <h3 class="font-bold">SecureBridge Protocol</h3>
+                    <span class="status-pending text-xs font-bold">IN PREPARATION</span>
+                </div>
+                <p class="text-slate-400 text-sm mb-3">Hybrid encryption protocol for zero-trust AI provider communication</p>
+                <p class="text-xs text-slate-500">Hybrid WebRTC + WebSocket + gRPC secure transport</p>
+            </div>
+            
+            <div class="patent-card p-6 bg-slate-900 rounded-xl">
+                <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-brain text-purple-400 text-xl"></i>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                    <h3 class="font-bold">AROL Compression</h3>
+                    <span class="status-pending text-xs font-bold">IN PREPARATION</span>
+                </div>
+                <p class="text-slate-400 text-sm mb-3">Semantic compression method for 90% token cost reduction</p>
+                <p class="text-xs text-slate-500">ContextVault persistent memory architecture</p>
+            </div>
+            
+            <div class="patent-card p-6 bg-slate-900 rounded-xl">
+                <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-lock text-emerald-400 text-xl"></i>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                    <h3 class="font-bold">Zero-Knowledge DLP</h3>
+                    <span class="status-pending text-xs font-bold">IN PREPARATION</span>
+                </div>
+                <p class="text-slate-400 text-sm mb-3">Local data loss prevention with privacy-preserving verification</p>
+                <p class="text-xs text-slate-500">EdgeShield WebAssembly runtime architecture</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="protection" class="py-24 px-4 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">IP Protection Strategy</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Multi-layered approach to safeguarding innovations.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl">
+                <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-file-signature text-amber-400 text-xl"></i>
+                </div>
+                <h3 class="font-bold mb-2">Patents</h3>
+                <p class="text-sm text-slate-400">UK patent applications for core innovations. Filed after
