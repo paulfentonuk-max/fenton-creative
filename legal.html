@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal | FENTON CREATIVE™</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #05070a;
+            --bg-secondary: #0a0f1a;
+            --accent: #00d4ff;
+            --text-primary: #f0f2f5;
+            --text-secondary: #8a94a8;
+            --border: rgba(0, 212, 255, 0.15);
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(5,7,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent); font-weight: 500; }
+        
+        .content { padding: 8rem 0 4rem; }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin: 2.5rem 0 1rem;
+            color: var(--accent);
+        }
+        p { color: var(--text-secondary); margin-bottom: 1rem; }
+        
+        .legal-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .legal-card h3 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        footer {
+            padding: 3rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            background: var(--bg-secondary);
+        }
+        footer p { color: var(--text-secondary); font-size: 0.8rem; }
+        footer a { color: var(--accent); text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            nav { padding: 1rem 2rem; }
+            .content { padding: 6rem 1rem 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">FENTON<span>CREATIVE</span>™</a>
+    </nav>
+
+    <div class="content">
+        <div class="container">
+            <h1>Legal Information</h1>
+            
+            <div class="legal-card">
+                <h3>Company Information</h3>
+                <p><strong>FENTON CREATIVE™</strong> is a trading name of Fenton Shield Ltd</p>
+                <p><strong>Registered in England and Wales</strong></p>
+                <p><strong>Company Number:</strong> [Your Company Number]</p>
+                <p><strong>Registered Office:</strong> [Your Registered Address]</p>
+            </div>
+            
+            <h2>Trademarks</h2>
+            <p>The following are trademarks or registered trademarks of Fenton Shield Ltd:</p>
+            <div class="legal-card">
+                <p>• FENTON CREATIVE™</p>
+                <p>• ShieldPost™ (Patent Pending)</p>
+                <p>• MTAVS™</p>
+                <p>• DataPrune™</p>
+                <p>• ValueCompanion™</p>
+                <p>• EdgeShield™</p>
+            </div>
+            
+            <h2>Patents</h2>
+            <p>ShieldPost™ technology is patent pending. Unauthorized use, reproduction, or distribution of our patented or patent-pending technologies is strictly prohibited.</p>
+            
+            <h2>Open Source</h2>
+            <p>Portions of our software may incorporate open-source components. All open-source licenses and attributions are available upon request.</p>
+            
+            <h2>Contact</h2>
+            <p>For legal inquiries:</p>
+            <p><a href="mailto:legal@fenton-shield.co">legal@fenton-shield.co</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 FENTON CREATIVE™. <a href="index.html">Return to Home</a></p>
+    </footer>
+</body>
+</html>
