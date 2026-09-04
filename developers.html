@@ -3,170 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developers | Fenton Creative™</title>
-    <meta name="description" content="Developer resources, API documentation, and integration guides for Fenton Creative™ products.">
+    <title>Developers | FENTON CREATIVE™</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #05070a;
+            --bg-secondary: #0a0f1a;
+            --bg-elevated: #0d1320;
+            --accent: #00d4ff;
+            --text-primary: #f0f2f5;
+            --text-secondary: #8a94a8;
+            --border: rgba(0, 212, 255, 0.15);
         }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
-            color: #333;
-            background: #fafafa;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         
         nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 4rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 1000;
+            background: rgba(5,7,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
         }
-        
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: var(--text-primary);
             text-decoration: none;
         }
-        
-        .logo span {
-            color: #e94560;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
+        .logo span { color: var(--accent); font-weight: 500; }
+        .nav-links { display: flex; gap: 3rem; list-style: none; }
         .nav-links a {
-            color: #fff;
+            color: var(--text-secondary);
             text-decoration: none;
-            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             transition: color 0.3s;
         }
-        
-        .nav-links a:hover {
-            color: #e94560;
-        }
+        .nav-links a:hover { color: var(--accent); }
         
         .page-header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 120px 0 60px;
+            padding: 150px 4rem 80px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
             text-align: center;
         }
-        
         .page-header h1 {
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
             margin-bottom: 1rem;
+        }
+        .page-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
         }
         
         .content {
-            padding: 60px 0;
+            padding: 6rem 4rem;
         }
-        
         .doc-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
         }
-        
         .doc-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border-left: 4px solid #e94560;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            transition: all 0.3s;
         }
-        
+        .doc-card:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-5px);
+        }
         .doc-card h3 {
-            color: #1a1a2e;
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 400;
             margin-bottom: 1rem;
         }
-        
         .doc-card p {
-            color: #666;
+            color: var(--text-secondary);
             margin-bottom: 1.5rem;
+            line-height: 1.7;
         }
-        
         .doc-link {
-            color: #e94560;
+            color: var(--accent);
             text-decoration: none;
-            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         
-        .code-block {
-            background: #1a1a2e;
-            color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            margin: 1rem 0;
+        .architecture-section {
+            padding: 6rem 4rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
         }
-        
-        .code-block code {
-            font-family: 'Courier New', monospace;
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        .component-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+        }
+        .component-card:hover {
+            border-color: var(--accent);
+        }
+        .component-card h4 {
+            color: var(--accent);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .component-card p {
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
         
         footer {
-            background: #0f0f1a;
-            color: #888;
-            padding: 40px 0;
+            padding: 4rem;
+            border-top: 1px solid var(--border);
+            background: var(--bg-secondary);
             text-align: center;
         }
+        footer p { color: var(--text-secondary); font-size: 0.8rem; }
         
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .page-header h1 {
-                font-size: 2rem;
-            }
+            nav { padding: 1rem 2rem; }
+            .nav-links { display: none; }
+            .page-header { padding: 120px 2rem 60px; }
+            .content { padding: 4rem 2rem; }
+            .doc-grid { grid-template-columns: 1fr; }
+            .component-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <a href="index.html" class="logo">Fenton<span>Creative</span>™</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="developers.html">Developers</a></li>
-                <li><a href="tech-heroes.html">Tech Heroes</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <a href="index.html" class="logo">FENTON<span>CREATIVE</span>™</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="developers.html">Developers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <section class="page-header">
         <div class="container">
             <h1>Developer Resources</h1>
-            <p>Everything you need to integrate and build with our platform</p>
+            <p>API documentation, SDKs, and integration guides for the FENTON CREATIVE™ platform</p>
         </div>
     </section>
 
@@ -175,7 +192,7 @@
             <div class="doc-grid">
                 <div class="doc-card">
                     <h3>API Documentation</h3>
-                    <p>Complete REST API reference for all Fenton Creative™ products. Authentication, endpoints, rate limits, and examples.</p>
+                    <p>Complete REST API reference for all FENTON CREATIVE™ products. Authentication, endpoints, rate limits, and examples.</p>
                     <a href="#" class="doc-link">View API Docs →</a>
                 </div>
                 
@@ -192,34 +209,43 @@
                 </div>
                 
                 <div class="doc-card">
-                    <h3>WebAssembly Runtime</h3>
-                    <p>Technical documentation for EdgeShield, our WebAssembly runtime powering client-side security validation.</p>
-                    <a href="#" class="doc-link">Explore EdgeShield →</a>
-                </div>
-            </div>
-            
-            <div style="margin-top: 4rem;">
-                <h2 style="margin-bottom: 2rem;">Quick Start</h2>
-                <div class="code-block">
-                    <code>
-// Install ShieldPost SDK<br>
-npm install @fentoncreative/shieldpost<br><br>
-// Initialize client<br>
-import { ShieldPost } from '@fentoncreative/shieldpost';<br><br>
-const shield = new ShieldPost({<br>
-&nbsp;&nbsp;apiKey: process.env.SHIELDPOST_KEY,<br>
-&nbsp;&nbsp;region: 'eu-west'<br>
-});
-                    </code>
+                    <h3>GitHub Repository</h3>
+                    <p>Open source SDKs, example projects, and community contributions. Star us and submit pull requests.</p>
+                    <a href="https://github.com/fentoncreative" class="doc-link">View on GitHub →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <section class="architecture-section">
         <div class="container">
-            <p>&copy; 2024 Fenton Creative™. All rights reserved.</p>
+            <div class="section-header">
+                <h2>Core Architecture Components</h2>
+                <p>Deep dives into our platform's foundational technologies</p>
+            </div>
+            <div class="component-grid">
+                <a href="arol.html" class="component-card">
+                    <h4>AROL</h4>
+                    <p>AI Request Optimization</p>
+                </a>
+                <a href="securebridge.html" class="component-card">
+                    <h4>SecureBridge</h4>
+                    <p>Encrypted Data Transfer</p>
+                </a>
+                <a href="edgeshield.html" class="component-card">
+                    <h4>EdgeShield</h4>
+                    <p>Local AI Processing</p>
+                </a>
+                <a href="llm-dlp.html" class="component-card">
+                    <h4>LLM DLP</h4>
+                    <p>Data Loss Prevention</p>
+                </a>
+            </div>
         </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FENTON CREATIVE™. All rights reserved.</p>
     </footer>
 </body>
 </html>
